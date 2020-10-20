@@ -36,12 +36,16 @@
   --bprder-dark-color: #323746;
   --bprder-slider-main-color: #ea676b;
   --arrow-color: #e94348;
+  --shade-color: #cd5d56;
 }
 html {
   font-size: 10px;
 }
 * {
-  margin: 0 auto;
+  margin: 0;
+}
+body {
+  max-width: 1020px;
 }
 .h2 {
   font-family: "Lato900";
@@ -56,10 +60,21 @@ html {
   line-height: 3rem;
   color: var(--simple-text);
 }
+.wrapper {
+  width: 940px;
+}
 /* Header */
 .header {
   background-color: var(--dark-background);
   border-bottom: solid 6px var(--bprder-dark-color);
+  display: flex;
+  justify-content: center;
+}
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 28px;
 }
 .logo {
   font-family: "LatoBold";
@@ -75,24 +90,87 @@ html {
   color: var(--active-item-navigation);
 }
 .navigation {
+  display: flex;
+  justify-content: space-between;
   font-family: "LatoBold";
+  padding-top: 11px;
+  width: 375px;
   font-size: 1.2rem;
   line-height: 1.4rem;
-  /* text-align: right; */
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
   color: var(--wite);
 }
+.navigation__item {
+  list-style: disc;
+}
 .navigation__active-item {
   color: var(--active-item-navigation);
+  list-style: none;
 }
 
 /* Slider */
 .slider {
   background-color: var(--slider-main-background);
   border-bottom: solid 6px var(--bprder-slider-main-color);
+  display: flex;
+  justify-content: center;
 }
-
+.slider__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 54px;
+  padding-bottom: 82px;
+}
+.wrapper-arrow-left {
+  padding-top: 32px;
+}
+.arrow-left {
+  width: 16px;
+  padding: 13.5px 0px;
+  background: url(./image/slider/arrow-left.png);
+}
+.vertical-phone-wrapper {
+  width: 216px;
+  padding-right: 45px;
+}
+.vertical-phone {
+  width: 188px;
+  padding: 65px 14px 60px;
+  background: url(./image/slider/phone-vertical.png) no-repeat;
+  border-radius: 25px;
+  box-shadow: 20px 25px 1px 1px var(--shade-color);
+}
+.vertical-phone__screen {
+  width: 188px;
+  padding: 166.5px 0px;
+  background: url(./image/slider/phone-vertical-display.png);
+}
+.horizontal-phone-wrapper {
+  width: 483px;
+  padding-top: 6px;
+}
+.horizontal-phone {
+  width: 333px;
+  padding: 14px 65px 14px 60px;
+  background: url(./image/slider/phone-horizontal.png) no-repeat;
+  border-radius: 25px;
+  box-shadow: 25px 20px 1px 1px var(--shade-color);
+}
+.horizontal-phone__screen {
+  width: 333px;
+  padding: 94px 0px;
+  background: url(./image/slider/phone-horizontal-display.png);
+}
+.wrapper-arrow-right {
+  padding-top: 32px;
+}
+.arrow-right {
+  width: 16px;
+  padding: 13.5px 0px;
+  background: url(./image/slider/arrow-right.png);
+}
 /* Services */
 .services {
   background-color: var(--lite-background);

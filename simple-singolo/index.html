@@ -9,7 +9,7 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="wrapper">
+        <div class="wrapper header__wrapper">
             <h1 class="logo">
                 <span class="logo__text">singolo</span>
                 <span class="logo_star">*</span>
@@ -28,15 +28,23 @@
 
     <!-- Slider -->
     <section class="slider">
-        <div class="wrapper">
-            <div class="arrow-left"></div>
-            <div class="vertical-phone">
-                <div class="vertical-phone__screen"></div>
+        <div class="wrapper slider__wrapper">
+            <div class="wrapper-arrow-left">
+                <div class="arrow-left"></div>
             </div>
-            <div class="horizontal-phone">
-                <div class="horizontal-phone__screen"></div>
+            <div class="vertical-phone-wrapper">
+                <div class="vertical-phone">
+                    <div class="vertical-phone__screen"></div>
+                </div>
+            </div> 
+            <div class="horizontal-phone-wrapper">  
+                <div class="horizontal-phone">
+                    <div class="horizontal-phone__screen"></div>
+                </div> 
+             </div>   
+             <div class="wrapper-arrow-left">
+                <div class="arrow-right"></div>
             </div>
-            <div class="arrow-right"></div>
         </div>
     </section>
 
@@ -96,39 +104,43 @@
 
     <!-- Portfolio -->
     <section class="portfolio">
-        <h2 class="portfolio__header h2">portfolio
-        </h2>
-        <p class="portfolio__information information">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-        <div class="portfolio__filter-item">
-            <div class="portfolio__item portfolio__active-item"><span>All</span></div>
-            <div class="portfolio__item"><span>Web Design</span></div>
-            <div class="portfolio__item"><span>Graphic Design</span></div>
-            <div class="portfolio__item"><span>Artwork</span></div>
-        </div>
-        <div class="portfolio__pictures-holder">
-            <div class="portfolio__picture"></div>
-            <div class="portfolio__picture"></div>
-            <div class="portfolio__picture"></div>
-            <div class="portfolio__picture"></div>
-            <div class="portfolio__picture"></div>
-            <div class="portfolio__picture"></div>
-            <div class="portfolio__picture"></div>
-            <div class="portfolio__picture"></div>
-            <div class="portfolio__picture"></div>
-            <div class="portfolio__picture"></div>
-            <div class="portfolio__picture"></div>
-            <div class="portfolio__picture"></div>
+        <div class="wrapper">
+            <h2 class="portfolio__header h2">portfolio
+            </h2>
+            <p class="portfolio__information information">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+            <div class="portfolio__filter-item">
+                <div class="portfolio__item portfolio__active-item"><span>All</span></div>
+                <div class="portfolio__item"><span>Web Design</span></div>
+                <div class="portfolio__item"><span>Graphic Design</span></div>
+                <div class="portfolio__item"><span>Artwork</span></div>
+            </div>
+            <div class="portfolio__pictures-holder">
+                <div class="portfolio__picture"></div>
+                <div class="portfolio__picture"></div>
+                <div class="portfolio__picture"></div>
+                <div class="portfolio__picture"></div>
+                <div class="portfolio__picture"></div>
+                <div class="portfolio__picture"></div>
+                <div class="portfolio__picture"></div>
+                <div class="portfolio__picture"></div>
+                <div class="portfolio__picture"></div>
+                <div class="portfolio__picture"></div>
+                <div class="portfolio__picture"></div>
+                <div class="portfolio__picture"></div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer__description"><span>© Copyright 2013 </span></div>
-        <div class="social-buttons">
-            <div class="social-buttons__icon social-buttons__facebook"></div>
-            <div class="social-buttons__icon social-buttons__google-plus"></div>
-            <div class="social-buttons__icon social-buttons__twitter"></div>
-            <div class="social-buttons__icon social-buttons__linkedin"></div>
+        <div class="wrapper">
+            <div class="footer__description"><span>© Copyright 2013 </span></div>
+            <div class="social-buttons">
+                <div class="social-buttons__icon social-buttons__facebook"></div>
+                <div class="social-buttons__icon social-buttons__google-plus"></div>
+                <div class="social-buttons__icon social-buttons__twitter"></div>
+                <div class="social-buttons__icon social-buttons__linkedin"></div>
+            </div>
         </div>
     </footer>
 </body>
