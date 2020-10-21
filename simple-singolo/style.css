@@ -53,12 +53,14 @@ body {
   line-height: 3.6rem;
   text-transform: capitalize;
   color: var(--section-headers);
+  letter-spacing: -0.008em;
 }
 .information {
   font-family: "Lato300";
   font-size: 1.8rem;
   line-height: 3rem;
   color: var(--simple-text);
+  letter-spacing: -0.008em;
 }
 .wrapper {
   width: 940px;
@@ -175,6 +177,55 @@ body {
 .services {
   background-color: var(--lite-background);
   border-bottom: solid 6px var(--wite);
+  display: flex;
+  justify-content: center;
+  padding-top: 59px;
+  padding-bottom: 25px;
+}
+.services__header {
+  padding-bottom: 18px;
+}
+.services__information {
+  padding-bottom: 47px;
+}
+.services-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+.services__item {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 32%;
+  padding-bottom: 30px;
+}
+.services__icon {
+  width: 60px;
+  padding: 30px 0;
+}
+.services__icon1 {
+  background: url(./image/services/services-item-pencil.png) no-repeat;
+}
+.services__icon2 {
+  background: url(./image/services/services-item-lightbulb.png) no-repeat;
+}
+.services__icon3 {
+  background: url(./image/services/services-item-heart.png) no-repeat;
+}
+.services__icon4 {
+  background: url(./image/services/services-item-phone.png) no-repeat;
+}
+.services__icon5 {
+  background: url(./image/services/services-item-thought.png) no-repeat;
+}
+.services__icon6 {
+  background: url(./image/services/services-item-star.png) no-repeat;
+}
+.services_text {
+  width: 73%;
 }
 .services__name {
   font-family: "Lato900";
@@ -182,36 +233,141 @@ body {
   line-height: 1.8rem;
   text-transform: capitalize;
   color: var(--section-headers);
+  /* padding-top: 10px; */
+  padding-bottom: 11px;
+  letter-spacing: -0.01em;
 }
 .services_description {
   font-family: "Lato400";
   font-size: 1.2rem;
   line-height: 2.2rem;
   color: var(--simple-text);
+  text-align: justify;
+  letter-spacing: 0.02em;
 }
 
 /* Portfolio */
 .portfolio {
   background-color: var(--dark-background);
   border-bottom: solid 6px var(--bprder-dark-color);
+  display: flex;
+  justify-content: center;
+  padding-top: 58px;
+}
+.portfolio__header {
+  padding-bottom: 18px;
+}
+.portfolio__information {
+  padding-bottom: 12px;
+}
+.portfolio__filter-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 290px;
+  padding-bottom: 18px;
 }
 .portfolio__item {
   font-family: "Lato400";
-  font-size: 1.2rem;
-  line-height: 2.2rem;
+  font-size: 1.25rem;
+  line-height: 2.15rem;
+  padding: 0px 6px;
   color: var(--simple-text);
+  border: 1px solid var(--simple-text);
+  border-radius: 5px;
+  letter-spacing: 0.02em;
 }
 .portfolio__active-item {
+  padding: 0px 5px;
   color: var(--portfolio-active-item);
+  border: 1px solid var(--portfolio-active-item);
 }
-
+.portfolio__pictures-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+.portfolio__picture {
+  width: 23.4%;
+  padding: 103.5px 0px;
+}
+.portfolio__picture1 {
+  background: url(./image/portfolio/portfolio-1.png) no-repeat;
+}
+.portfolio__picture2 {
+  background: url(./image/portfolio/portfolio-2.png) no-repeat;
+}
+.portfolio__picture3 {
+  background: url(./image/portfolio/portfolio-3.png) no-repeat;
+}
+.portfolio__picture4 {
+  background: url(./image/portfolio/portfolio-4.png) no-repeat;
+}
+.portfolio__picture5 {
+  background: url(./image/portfolio/portfolio-5.png) no-repeat;
+}
+.portfolio__picture6 {
+  background: url(./image/portfolio/portfolio-6.png) no-repeat;
+}
+.portfolio__picture7 {
+  background: url(./image/portfolio/portfolio-7.png) no-repeat;
+}
+.portfolio__picture8 {
+  background: url(./image/portfolio/portfolio-8.png) no-repeat;
+}
+.portfolio__picture9 {
+  background: url(./image/portfolio/portfolio-9.png) no-repeat;
+}
+.portfolio__picture10 {
+  background: url(./image/portfolio/portfolio-10.png) no-repeat;
+}
+.portfolio__picture11 {
+  background: url(./image/portfolio/portfolio-11.png) no-repeat;
+}
+.portfolio__picture12 {
+  background: url(./image/portfolio/portfolio-12.png) no-repeat;
+}
 /* Footer */
 .footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 22px;
+  padding-bottom: 22px;
   background-color: var(--dark-background);
+}
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .footer__description {
   font-family: "Lato900";
   font-size: 1.3rem;
   line-height: 1.8rem;
   color: var(--section-headers);
+}
+.social-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 22px 0px; */
+  width: 152px;
+}
+.social-buttons__icon {
+  width: 32px;
+  padding: 16px 0px;
+}
+.social-buttons__facebook {
+  background: url(./image/footer/ico-facebook.png);
+}
+.social-buttons__google-plus {
+  background: url(./image/footer/ico-google-plus.png);
+}
+.social-buttons__twitter {
+  background: url(./image/footer/ico-twitter.png);
+}
+.social-buttons__linkedin {
+  background: url(./image/footer/ico-linkedin.png);
 }
