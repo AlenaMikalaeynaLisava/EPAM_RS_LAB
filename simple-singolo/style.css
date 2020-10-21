@@ -105,6 +105,7 @@ body {
 }
 .navigation__item {
   list-style: disc;
+  cursor: pointer;
 }
 .navigation__active-item {
   color: var(--active-item-navigation);
@@ -132,6 +133,7 @@ body {
   width: 16px;
   padding: 13.5px 0px;
   background: url(./image/slider/arrow-left.png);
+  cursor: pointer;
 }
 .vertical-phone-wrapper {
   width: 216px;
@@ -172,6 +174,7 @@ body {
   width: 16px;
   padding: 13.5px 0px;
   background: url(./image/slider/arrow-right.png);
+  cursor: pointer;
 }
 /* Services */
 .services {
@@ -198,7 +201,6 @@ body {
 .services__item {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   width: 32%;
   padding-bottom: 30px;
 }
@@ -244,6 +246,7 @@ body {
   color: var(--simple-text);
   text-align: justify;
   letter-spacing: 0.02em;
+  overflow: hidden;
 }
 
 /* Portfolio */
@@ -276,6 +279,7 @@ body {
   border: 1px solid var(--simple-text);
   border-radius: 5px;
   letter-spacing: 0.02em;
+  cursor: pointer;
 }
 .portfolio__active-item {
   padding: 0px 5px;
@@ -292,6 +296,9 @@ body {
 .portfolio__picture {
   width: 23.4%;
   padding: 103.5px 0px;
+}
+.portfolio__picture:nth-child(1n + 13) {
+  display: none;
 }
 .portfolio__picture1 {
   background: url(./image/portfolio/portfolio-1.png) no-repeat;
@@ -358,6 +365,7 @@ body {
 .social-buttons__icon {
   width: 32px;
   padding: 16px 0px;
+  cursor: pointer;
 }
 .social-buttons__facebook {
   background: url(./image/footer/ico-facebook.png);
