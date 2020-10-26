@@ -15,6 +15,106 @@
   --arrow-color: #e94348;
   --shade-color: #cd5d56;
 }
+
+@keyframes pulse {
+  0% {
+    transform: translateX(0vw);
+  }
+  50% {
+    transform: translateX(50vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+.element {
+  position: absolute;
+  top: 0px;
+  left: -100vw;
+  z-index: 1;
+  width: 100vw;
+  height: 610px;
+  background: url(./image/slider/Slider.png) no-repeat center, #648bf0;
+}
+.element1 {
+  animation-name: pulse;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  /* animation-direction: alternate; */
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  /* animation-play-state: running running; */
+}
+
+@keyframes pulse2 {
+  0% {
+    transform: translateX(200vw);
+  }
+  50% {
+    transform: translateX(150vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+.element2 {
+  animation-name: pulse2;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  /* animation-direction: alternate; */
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+@keyframes pulse3 {
+  0% {
+    transform: translateX(100vw);
+  }
+  50% {
+    transform: translateX(150vw);
+  }
+  100% {
+    transform: translateX(200vw);
+  }
+}
+.element3 {
+  animation-name: pulse3;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  /* animation-direction: alternate; */
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+@keyframes pulse4 {
+  0% {
+    transform: translateX(100vw);
+  }
+  50% {
+    transform: translateX(50vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+.element4 {
+  animation-name: pulse4;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  /* animation-direction: alternate; */
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.display {
+  display: none;
+}
+
 html {
   font-size: 10px;
   scroll-behavior: smooth;
@@ -206,6 +306,7 @@ body {
   border-bottom: solid 6px var(--bprder-slider-main-color);
   display: flex;
   justify-content: center;
+  position: relative;
 }
 .slider__wrapper {
   width: 940px;
@@ -218,6 +319,7 @@ body {
 .wrapper-arrow-left {
   padding-top: 28px;
   padding-left: 2.5px;
+  z-index: 10;
 }
 .arrow {
   width: 15px;
@@ -268,6 +370,7 @@ body {
 .wrapper-arrow-right {
   padding-top: 28px;
   padding-right: 3px;
+  z-index: 10;
 }
 .arrow-right {
   transform: rotate(45deg);

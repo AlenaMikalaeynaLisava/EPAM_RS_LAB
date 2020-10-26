@@ -36,7 +36,7 @@ portfolio__filter_list.addEventListener("click", (event)=>{
 document.addEventListener('scroll', onScroll);
 function onScroll(event){
     const curPoss = window.scrollY;
-    console.log(document.querySelectorAll('header'||'body>section'));
+    // console.log(document.querySelectorAll('header'||'body>section'));
     document.querySelectorAll('.header'&&'body>section').forEach((el) => {el.getAttribute('id')
     if(el.offsetTop <= curPoss && (el.offsetTop + el.offsetHeight) > curPoss){
         links.forEach((a) => {
@@ -51,7 +51,7 @@ function onScroll(event){
 document.addEventListener('scroll', onScrollSide);
 function onScrollSide(event){
     const curPoss = window.scrollY;
-    console.log(document.querySelectorAll('header'||'body>section'));
+    // console.log(document.querySelectorAll('header'||'body>section'));
     document.querySelectorAll('.header'&&'body>section').forEach((el) => {el.getAttribute('id')
     if(el.offsetTop <= curPoss && (el.offsetTop + el.offsetHeight) > curPoss){
         linksMenu375.forEach((a) => {
@@ -61,4 +61,40 @@ function onScrollSide(event){
             }
         })
     }})
+}
+
+// arrows
+const arrows = document.querySelectorAll('.arrow');
+const slider__wrapper = document.querySelector(".slider__wrapper");
+const slider = document.querySelector('.slider');
+const vertical_phone_wrapper = document.querySelector('.vertical-phone-wrapper');
+const horizontal_phone_wrapper = document.querySelector('.horizontal-phone-wrapper');
+const element = document.querySelector('.element');
+slider__wrapper.addEventListener('click', sliderChange);
+function sliderChange(event){
+    if(event.target.classList.contains("arrow-right")){
+        if(!element.classList.contains('element1')&&!element.classList.contains('element2')){
+        // slider.classList.toggle('back-color');
+        element.classList.remove('element3');
+        element.classList.remove('element4');
+            element.classList.add('element1');
+        } else{
+            element.classList.remove('element1');
+            element.classList.remove('element2');
+            element.classList.add('element3');
+        }
+    } else if(event.target.classList.contains("arrow-left")){
+        if(!element.classList.contains('element1')&&!element.classList.contains('element2')){
+        // slider.classList.toggle('back-color');
+        element.classList.remove('element3');
+        element.classList.remove('element4');
+            element.classList.add('element2');
+        } else{
+            element.classList.remove('element1');
+            element.classList.remove('element2');
+            element.classList.add('element4');
+        }
+    
+
+    }
 }
