@@ -41,10 +41,8 @@
   animation-duration: 5s;
   animation-timing-function: ease-out;
   animation-delay: 0s;
-  /* animation-direction: alternate; */
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  /* animation-play-state: running running; */
 }
 
 @keyframes pulse2 {
@@ -63,7 +61,6 @@
   animation-duration: 5s;
   animation-timing-function: ease-out;
   animation-delay: 0s;
-  /* animation-direction: alternate; */
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: running;
@@ -84,7 +81,6 @@
   animation-duration: 5s;
   animation-timing-function: ease-out;
   animation-delay: 0s;
-  /* animation-direction: alternate; */
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: running;
@@ -105,7 +101,6 @@
   animation-duration: 5s;
   animation-timing-function: ease-out;
   animation-delay: 0s;
-  /* animation-direction: alternate; */
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: running;
@@ -183,15 +178,11 @@ body {
   font-size: 1.8rem;
   line-height: 3rem;
   color: var(--simple-text);
-  letter-spacing: -0.044rem;
 }
 .wrapper {
   max-width: 1020px;
   min-width: 320px;
 }
-/* .wrapper {
-  width: 940px;
-} */
 
 /* Header */
 .header {
@@ -596,9 +587,6 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  /* .wrapper {
-    width: 686px;
-  } */
   .header__wrapper {
     width: 688px;
     padding: 29px 0 30px;
@@ -608,6 +596,13 @@ body {
   }
   .h2 {
     letter-spacing: 0em;
+  }
+  .information {
+    font-family: "Lato300";
+    font-size: 1.8rem;
+    line-height: 3rem;
+    color: var(--simple-text);
+    letter-spacing: -0.044rem;
   }
   .navigation {
     margin-left: 20px;
@@ -647,7 +642,6 @@ body {
     background: url(./image/tablet/Slider/phone-vertical.png) no-repeat;
     border-radius: 18px;
     box-shadow: 18px 18px 1px 1px var(--shade-color);
-    /* 1px 11px 10px 10px var(--shade-color); */
   }
   .vertical-phone__screen {
     width: 141.55px;
@@ -995,7 +989,7 @@ body {
   }
   .slider__wrapper {
     width: 100vw;
-    padding: 0px;
+    padding: 10px 0px;
     margin: 0px;
   }
   .wrapper-arrow-left {

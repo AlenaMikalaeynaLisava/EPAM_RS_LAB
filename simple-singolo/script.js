@@ -36,7 +36,6 @@ portfolio__filter_list.addEventListener("click", (event)=>{
 document.addEventListener('scroll', onScroll);
 function onScroll(event){
     const curPoss = window.scrollY;
-    // console.log(document.querySelectorAll('header'||'body>section'));
     document.querySelectorAll('.header'&&'body>section').forEach((el) => {el.getAttribute('id')
     if(el.offsetTop <= curPoss && (el.offsetTop + el.offsetHeight) > curPoss){
         links.forEach((a) => {
@@ -51,7 +50,6 @@ function onScroll(event){
 document.addEventListener('scroll', onScrollSide);
 function onScrollSide(event){
     const curPoss = window.scrollY;
-    // console.log(document.querySelectorAll('header'||'body>section'));
     document.querySelectorAll('.header'&&'body>section').forEach((el) => {el.getAttribute('id')
     if(el.offsetTop <= curPoss && (el.offsetTop + el.offsetHeight) > curPoss){
         linksMenu375.forEach((a) => {
@@ -74,7 +72,6 @@ slider__wrapper.addEventListener('click', sliderChange);
 function sliderChange(event){
     if(event.target.classList.contains("arrow-right")){
         if(!element.classList.contains('element1')&&!element.classList.contains('element2')){
-        // slider.classList.toggle('back-color');
         element.classList.remove('element3');
         element.classList.remove('element4');
             element.classList.add('element1');
@@ -85,7 +82,6 @@ function sliderChange(event){
         }
     } else if(event.target.classList.contains("arrow-left")){
         if(!element.classList.contains('element1')&&!element.classList.contains('element2')){
-        // slider.classList.toggle('back-color');
         element.classList.remove('element3');
         element.classList.remove('element4');
             element.classList.add('element2');
@@ -96,5 +92,23 @@ function sliderChange(event){
         }
     
 
+    }
+}
+
+//portfolio
+
+const portfolio__item = document.querySelector('.portfolio__item');
+const portfolio__pictures_holder = document.querySelector('.portfolio__pictures-holder');
+portfolio__filter_list.addEventListener('click', portfolioMix);
+function portfolioMix(event){
+    if(event.target.classList.contains("portfolio__item")){
+        const allPictures = portfolio__pictures_holder.querySelectorAll('.portfolio__picture');
+        const temp = allPictures[0];
+        let i=0;
+        for(i=0; i<allPictures.length; i++){
+            if(allPictures[i+2]){
+                portfolio__pictures_holder.insertBefore(allPictures[i+2], allPictures[i]);
+            } else {portfolio__pictures_holder.insertBefore(allPictures[i], temp) }
+        }
     }
 }
