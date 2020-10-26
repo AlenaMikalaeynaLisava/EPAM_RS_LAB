@@ -5,6 +5,8 @@ const menu_375__item = document.querySelector('.menu-375__item');
 const menu_375_hidden = document.querySelector('.menu-375-hidden');
 const navigation = document.querySelector('.navigation');
 const portfolio__filter_list = document.querySelector('.portfolio__filter-list');
+const links = document.querySelectorAll(".navigation a");
+const linksMenu375 = document.querySelectorAll(".menu-375 a");
 
 hamburger_wrapper.addEventListener("click", ()=>{
     hamburger.classList.toggle('rotate');
@@ -30,3 +32,33 @@ portfolio__filter_list.addEventListener("click", (event)=>{
         event.target.classList.add('portfolio__active-item');
  }  
 })
+
+document.addEventListener('scroll', onScroll);
+function onScroll(event){
+    const curPoss = window.scrollY;
+    console.log(document.querySelectorAll('header'||'body>section'));
+    document.querySelectorAll('.header'&&'body>section').forEach((el) => {el.getAttribute('id')
+    if(el.offsetTop <= curPoss && (el.offsetTop + el.offsetHeight) > curPoss){
+        links.forEach((a) => {
+            a.classList.remove("navigation__active-item");
+            if(el.getAttribute('id') === a.getAttribute('href').substring(1)){
+                a.classList.add("navigation__active-item");
+            }
+        })
+    }})
+}
+
+document.addEventListener('scroll', onScrollSide);
+function onScrollSide(event){
+    const curPoss = window.scrollY;
+    console.log(document.querySelectorAll('header'||'body>section'));
+    document.querySelectorAll('.header'&&'body>section').forEach((el) => {el.getAttribute('id')
+    if(el.offsetTop <= curPoss && (el.offsetTop + el.offsetHeight) > curPoss){
+        linksMenu375.forEach((a) => {
+            a.classList.remove("menu-375__active-item");
+            if(el.getAttribute('id') === a.getAttribute('href').substring(1)){
+                a.classList.add("menu-375__active-item");
+            }
+        })
+    }})
+}
