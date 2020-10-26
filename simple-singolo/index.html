@@ -8,8 +8,9 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="wrapper header__wrapper">
+    <header class = "header" id = "home">
+        <div class="wrapper">
+            <div  class="header__wrapper">
             <span class="hamburger-wrapper">
                 <span class="hamburger">
                     <span class="hamburger_line"></span>
@@ -21,135 +22,144 @@
             </h1>
             <nav class="header-navigation">
                 <ul class="navigation">
-                    <li class="navigation__item navigation__active-item">home</li>
-                    <li class="navigation__item">services</li>
-                    <li class="navigation__item">portfolio</li>
-                    <li class="navigation__item">about</li>
-                    <li class="navigation__item">contact</li>
+                    <li ><a class = "navigation__item navigation__active-item navigation__first-item" href="#home">home</a></li>
+                    <li ><a class="navigation__item" href="#services">services</a></li>
+                    <li ><a class="navigation__item" href="#portfolio">portfolio</a></li>
+                    <li ><a class="navigation__item" href="#home">about</a></li>
+                    <li ><a class="navigation__item" href="#contact">contact</a></li>
                 </ul>
             </nav>
+            </div>
         </div>
     </header>
 
     <!-- Menu-375 -->
-    <section class="menu-375">
-        <ul class="menu-375__list-holder">
-            <li class="menu-375__item menu-375__active-item">home</li>
-            <li class="menu-375__item">services</li>
-            <li class="menu-375__item">portfolio</li>
-            <li class="menu-375__item">about</li>
-            <li class="menu-375__item">contact</li>
-        </ul>
+    <section class="menu-375-hidden">
+        <div class="menu-375">
+            <ul class="menu-375__list-holder">
+                <li><a class="menu-375__item menu-375__active-item" href="#home">home</a></li>
+                <li><a class="menu-375__item" href="#services">services</a></li>
+                <li ><a class="menu-375__item" href="#portfolio">portfolio</a></li>
+                <li ><a class="menu-375__item" href="#home">about</a></li>
+                <li ><a class="menu-375__item" href="#contact">contact</a></li>
+            </ul>
+        </div>
     </section>
 
     <!-- Slider -->
-    <section class="slider">
-        <div class="wrapper slider__wrapper">
-            <div class="wrapper-arrow-left">
-                <div class="arrow arrow-left"> 
+    <section class = "slider" id = "slider">
+        <div class="wrapper">
+            <div class="slider__wrapper">
+                <div class="wrapper-arrow-left">
+                    <div class="arrow arrow-left"> 
+                    </div>
                 </div>
-            </div>
-            <div class="vertical-phone-wrapper">
-                <div class="vertical-phone">
-                    <div class="vertical-phone__screen"></div>
-                </div>
-            </div> 
-            <div class="horizontal-phone-wrapper">  
-                <div class="horizontal-phone">
-                    <div class="horizontal-phone__screen"></div>
+                <div class="vertical-phone-wrapper">
+                    <div class="vertical-phone">
+                        <div class="vertical-phone__screen"></div>
+                    </div>
                 </div> 
-             </div>   
-             <div class="wrapper-arrow-right">
-                <div class="arrow arrow-right"></div>
+                <div class="horizontal-phone-wrapper">  
+                    <div class="horizontal-phone">
+                        <div class="horizontal-phone__screen"></div>
+                    </div> 
+                </div>   
+                <div class="wrapper-arrow-right">
+                    <div class="arrow arrow-right"></div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services -->
-    <section class="services">
-        <div class="wrapper services__wrapper">
-            <h2 class="services__header h2">our services</h2>
-            <p class="services__information information">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-            <ul class="services-list">
-                <li class="services__item">
-                    <div class="services__icon services__icon1"></div>
-                    <div class="services_text">
-                        <h3 class="services__name">custom design</h3>
-                        <p class="services_description">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
-                    </div>
-                </li>
-                <li class="services__item">
-                    <div class="services__icon services__icon2"></div>
-                    <div class="services_text">
-                        <h3 class="services__name">inovative ideas</h3>
-                        <p class="services_description">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
-                    </div>
-                </li>
-                <li class="services__item">
-                    <div class="services__icon services__icon3"></div>
-                    <div class="services_text">
-                        <h3 class="services__name">love is the answer</h3>
-                        <p class="services_description">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.
-                        </p>
-                    </div>
-                </li>
-                <li class="services__item">
-                    <div class="services__icon services__icon4"></div>
-                    <div class="services_text">
-                        <h3 class="services__name">responsive layout
-                        </h3>
-                        <p class="services_description">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</p>
-                    </div>
-                </li>
-                <li class="services__item">
-                    <div class="services__icon services__icon5"></div>
-                    <div class="services_text">
-                        <h3 class="services__name">24 / 7 Support</h3>
-                        <p class="services_description">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .</p>
-                    </div>
-                </li>
-                <li class="services__item">
-                    <div class="services__icon services__icon6"></div>
-                    <div class="services_text">
-                        <h3 class="services__name">Feel Like A Star</h3>
-                        <p class="services_description">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</p>
-                    </div>
-                </li>
-            </ul>
+    <section class="services" id="services">
+        <div class="wrapper">
+            <div class="services__wrapper">
+                <h2 class="services__header h2">our services</h2>
+                <p class="services__information information">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                <ul class="services-list">
+                    <li class="services__item">
+                        <div class="services__icon services__icon1"></div>
+                        <div class="services_text">
+                            <h3 class="services__name">custom design</h3>
+                            <p class="services_description">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
+                        </div>
+                    </li>
+                    <li class="services__item">
+                        <div class="services__icon services__icon2"></div>
+                        <div class="services_text">
+                            <h3 class="services__name">inovative ideas</h3>
+                            <p class="services_description">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
+                        </div>
+                    </li>
+                    <li class="services__item">
+                        <div class="services__icon services__icon3"></div>
+                        <div class="services_text">
+                            <h3 class="services__name">love is the answer</h3>
+                            <p class="services_description">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="services__item">
+                        <div class="services__icon services__icon4"></div>
+                        <div class="services_text">
+                            <h3 class="services__name">responsive layout
+                            </h3>
+                            <p class="services_description">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</p>
+                        </div>
+                    </li>
+                    <li class="services__item">
+                        <div class="services__icon services__icon5"></div>
+                        <div class="services_text">
+                            <h3 class="services__name">24 / 7 Support</h3>
+                            <p class="services_description">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .</p>
+                        </div>
+                    </li>
+                    <li class="services__item">
+                        <div class="services__icon services__icon6"></div>
+                        <div class="services_text">
+                            <h3 class="services__name">Feel Like A Star</h3>
+                            <p class="services_description">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <!-- Portfolio -->
-    <section class="portfolio">
-        <div class="wrapper portfolio__wrapper">
-            <h2 class="portfolio__header h2">portfolio
-            </h2>
-            <p class="portfolio__information information">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-            <div class="portfolio__filter-list">
-                <div class="portfolio__item portfolio__active-item"><span>All</span></div>
-                <div class="portfolio__item"><span>Web Design</span></div>
-                <div class="portfolio__item"><span>Graphic Design</span></div>
-                <div class="portfolio__item"><span>Artwork</span></div>
-            </div>
-            <div class="portfolio__pictures-holder">
-                <div class="portfolio__picture portfolio__picture1"></div>
-                <div class="portfolio__picture portfolio__picture2"></div>
-                <div class="portfolio__picture portfolio__picture3"></div>
-                <div class="portfolio__picture portfolio__picture4"></div>
-                <div class="portfolio__picture portfolio__picture5"></div>
-                <div class="portfolio__picture portfolio__picture6"></div>
-                <div class="portfolio__picture portfolio__picture7"></div>
-                <div class="portfolio__picture portfolio__picture8"></div>
-                <div class="portfolio__picture portfolio__picture9"></div>
-                <div class="portfolio__picture portfolio__picture10"></div>
-                <div class="portfolio__picture portfolio__picture11"></div>
-                <div class="portfolio__picture portfolio__picture12"></div>
+    <section class = "portfolio" id = "portfolio">
+        <div class="wrapper">
+            <div class="portfolio__wrapper">
+                <h2 class="portfolio__header h2">portfolio
+                </h2>
+                <p class="portfolio__information information">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+                <div class="portfolio__filter-list">
+                    <div class="portfolio__item portfolio__active-item">All</div>
+                    <div class="portfolio__item">Web Design</div>
+                    <div class="portfolio__item">Graphic Design</div>
+                    <div class="portfolio__item">Artwork</div>
+                </div>
+                <div class="portfolio__pictures-holder">
+                    <div class="portfolio__picture portfolio__picture1"></div>
+                    <div class="portfolio__picture portfolio__picture2"></div>
+                    <div class="portfolio__picture portfolio__picture3"></div>
+                    <div class="portfolio__picture portfolio__picture4"></div>
+                    <div class="portfolio__picture portfolio__picture5"></div>
+                    <div class="portfolio__picture portfolio__picture6"></div>
+                    <div class="portfolio__picture portfolio__picture7"></div>
+                    <div class="portfolio__picture portfolio__picture8"></div>
+                    <div class="portfolio__picture portfolio__picture9"></div>
+                    <div class="portfolio__picture portfolio__picture10"></div>
+                    <div class="portfolio__picture portfolio__picture11"></div>
+                    <div class="portfolio__picture portfolio__picture12"></div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class = "footer" id = "contact">
         <div class="wrapper footer__wrapper">
             <div class="footer__description"><span>© Copyright 2013 </span></div>
             <div class="social-buttons">
@@ -160,5 +170,6 @@
             </div>
         </div>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
