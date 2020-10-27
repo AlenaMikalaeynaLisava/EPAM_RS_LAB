@@ -268,6 +268,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   background-color: var(--dark-background);
+  z-index: 10;
 }
 .menu-375__list-holder {
   list-style: none;
