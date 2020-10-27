@@ -33,7 +33,7 @@
   left: -100vw;
   z-index: 1;
   width: 100vw;
-  height: 610px;
+  height: 101%;
   background: url(./image/slider/Slider.png) no-repeat center, #648bf0;
 }
 .element1 {

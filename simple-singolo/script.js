@@ -12,6 +12,7 @@ hamburger_wrapper.addEventListener("click", ()=>{
     hamburger.classList.toggle('rotate');
     menu_375_hidden.classList.toggle('menu-375-hidden');
 })
+
 menu_375__list_holder.addEventListener("click", (event)=>{
     menu_375__list_holder.querySelectorAll('a').forEach(el => el.classList.remove('menu-375__active-item'));
     hamburger.classList.toggle('rotate');
