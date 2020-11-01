@@ -22,10 +22,8 @@ const buttonOnClick = (e)=>{
         if(e.target.classList.contains("number")){
             numberPress(e.target.textContent);
         } else if(e.target.classList.contains("simple-operation")){
-            console.log(e.target.textContent);
             simpleOperationPressed(e.target.textContent);
         } else if(e.target.classList.contains("square-operation")){
-            console.log(e.target.textContent)
             squareOperationPressed(e.target.textContent);
         }else if(e.target.classList.contains("sign-change")){
             signChangePressed(e.target.textContent);
@@ -45,6 +43,9 @@ const numberPress = (number) => {
     let regexp = /\./g;
     if (previousOpperation === 'resultOperation'){
         currentResult = 0;
+        calculatorShow.textContent = "";
+            calculatorShowAll.textContent = "";
+
     }else if ((previousOpperation !== 'number') && (previousOpperation !=='cleenLastOperation')){
         calculatorShow.textContent = ' ';
     }
@@ -85,7 +86,6 @@ const simpleOperationPressed = (currentSign) =>{
         } else  if(sign === "-"){
             currentResult = (+number1 - +number2).toFixed(2);
         } else  if(sign == '×'){
-            console.log(sign);
             currentResult = (+number1 * +number2).toFixed(2);
         } else  if(sign === "÷"){
             currentResult = (+number1 / +number2).toFixed(2);
@@ -110,40 +110,37 @@ const squareOperationPressed = (currentSign) => {
     calculatorShow.textContent = '';
     let length =0;
     let temp = '';
-    if(currentSign === "√"){
-        if (active === "number1"){     
+    if(currentSign === "√"){      
+        if (active === "number1"){   
+            if(+number1 < 0) {
+                cleenOperationPressed("ce");
+            }else{
             number1 = Math.sqrt(+number1);
-            active = "number2"
             calculatorShowAll.textContent = number1;
             calculatorShow.textContent += number1;
+        }
         } else  {
+            if(+number2 < 0) {
+                cleenOperationPressed('ce');
+            }else{
             length = number2.length;
-            console.log(length);
             number2 = Math.sqrt(+number2);
-            active = "number1"
             temp = calculatorShowAll.innerText;
-            console.log(calculatorShowAll.innerText);
-            console.log(temp);
             temp = temp.slice(0, (temp.length-length));
-            console.log(temp);
             calculatorShowAll.textContent = temp + number2;
             calculatorShow.textContent += number2;
+            }
     }
     } else {
         if (active === "number1"){
             number1 = +number1 * +number1;
-            active = "number2"
             calculatorShowAll.textContent = number1;
             calculatorShow.textContent += number1;
         } else  {
             length = number2.length;
             number2 = +number2 * +number2;
-            active = "number1"
                 temp = calculatorShowAll.innerText;
-                console.log(calculatorShowAll.innerText);
-                console.log(temp);
                 temp = temp.slice(0, (temp.length-length));
-                console.log(temp);
                 calculatorShowAll.textContent = temp + number2;
                 calculatorShow.textContent += number2;
             }       
@@ -166,12 +163,10 @@ const cleenOperationPressed = (clean) => {
         if(previousOpperation === "number"){
             if (active === 'number1'){
                 number1 = number1.slice(0, number1.length-1);
-                console.log(number1);
                 calculatorShowAll.textContent  = calculatorShowAll.textContent.slice(0, calculatorShowAll.textContent.length-1);
                 calculatorShow.textContent  = calculatorShow.textContent.slice(0, calculatorShow.textContent.length-1);
             } else{
                 number2 = number2.slice(0, number2.length-1);
-                console.log(number2);
                 calculatorShowAll.textContent  = calculatorShowAll.textContent.slice(0, calculatorShowAll.textContent.length-1);
                 calculatorShow.textContent  = calculatorShow.textContent.slice(0, calculatorShow.textContent.length-1);
             }
@@ -185,28 +180,19 @@ const cleenOperationPressed = (clean) => {
 }
 
 //Change the sign
-// calculatorShow.textContent = ''
 const signChangePressed = (sign) => {
     if (active === "number1"){
         length = number1.length;
         number1 = -number1;
-        active = "number2"
         temp = calculatorShowAll.innerText;
-            console.log(calculatorShowAll.innerText);
-            console.log(temp);
             temp = temp.slice(0, (temp.length-length));
-            console.log(temp);
             calculatorShowAll.textContent = temp + number1;
             calculatorShow.textContent = number1;
     } else  {
         length = number2.length;
         number2 = -number2;
-        active = "number1"
         temp = calculatorShowAll.innerText;
-        console.log(calculatorShowAll.innerText);
-        console.log(temp);
         temp = temp.slice(0, (temp.length-length));
-        console.log(temp);
         calculatorShowAll.textContent = temp + number2;
         calculatorShow.textContent = number2;
 }
