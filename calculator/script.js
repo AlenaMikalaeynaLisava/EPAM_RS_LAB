@@ -12,19 +12,13 @@ let previousOpperation = 'resultOperation';
 
 const buttonOnClick = (e)=>{
     if(e.target.classList.contains("button")){
-        // if(previousOpperation === "resultOperation"){
-        //     calculatorShow.textContent = "";
-        //     calculatorShowAll.textContent = "";
-        // }
         if(previousOpperation === "cleenOperation"){
             calculatorShow.textContent = "";
             calculatorShowAll.textContent = "";
         }
-        //заменить функцией вывода 
         if(calculatorShow.textContent === "0"){
             calculatorShow.textContent = "";
         }
-
         if(e.target.classList.contains("number")){
             numberPress(e.target.textContent);
         } else if(e.target.classList.contains("simple-operation")){
@@ -43,15 +37,15 @@ const buttonOnClick = (e)=>{
             resultOperationPressed(e.target.textContent);
         }
     }
-
-
 }
+
 //Numper press
 const numberPress = (number) => {
+    document.querySelector('.disabled-cleen').removeAttribute("disabled", "disabled");
     let regexp = /\./g;
     if (previousOpperation === 'resultOperation'){
         currentResult = 0;
-    }else if (previousOpperation !== 'number'){
+    }else if ((previousOpperation !== 'number') && (previousOpperation !=='cleenLastOperation')){
         calculatorShow.textContent = ' ';
     }
     for (let i=0; i<disabledButtons.length; i++){
@@ -76,6 +70,7 @@ const numberPress = (number) => {
 
 //Simple operations
 const simpleOperationPressed = (currentSign) =>{
+    document.querySelector('.disabled-cleen').removeAttribute("disabled", "disabled");
     calculatorShow.textContent = '';
     if (previousOpperation === 'resultOperation'){
         calculatorShowAll.textContent = currentResult;
@@ -86,14 +81,14 @@ const simpleOperationPressed = (currentSign) =>{
     }
     if(number1 && number2){
         if(sign === "+"){
-            currentResult = +number1 + +number2;
+            currentResult = (+number1 + +number2).toFixed(2);
         } else  if(sign === "-"){
-            currentResult = +number1 - +number2;
+            currentResult = (+number1 - +number2).toFixed(2);
         } else  if(sign == '×'){
             console.log(sign);
-            currentResult = +number1 * +number2;
+            currentResult = (+number1 * +number2).toFixed(2);
         } else  if(sign === "÷"){
-            currentResult = +number1 / +number2;
+            currentResult = (+number1 / +number2).toFixed(2);
         }
         calculatorShowAll.textContent = currentResult + currentSign;
         number1 = currentResult;
@@ -110,8 +105,8 @@ const simpleOperationPressed = (currentSign) =>{
 }
 
 //Square operations
-
 const squareOperationPressed = (currentSign) => {
+    document.querySelector('.disabled-cleen').setAttribute("disabled", "disabled");
     calculatorShow.textContent = '';
     let length =0;
     let temp = '';
@@ -134,32 +129,31 @@ const squareOperationPressed = (currentSign) => {
             calculatorShowAll.textContent = temp + number2;
             calculatorShow.textContent += number2;
     }
- } else {
-    if (active === "number1"){
-        number1 = +number1 * +number1;
-        active = "number2"
-        calculatorShowAll.textContent = number1;
-        calculatorShow.textContent += number1;
-    } else  {
-        length = number2.length;
-        number2 = +number2 * +number2;
-        active = "number1"
-            temp = calculatorShowAll.innerText;
-            console.log(calculatorShowAll.innerText);
-            console.log(temp);
-            temp = temp.slice(0, (temp.length-length));
-            console.log(temp);
-            calculatorShowAll.textContent = temp + number2;
-            calculatorShow.textContent += number2;
-}
+    } else {
+        if (active === "number1"){
+            number1 = +number1 * +number1;
+            active = "number2"
+            calculatorShowAll.textContent = number1;
+            calculatorShow.textContent += number1;
+        } else  {
+            length = number2.length;
+            number2 = +number2 * +number2;
+            active = "number1"
+                temp = calculatorShowAll.innerText;
+                console.log(calculatorShowAll.innerText);
+                console.log(temp);
+                temp = temp.slice(0, (temp.length-length));
+                console.log(temp);
+                calculatorShowAll.textContent = temp + number2;
+                calculatorShow.textContent += number2;
+            }       
     }
     previousOpperation = 'squareOperation'; 
-
 };
 
 //Clear the screen
 const cleenOperationPressed = (clean) => {
- if(clean === 'ce'){
+    if(clean === 'ce'){
     calculatorShowAll.textContent = '0';
     calculatorShow.textContent = '0';
     number1 = " ";
@@ -167,31 +161,31 @@ const cleenOperationPressed = (clean) => {
     sign = currentSign = "";
     number2 = '';
     currentResult = 0;
- } else {
-     if(previousOpperation === "number"){
-         if (active === 'number1'){
-             number1 = number1.slice(-1);
-             console.log(number1);
-             calculatorShowAll.textContent  = calculatorShowAll.textContent.slice(0, calculatorShowAll.textContent.length-1);
-             calculatorShow.textContent  = calculatorShow.textContent.slice(0, calculatorShow.textContent.length-1);
-         } else{
-            number2 = number2.slice(-1);
-            console.log(number2);
+    previousOpperation = 'cleenOperation'; 
+    } else {
+        if(previousOpperation === "number"){
+            if (active === 'number1'){
+                number1 = number1.slice(0, number1.length-1);
+                console.log(number1);
+                calculatorShowAll.textContent  = calculatorShowAll.textContent.slice(0, calculatorShowAll.textContent.length-1);
+                calculatorShow.textContent  = calculatorShow.textContent.slice(0, calculatorShow.textContent.length-1);
+            } else{
+                number2 = number2.slice(0, number2.length-1);
+                console.log(number2);
+                calculatorShowAll.textContent  = calculatorShowAll.textContent.slice(0, calculatorShowAll.textContent.length-1);
+                calculatorShow.textContent  = calculatorShow.textContent.slice(0, calculatorShow.textContent.length-1);
+            }
+        }else if (previousOpperation === "simpleOperation"){
+            sign = '';
             calculatorShowAll.textContent  = calculatorShowAll.textContent.slice(0, calculatorShowAll.textContent.length-1);
             calculatorShow.textContent  = calculatorShow.textContent.slice(0, calculatorShow.textContent.length-1);
-         }
-     }else if (previousOpperation === "simpleOperation"){
-        sign = '';
-        calculatorShowAll.textContent  = calculatorShowAll.textContent.slice(0, calculatorShowAll.textContent.length-1);
-        calculatorShow.textContent  = calculatorShow.textContent.slice(0, calculatorShow.textContent.length-1);
-     }
-
- }
- previousOpperation = 'cleenOperation'; 
+        }
+     previousOpperation = 'cleenLastOperation'; 
+    }
 }
 
 //Change the sign
-calculatorShow.textContent = ''
+// calculatorShow.textContent = ''
 const signChangePressed = (sign) => {
     if (active === "number1"){
         length = number1.length;
@@ -221,7 +215,6 @@ previousOpperation = 'signChangeOperation';
 
 //Decimal
 const decimalSignPressed = (sign) => {
-
     if (active === "number1"){
         number1 += ".";
         active = "number1"
@@ -231,9 +224,7 @@ const decimalSignPressed = (sign) => {
 }
 calculatorShowAll.textContent += sign;
     calculatorShow.textContent += sign;
-
 }
-
 
 //Result
 const resultOperationPressed = (currentSign) => {
@@ -245,8 +236,7 @@ const resultOperationPressed = (currentSign) => {
     sign = currentSign = "";
     number2 = '';
     previousOpperation = 'resultOperation'; 
+    document.querySelector('.disabled-cleen').setAttribute("disabled", "disabled");
 } 
-
-
 
 calculatorButtonsHolder.addEventListener('click', buttonOnClick);
