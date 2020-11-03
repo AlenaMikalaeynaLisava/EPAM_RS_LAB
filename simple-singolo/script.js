@@ -68,28 +68,28 @@ const slider__wrapper = document.querySelector(".slider__wrapper");
 const slider = document.querySelector('.slider');
 const vertical_phone_wrapper = document.querySelector('.vertical-phone-wrapper');
 const horizontal_phone_wrapper = document.querySelector('.horizontal-phone-wrapper');
-const element = document.querySelector('.element');
+const element = document.querySelector('.slider__element');
 slider__wrapper.addEventListener('click', sliderChange);
 function sliderChange(event){
     if(event.target.classList.contains("arrow-right")){
-        if(!element.classList.contains('element1')&&!element.classList.contains('element2')){
-        element.classList.remove('element3');
-        element.classList.remove('element4');
-            element.classList.add('element1');
+        if(!element.classList.contains('slider__element1')&&!element.classList.contains('slider__element2')){
+        element.classList.remove('slider__element3');
+        element.classList.remove('slider__element4');
+            element.classList.add('slider__element1');
         } else{
-            element.classList.remove('element1');
-            element.classList.remove('element2');
-            element.classList.add('element3');
+            element.classList.remove('slider__element1');
+            element.classList.remove('slider__element2');
+            element.classList.add('slider__element3');
         }
     } else if(event.target.classList.contains("arrow-left")){
-        if(!element.classList.contains('element1')&&!element.classList.contains('element2')){
-        element.classList.remove('element3');
-        element.classList.remove('element4');
-            element.classList.add('element2');
+        if(!element.classList.contains('slider__element1')&&!element.classList.contains('slider__element2')){
+        element.classList.remove('slider__element3');
+        element.classList.remove('slider__element4');
+            element.classList.add('slider__element2');
         } else{
-            element.classList.remove('element1');
-            element.classList.remove('element2');
-            element.classList.add('element4');
+            element.classList.remove('slider__element1');
+            element.classList.remove('slider__element2');
+            element.classList.add('slider__element4');
         }
     
 
@@ -98,7 +98,6 @@ function sliderChange(event){
 
 //portfolio
 
-const portfolio__item = document.querySelector('.portfolio__item');
 const portfolio__pictures_holder = document.querySelector('.portfolio__pictures-holder');
 portfolio__filter_list.addEventListener('click', portfolioMix);
 function portfolioMix(event){

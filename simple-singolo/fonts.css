@@ -1,23 +1,23 @@
 @font-face {
-  font-family: "LatoBold";
+  font-family: "LatoBold", sans-serif;
   src: url("./fonts/lato/Lato-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: bold;
 }
 @font-face {
-  font-family: "Lato900";
+  font-family: "Lato900", sans-serif;
   src: url("./fonts/lato/Lato-Black.ttf") format("truetype");
   font-style: normal;
   font-weight: 900;
 }
 @font-face {
-  font-family: "Lato300";
+  font-family: "Lato300", sans-serif;
   src: url("./fonts/lato/Lato-Light.ttf") format("truetype");
   font-style: normal;
   font-weight: 300;
 }
 @font-face {
-  font-family: "Lato400";
+  font-family: "Lato400", sans-serif;
   src: url("./fonts/lato/Lato-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
