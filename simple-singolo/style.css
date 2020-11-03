@@ -179,9 +179,12 @@ body {
   line-height: 3rem;
   color: var(--simple-text);
 }
-.wrapper {
+/* .wrapper {
   max-width: 1020px;
   min-width: 320px;
+} */
+.text {
+  overflow: hidden;
 }
 
 /* Header */
@@ -197,7 +200,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 30px 0 29px;
-  width: 940px;
+  /* width: 940px; */
+  width: 92.156%;
 }
 .logo {
   position: relative;
@@ -301,7 +305,8 @@ body {
   position: relative;
 }
 .slider__wrapper {
-  width: 940px;
+  /* width: 940px; */
+  width: 92.156%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -328,7 +333,8 @@ body {
   transform: rotate(-135deg);
 }
 .vertical-phone-wrapper {
-  width: 216px;
+  /* width: 216px; */
+  width: 22.9787%;
   padding-right: 47px;
 }
 .vertical-phone {
@@ -344,7 +350,8 @@ body {
   background: url(./image/slider/phone-vertical-display.png);
 }
 .horizontal-phone-wrapper {
-  width: 483px;
+  /* width: 483px; */
+  width: 51.3829%;
   padding-top: 4px;
 }
 .horizontal-phone {
@@ -379,7 +386,8 @@ body {
   padding-bottom: 28px;
 }
 .services__wrapper {
-  width: 940px;
+  /* width: 940px; */
+  width: 92.156%;
 }
 .services__header {
   padding-bottom: 18px;
@@ -455,7 +463,8 @@ body {
   padding-top: 59px;
 }
 .portfolio__wrapper {
-  width: 940px;
+  /* width: 940px; */
+  width: 92.156%;
 }
 .portfolio__header {
   padding-bottom: 18px;
@@ -549,7 +558,8 @@ body {
   background-color: var(--dark-background);
 }
 .footer__wrapper {
-  width: 940px;
+  /* width: 940px; */
+  width: 92.156%;
   display: flex;
   justify-content: space-between;
   align-items: center;
