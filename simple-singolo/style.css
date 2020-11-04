@@ -812,9 +812,51 @@ body {
     left: 21px;
     top: calc(50% - 6px);
   }
-  .navigation {
+
+  /* menu-375-hidden {
+    display: none;
+  } */
+  .header-navigation {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1;
+    width: 278px;
+    height: calc(100vh - 71px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--dark-background);
+    z-index: 10;
+  }
+  .header-navigation-hidden {
     display: none;
   }
+  .navigation {
+    list-style: none;
+    margin-right: 71px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: "LatoBold";
+    padding-bottom: 10px;
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+  }
+  .navigation__item {
+    text-decoration: none;
+    color: var(--wite);
+  }
+  .navigation__active-item {
+    color: var(--slider-main-background);
+  }
+  .navigation__link:before {
+    content: " ";
+  }
+
   .logo {
     position: relative;
     font-family: "LatoBold";

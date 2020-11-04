@@ -3,29 +3,36 @@ const hamburger = document.querySelector('.hamburger');
 const menu_375__list_holder = document.querySelector('.menu-375__list-holder');
 const menu_375__item = document.querySelector('.menu-375__item');
 const menu_375_hidden = document.querySelector('.menu-375-hidden');
+const header_navigation = document.querySelector('.header-navigation');
 const navigation = document.querySelector('.navigation');
 const portfolio__filter_list = document.querySelector('.portfolio__filter-list');
 const links = document.querySelectorAll(".navigation a");
 const linksMenu375 = document.querySelectorAll(".menu-375 a");
 
+let computedStyle = getComputedStyle(hamburger_wrapper);
+//console.log(computedStyle.display);
 hamburger_wrapper.addEventListener("click", ()=>{
     hamburger.classList.toggle('rotate');
-    menu_375_hidden.classList.toggle('menu-375-hidden');
-})
-
-menu_375__list_holder.addEventListener("click", (event)=>{
-    menu_375__list_holder.querySelectorAll('a').forEach(el => el.classList.remove('menu-375__active-item'));
-    hamburger.classList.toggle('rotate');
-    event.target.classList.add('menu-375__active-item');
-    menu_375_hidden.classList.toggle('menu-375-hidden');
+    header_navigation.classList.toggle('header-navigation-hidden');
 })
 
 navigation.addEventListener("click", (event)=>{
     navigation.querySelectorAll('a').forEach(el => el.classList.remove('navigation__active-item'));
     if(event.target.nodeName==='A'){
-        event.target.classList.add('navigation__active-item');
-}  
+    event.target.classList.add('navigation__active-item');
+    if(computedStyle.display !== 'none'){
+        hamburger.classList.toggle('rotate');
+        header_navigation.classList.toggle('header-navigation-hidden');
+        }
+    }
 })
+
+// navigation.addEventListener("click", (event)=>{
+//     navigation.querySelectorAll('a').forEach(el => el.classList.remove('navigation__active-item'));
+//     if(event.target.nodeName==='A'){
+//         event.target.classList.add('navigation__active-item');
+// }  
+// })
 
 portfolio__filter_list.addEventListener("click", (event)=>{
     portfolio__filter_list.querySelectorAll('.portfolio__active-item').forEach(el => el.classList.remove('portfolio__active-item'));
