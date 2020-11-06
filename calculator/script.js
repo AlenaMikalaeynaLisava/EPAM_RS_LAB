@@ -80,6 +80,10 @@ const simpleOperationPressed = (currentSign) =>{
     for (let i=0; i<disabledButtons.length; i++){
         disabledButtons[i].setAttribute("disabled", "disabled");
     }
+    if(previousOpperation === 'simpleOperation'){
+        calculatorShowAll.textContent  = calculatorShowAll.textContent.slice(0, calculatorShowAll.textContent.length-1);
+        calculatorShow.textContent  = '';
+    }
     if(number1 && number2){
         if(sign === "+"){
             currentResult = (+number1 + +number2).toFixed(2);
