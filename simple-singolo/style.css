@@ -1,4 +1,4 @@
-@import url("fonts.css");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 
 :root {
   --wite: #ffffff;
@@ -16,10 +16,6 @@
   --shade-color: #cd5d56;
 }
 
-/* .display {
-  display: none;
-} */
-
 html {
   font-size: 10px;
   scroll-behavior: smooth;
@@ -32,6 +28,31 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.h2 {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 3.6rem;
+  text-transform: capitalize;
+  color: var(--section-headers);
+}
+.information {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  color: var(--simple-text);
+  text-align: left;
+  vertical-align: top;
+  letter-spacing: 0.01em;
+}
+.text {
+  overflow: hidden;
+}
+
+/* Hamburger*/
 .hamburger-wrapper {
   display: none;
 }
@@ -75,27 +96,6 @@ body {
   left: 0px;
   bottom: 0px;
 }
-.h2 {
-  font-family: "Lato900";
-  font-size: 3rem;
-  line-height: 3.6rem;
-  text-transform: capitalize;
-  color: var(--section-headers);
-  letter-spacing: -0.006em;
-}
-.information {
-  font-family: "Lato300";
-  font-size: 1.8rem;
-  line-height: 3rem;
-  color: var(--simple-text);
-}
-/* .wrapper {
-  max-width: 1020px;
-  min-width: 320px;
-} */
-.text {
-  overflow: hidden;
-}
 
 /* Header */
 .header {
@@ -109,13 +109,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 0 29px;
-  /* width: 940px; */
-  width: 92.156%;
+  padding: 29px 0 30px;
+  max-width: 940px;
+  min-width: 320px;
+  width: 92.1%;
 }
 .logo {
   position: relative;
-  font-family: "LatoBold";
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: bold;
   font-size: 2.5rem;
   line-height: 3rem;
   letter-spacing: -0.03em;
@@ -130,20 +133,27 @@ body {
   right: top;
   color: var(--active-item-navigation);
 }
+.header-navigation {
+  width: 40%;
+}
 .navigation {
   display: flex;
   justify-content: space-between;
-  font-family: "LatoBold";
-  padding-top: 11px;
-  width: 375px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  padding-top: 1.078vw;
+  padding-left: 0;
   font-size: 1.2rem;
   line-height: 1.4rem;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
   text-transform: uppercase;
   color: var(--wite);
+  margin: 0;
 }
 .navigation > .navigation__item {
   list-style: none;
+  margin: 0;
 }
 .navigation__link:not(.navigation__active-item):hover {
   text-decoration: underline;
@@ -153,6 +163,7 @@ body {
   text-decoration: none;
   color: var(--wite);
   position: relative;
+  margin: 0;
 }
 .navigation__link:before {
   content: ".";
@@ -167,43 +178,15 @@ body {
   color: var(--active-item-navigation);
 }
 
-/* Menu-375 */
-.menu-375-hidden {
-  display: none;
-}
-.menu-375 {
+/* Slider animation */
+.slider__element {
   position: absolute;
-  top: 70px;
-  left: 0;
+  top: 0px;
+  left: -100vw;
   z-index: 1;
-  width: 278px;
-  height: calc(100vh - 71px);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: var(--dark-background);
-  z-index: 10;
-}
-.menu-375__list-holder {
-  list-style: none;
-  margin-right: 71px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  font-family: "LatoBold";
-  padding-bottom: 10px;
-  font-size: 2.4rem;
-  line-height: 2.9rem;
-  letter-spacing: -0.035em;
-  text-transform: uppercase;
-}
-.menu-375__item {
-  text-decoration: none;
-  color: var(--wite);
-}
-.menu-375__active-item {
-  color: var(--slider-main-background);
+  width: 100vw;
+  height: 101%;
+  background: url(./image/slider/Slider.png) no-repeat center, #648bf0;
 }
 
 @keyframes pulse {
@@ -216,15 +199,6 @@ body {
   100% {
     transform: translateX(100vw);
   }
-}
-.slider__element {
-  position: absolute;
-  top: 0px;
-  left: -100vw;
-  z-index: 1;
-  width: 100vw;
-  height: 101%;
-  background: url(./image/slider/Slider.png) no-repeat center, #648bf0;
 }
 .slider__element1 {
   animation-name: pulse;
@@ -306,17 +280,16 @@ body {
   position: relative;
 }
 .slider__wrapper {
-  /* width: 940px; */
-  width: 92.156%;
+  width: 92.1%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 54px;
-  padding-bottom: 82px;
+  padding-top: 5.32vw;
+  padding-bottom: 8.04vw;
 }
 .wrapper-arrow-left {
-  padding-top: 28px;
-  padding-left: 2.5px;
+  padding-top: 2.745vw;
+  padding-left: 0.245vw;
   z-index: 10;
 }
 .arrow {
@@ -334,42 +307,56 @@ body {
   transform: rotate(-135deg);
 }
 .vertical-phone-wrapper {
-  /* width: 216px; */
-  width: 22.9787%;
-  padding-right: 47px;
+  position: relative;
+  width: 23%;
+  padding-bottom: 48.8%;
+  margin-right: 5%;
 }
 .vertical-phone {
-  width: 188px;
-  padding: 65px 14px 60px;
-  background: url(./image/slider/phone-vertical.png) no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(./image/slider/phone-vertical.png) no-repeat center;
+  background-size: cover;
   border-radius: 25px;
   box-shadow: 24px 24px 1px 1px var(--shade-color);
 }
 .vertical-phone__screen {
-  width: 188px;
-  padding: 166.5px 0px;
-  background: url(./image/slider/phone-vertical-display.png);
+  position: absolute;
+  top: 14%;
+  left: 6.6%;
+  width: 87%;
+  height: 73%;
+  background: url(./image/slider/phone-vertical-display.png) no-repeat center;
+  background-size: cover;
 }
 .horizontal-phone-wrapper {
-  /* width: 483px; */
-  width: 51.3829%;
-  padding-top: 4px;
+  position: relative;
+  width: 48.8%;
+  padding-bottom: 23%;
+  margin-right: 2.4%;
 }
 .horizontal-phone {
-  width: 333px;
-  padding: 14px 65px 14px 60px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background: url(./image/slider/phone-horizontal.png) no-repeat;
+  background-size: cover;
   border-radius: 25px;
   box-shadow: 24px 24px 1px 1px var(--shade-color);
 }
 .horizontal-phone__screen {
-  width: 333px;
-  padding: 94px 0px;
+  position: absolute;
+  top: 6.5%;
+  left: 13%;
+  width: 73%;
+  height: 87%;
   background: url(./image/slider/phone-horizontal-display.png);
+  background-size: cover;
 }
 .wrapper-arrow-right {
-  padding-top: 28px;
-  padding-right: 3px;
+  padding-top: 2.745vw;
+  padding-right: 0.294vw;
   z-index: 10;
 }
 .arrow-right {
@@ -383,20 +370,23 @@ body {
   border-bottom: solid 6px var(--wite);
   display: flex;
   justify-content: center;
-  padding-top: 59px;
-  padding-bottom: 28px;
+  padding-top: 5.784vw;
+  padding-bottom: 2.4vw;
+  margin: 0;
 }
 .services__wrapper {
-  /* width: 940px; */
-  width: 92.156%;
+  width: 92.1%;
 }
 .services__header {
-  padding-bottom: 18px;
+  padding-bottom: 1.764vw;
 }
 .services__information {
-  padding-bottom: 47.5px;
+  width: 100%;
+  height: 14%;
+  overflow: hidden;
 }
 .services-list {
+  margin-top: 5.35%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -407,53 +397,61 @@ body {
   display: flex;
   justify-content: space-between;
   width: 32%;
-  padding-bottom: 31px;
+  margin-bottom: 2.843vw;
 }
 .services__icon {
-  /* width: 60px; */
-  width: 20%;
-  /* padding: 30px 0; */
-  padding: 10% 0;
+  width: 60px;
+  height: 60px;
 }
 .services__icon1 {
   background: url(./image/services/services-item-pencil.png) no-repeat;
+  background-size: cover;
 }
 .services__icon2 {
   background: url(./image/services/services-item-lightbulb.png) no-repeat;
+  background-size: cover;
 }
 .services__icon3 {
   background: url(./image/services/services-item-heart.png) no-repeat;
+  background-size: cover;
 }
 .services__icon4 {
   background: url(./image/services/services-item-phone.png) no-repeat;
+  background-size: cover;
 }
 .services__icon5 {
   background: url(./image/services/services-item-thought.png) no-repeat;
+  background-size: cover;
 }
 .services__icon6 {
   background: url(./image/services/services-item-star.png) no-repeat;
+  background-size: cover;
 }
 .services_text {
   width: 73.2%;
 }
 .services__name {
-  font-family: "Lato900";
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 900;
   font-size: 1.8rem;
   line-height: 1.8rem;
   text-transform: capitalize;
   color: var(--section-headers);
-  padding-bottom: 10px;
-  letter-spacing: -0.012em;
+  padding-bottom: 0.98vw;
 }
 .services_description {
-  font-family: "Lato400";
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 1.2rem;
-  line-height: 2.15rem;
+  line-height: 2.2rem;
   color: var(--simple-text);
   text-align: justify;
-  letter-spacing: 0.02em;
+  letter-spacing: 0em;
+  width: 100%;
+  height: 70%;
   overflow: hidden;
-  letter-spacing: -0.008em;
 }
 
 /* Portfolio */
@@ -463,27 +461,28 @@ body {
   border-bottom: solid 6px var(--bprder-dark-color);
   display: flex;
   justify-content: center;
-  padding-top: 59px;
+  padding-top: 5.784vw;
 }
 .portfolio__wrapper {
-  /* width: 940px; */
-  width: 92.156%;
+  width: 92.1%;
 }
 .portfolio__header {
-  padding-bottom: 18px;
+  padding-bottom: 1.764vw;
 }
 .portfolio__information {
-  padding-bottom: 11.5px;
+  padding-bottom: 1.127vw;
 }
 .portfolio__filter-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 290px;
-  padding-bottom: 18px;
+  padding-bottom: 1.764vw;
 }
 .portfolio__item {
-  font-family: "Lato400";
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 1.25rem;
   line-height: 2rem;
   padding: 0px 5.5px;
@@ -506,51 +505,65 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding-bottom: 48px;
+  padding-bottom: 4.7vw;
 }
 .portfolio__picture {
   width: 23.4%;
-  padding: 103.5px 0px;
+  padding-top: 20%;
+  margin-bottom: 20px;
 }
 .portfolio__picture:nth-child(1n + 13) {
   display: none;
 }
 .portfolio__picture1 {
   background: url(./image/portfolio/portfolio-1.png) no-repeat;
+  background-size: cover;
 }
 .portfolio__picture2 {
   background: url(./image/portfolio/portfolio-2.png) no-repeat;
+  background-size: cover;
 }
 .portfolio__picture3 {
   background: url(./image/portfolio/portfolio-3.png) no-repeat;
+  background-size: cover;
 }
 .portfolio__picture4 {
   background: url(./image/portfolio/portfolio-4.png) no-repeat;
+  background-size: cover;
 }
 .portfolio__picture5 {
   background: url(./image/portfolio/portfolio-5.png) no-repeat;
+  background-size: cover;
 }
 .portfolio__picture6 {
   background: url(./image/portfolio/portfolio-6.png) no-repeat;
+  background-size: cover;
 }
 .portfolio__picture7 {
   background: url(./image/portfolio/portfolio-7.png) no-repeat;
+  background-size: cover;
 }
 .portfolio__picture8 {
   background: url(./image/portfolio/portfolio-8.png) no-repeat;
+  background-size: cover;
 }
 .portfolio__picture9 {
   background: url(./image/portfolio/portfolio-9.png) no-repeat;
+  background-size: cover;
 }
 .portfolio__picture10 {
   background: url(./image/portfolio/portfolio-10.png) no-repeat;
+  background-size: cover;
 }
 .portfolio__picture11 {
   background: url(./image/portfolio/portfolio-11.png) no-repeat;
+  background-size: cover;
 }
 .portfolio__picture12 {
   background: url(./image/portfolio/portfolio-12.png) no-repeat;
+  background-size: cover;
 }
+
 /* Footer */
 .footer {
   width: 100vw;
@@ -561,14 +574,15 @@ body {
   background-color: var(--dark-background);
 }
 .footer__wrapper {
-  /* width: 940px; */
-  width: 92.156%;
+  width: 92.1%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .footer__description {
-  font-family: "Lato900";
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 900;
   font-size: 1.3rem;
   line-height: 1.8rem;
   color: var(--section-headers);
@@ -600,202 +614,84 @@ body {
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1019px) {
   .header__wrapper {
-    width: 688px;
-    padding: 29px 0 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 89.583%;
+    padding: 29px 0 30px 0;
   }
-  .h2 {
-    letter-spacing: 0em;
-  }
-  .information {
-    font-family: "Lato300";
-    font-size: 1.8rem;
-    line-height: 3rem;
-    color: var(--simple-text);
-    letter-spacing: -0.044rem;
-  }
-  .navigation {
-    margin-left: 20px;
-    padding-top: 6.5px;
-    padding-right: 0;
-    font-size: 1.18rem;
-    line-height: 1.4rem;
-    letter-spacing: -0.03em;
-  }
-  .navigation__link:before {
-    content: ".";
-    position: absolute;
-    top: -0.35rem;
-    left: -1.75rem;
-  }
-  .navigation__first-item:before {
-    content: " ";
+  .header-navigation {
+    width: 54%;
   }
   .slider__wrapper {
-    width: 711px;
-    padding: 40px 0 61px;
-    margin-left: 3px;
-  }
-  .wrapper-arrow-left {
-    padding-top: 28px;
-    margin-left: 0px;
-  }
-  .vertical-phone-wrapper {
-    width: 162.36px;
-    margin-left: 0px;
-    padding-right: 0px;
-    border-radius: 18px;
+    width: 92.55%;
+    padding: 40px 0 58px;
   }
   .vertical-phone {
-    width: 142.16px; /*162.36px*/
-    padding: 49.01px 10.08px 44.52px 10.12px;
-    background: url(./image/tablet/Slider/phone-vertical.png) no-repeat;
     border-radius: 18px;
     box-shadow: 18px 18px 1px 1px var(--shade-color);
-  }
-  .vertical-phone__screen {
-    width: 141.55px;
-    padding: 125.365px 0px;
-    background: url(./image/tablet/Slider/phone-vertical-display.png);
-  }
-  .horizontal-phone-wrapper {
-    width: 344.26px;
-    padding-left: 0px;
-    margin-right: 26px;
-    margin-left: 36px;
   }
   .horizontal-phone {
-    width: 250.72px;
-    padding: 10.21px 47.89px 10.4px 45.67px;
-    background: url(./image/tablet/Slider/phone-horizontal.png) no-repeat;
     border-radius: 18px;
     box-shadow: 18px 18px 1px 1px var(--shade-color);
-    margin-left: 5px;
-  }
-  .horizontal-phone__screen {
-    width: 250.72px;
-    padding: 70.775px 0px;
-    background: url(./image/tablet/Slider/phone-horizontal-display.png);
-  }
-  .wrapper-arrow-right {
-    padding-top: 28px;
-    margin: 0px;
   }
   .services {
     padding-top: 40.5px;
     padding-left: 2px;
-    padding-bottom: 17px;
+    padding-bottom: 27px;
   }
   .services__wrapper {
-    width: 687px;
+    width: 89.583%;
+  }
+  .services__header {
+    padding-bottom: 2vw;
   }
   .services__information {
-    padding-bottom: 36.3px;
-    letter-spacing: 0px;
+    width: 100%;
+    height: 16%;
+    overflow: hidden;
   }
   .services-list {
     padding-right: 34px;
+    margin-top: 5.1%;
   }
   .services__item {
     display: flex;
     justify-content: space-between;
     width: 46%;
-    padding-bottom: 50px;
-  }
-  .services__name {
-    font-family: "Lato900";
-    font-size: 1.81rem;
-    line-height: 1.85rem;
-    text-transform: capitalize;
-    color: var(--section-headers);
-    padding-bottom: 9.5px;
-    letter-spacing: 0rem;
-  }
-  .services_description {
-    letter-spacing: 0em;
-    line-height: 2.2rem;
+    margin-bottom: 50px;
   }
   .portfolio {
     padding-top: 59.5px;
+    padding-bottom: 25px;
   }
   .portfolio__wrapper {
-    width: 686px;
+    width: 89.583%;
     padding-left: 1px;
   }
   .portfolio__header {
     padding-bottom: 17px;
   }
   .portfolio__information {
-    padding-bottom: 12px;
+    padding-bottom: 13px;
     padding-right: 20px;
-    letter-spacing: 0px;
-  }
-  .portfolio__filter-list {
-    padding-bottom: 28px;
+    letter-spacing: 0.2px;
   }
   .portfolio__pictures-holder {
     margin-left: -2px;
   }
   .portfolio__picture {
-    width: 31.5%;
-    padding: 101.6px 0px;
-  }
-  .portfolio__picture1 {
-    background: url(./image/tablet/portfolio/portfolio-1.png) no-repeat;
-  }
-  .portfolio__picture2 {
-    background: url(./image/tablet/portfolio/portfolio-2.png) no-repeat;
-  }
-  .portfolio__picture3 {
-    background: url(./image/tablet/portfolio/portfolio-3.png) no-repeat;
-  }
-  .portfolio__picture4 {
-    background: url(./image/tablet/portfolio/portfolio-4.png) no-repeat;
-  }
-  .portfolio__picture5 {
-    background: url(./image/tablet/portfolio/portfolio-5.png) no-repeat;
-  }
-  .portfolio__picture6 {
-    background: url(./image/tablet/portfolio/portfolio-6.png) no-repeat;
-  }
-  .portfolio__picture7 {
-    background: url(./image/tablet/portfolio/portfolio-7.png) no-repeat;
-  }
-  .portfolio__picture8 {
-    background: url(./image/tablet/portfolio/portfolio-8.png) no-repeat;
-  }
-  .portfolio__picture9 {
-    background: url(./image/tablet/portfolio/portfolio-9.png) no-repeat;
-  }
-  .portfolio__picture10 {
-    background: url(./image/tablet/portfolio/portfolio-10.png) no-repeat;
-  }
-  .portfolio__picture11 {
-    background: url(./image/tablet/portfolio/portfolio-11.png) no-repeat;
-  }
-  .portfolio__picture12 {
-    background: url(./image/tablet/portfolio/portfolio-12.png) no-repeat;
+    width: 31.4%;
+    padding: 13.3% 0px;
+    margin-top: 15px;
+    margin-bottom: 5px;
   }
   .footer__wrapper {
-    width: 686px;
+    width: 89.583%;
     padding-top: 2px;
   }
 }
 
-@media screen and (max-width: 376px) {
-  .wrapper {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-  }
-  .header {
-    border-bottom: solid 6px var(--dark-background);
-    width: 100vw;
-  }
+@media screen and (max-width: 767px) {
   .header__wrapper {
     width: 100vw;
     position: relative;
@@ -812,10 +708,6 @@ body {
     left: 21px;
     top: calc(50% - 6px);
   }
-
-  /* menu-375-hidden {
-    display: none;
-  } */
   .header-navigation {
     position: absolute;
     top: 70px;
@@ -834,20 +726,24 @@ body {
   }
   .navigation {
     list-style: none;
-    margin-right: 71px;
+    margin-right: 78px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    font-family: "LatoBold";
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: bold;
     padding-bottom: 10px;
     font-size: 2.4rem;
     line-height: 2.9rem;
     letter-spacing: -0.035em;
     text-transform: uppercase;
+    margin-top: 8%;
   }
   .navigation__item {
     text-decoration: none;
+    padding-bottom: 22.5%;
     color: var(--wite);
   }
   .navigation__active-item {
@@ -856,94 +752,53 @@ body {
   .navigation__link:before {
     content: " ";
   }
-
   .logo {
     position: relative;
-    font-family: "LatoBold";
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: bold;
     font-size: 1.96rem;
     line-height: 2.4rem;
     letter-spacing: -0.03em;
     text-transform: uppercase;
   }
+  .logo-shift {
+    margin-right: 40%;
+  }
   .slider {
-    width: 100vw;
     border-bottom: solid 6px var(--slider-main-background);
     padding: 0px;
     margin: 0px;
-    display: flex;
-    justify-content: center;
   }
   .slider__wrapper {
-    width: 93.2vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0px;
     padding: 19.5px 0px 27.5px 0.33px;
   }
-  .wrapper-arrow-left {
-    padding: 0px;
-    padding-top: 15px;
-    margin: 0;
-  }
-  .arrow {
-    width: 13px;
-    height: 13px;
-    border-top: 5px solid var(--arrow-color);
-    border-right: 5px solid var(--arrow-color);
-  }
-  .vertical-phone-wrapper {
-    box-sizing: border-box;
-    width: 79.28px;
-  }
   .vertical-phone {
-    width: 69.12px; /*79.28px*/
-    padding: 23.93px 4.94px 21.74px 5.22px;
-    background: url(./image/mobile375/slider/phone-vertical.png) no-repeat;
     box-shadow: 10px 10px 1px 1px var(--shade-color);
     border-radius: 10px;
-    margin-left: 8.6px;
-  }
-  .vertical-phone__screen {
-    width: 69.12px;
-    padding: 61.215px 0px;
-    background: url(./image/mobile375/slider/phone-vertical-display.png);
-  }
-  .horizontal-phone-wrapper {
-    box-sizing: border-box;
-    width: 168.1px;
+    margin-left: -4px;
   }
   .horizontal-phone {
-    width: 122.43px;
-    padding: 5.26px 23.25px 4.9px 22.32px;
-    background: url(./image/mobile375/slider/phone-horizontal.png) no-repeat;
     box-shadow: 10px 10px 1px 1px var(--shade-color);
     border-radius: 10px;
-    margin-left: 7px;
+    margin-left: 2px;
     margin-bottom: 2px;
-  }
-  .horizontal-phone__screen {
-    width: 122.43px;
-    padding: 34.56px 0px;
-    background: url(./image/mobile375/slider/phone-horizontal-display.png);
-  }
-  .wrapper-arrow-right {
-    padding: 0px;
-    padding-top: 15px;
-    margin: 0;
   }
   .services {
     width: 100vw;
-    padding-top: 26px;
+    padding-top: 24px;
     padding-left: 3px;
     padding-bottom: 0px;
     border-bottom: solid 6px var(--lite-background);
+    margin-bottom: 0;
   }
   .services__wrapper {
     width: 83.7%;
   }
   .services__information {
-    padding-bottom: 28px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    height: 20%;
   }
   .services-list {
     padding-right: 15px;
@@ -952,14 +807,11 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-bottom: 25px;
+    margin-bottom: 25px;
   }
   .services__item:last-child {
-    padding-bottom: 20px;
-  }
-  .services__icon {
-    width: 60px;
-    padding: 30px 0;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
   }
   .services_text {
     width: 73%;
@@ -981,53 +833,23 @@ body {
     width: 84%;
   }
   .portfolio__filter-list {
-    padding-bottom: 25.5px;
-  }
-  .portfolio__header {
-    padding-bottom: 18px;
+    padding-bottom: 10px;
   }
   .portfolio__information {
     padding-bottom: 14px;
     padding-right: 0px;
   }
-  .portfolio__pictures-holder {
-    padding-left: 2px;
-    padding-bottom: 21px;
-  }
   .portfolio__picture {
-    width: 48%;
-    padding: 64px 0px;
-    margin-bottom: 14px;
+    width: 47.8%;
+    padding-top: 26.8%;
+    margin-bottom: 0px;
   }
   .portfolio__picture:nth-child(1n + 9) {
     display: none;
   }
-  .portfolio__picture1 {
-    background: url(./image/mobile375/portfolio/portfolio-1.png) no-repeat;
-  }
-  .portfolio__picture2 {
-    background: url(./image/mobile375/portfolio/portfolio-2.png) no-repeat;
-  }
-  .portfolio__picture3 {
-    background: url(./image/mobile375/portfolio/portfolio-3.png) no-repeat;
-  }
-  .portfolio__picture4 {
-    background: url(./image/mobile375/portfolio/portfolio-4.png) no-repeat;
-  }
-  .portfolio__picture5 {
-    background: url(./image/mobile375/portfolio/portfolio-5.png) no-repeat;
-  }
-  .portfolio__picture6 {
-    background: url(./image/mobile375/portfolio/portfolio-6.png) no-repeat;
-  }
-  .portfolio__picture7 {
-    background: url(./image/mobile375/portfolio/portfolio-7.png) no-repeat;
-  }
-  .portfolio__picture8 {
-    background: url(./image/mobile375/portfolio/portfolio-8.png) no-repeat;
-  }
   .footer {
     width: 100vw;
+    padding-top: 12px;
   }
   .footer__wrapper {
     width: 100vw;
@@ -1039,7 +861,7 @@ body {
     display: none;
   }
 }
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 374px) {
   .header__wrapper {
     width: 100vw;
   }

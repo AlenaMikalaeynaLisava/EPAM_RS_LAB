@@ -1,3 +1,4 @@
+(function(){
 const hamburger_wrapper = document.querySelector('.hamburger-wrapper');
 const hamburger = document.querySelector('.hamburger');
 const header_navigation = document.querySelector('.header-navigation');
@@ -8,17 +9,19 @@ const links = document.querySelectorAll(".navigation a");
 const computedStyle = getComputedStyle(hamburger_wrapper);
 
 hamburger_wrapper.addEventListener("click", ()=>{
+    document.querySelector('.logo').classList.toggle('logo-shift');
     hamburger.classList.toggle('rotate');
     header_navigation.classList.toggle('header-navigation-hidden');
 });
 
 navigation.addEventListener("click", (event)=>{
-    navigation.querySelectorAll('a').forEach(el => el.classList.remove('navigation__active-item'));
+    navigation.querySelectorAll('.navigation__link').forEach(el => el.classList.remove('navigation__active-item'));
     if(event.target.nodeName==='A'){
     event.target.classList.add('navigation__active-item');
         if(computedStyle.display !== 'none'){
         hamburger.classList.toggle('rotate');
         header_navigation.classList.toggle('header-navigation-hidden');
+        document.querySelector('.logo').classList.toggle('logo-shift');
         }
     }
 });
@@ -90,3 +93,4 @@ function portfolioMix(event){
         }
     }
 }
+}());

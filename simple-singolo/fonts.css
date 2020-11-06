@@ -1,24 +1,24 @@
 @font-face {
-  font-family: "LatoBold", sans-serif;
-  src: url("./fonts/lato/Lato-Bold.ttf") format("truetype");
+  font-family: "Lato", sans-serif; /*LatoBold*/
+  src: url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
   font-style: normal;
   font-weight: bold;
 }
 @font-face {
-  font-family: "Lato900", sans-serif;
-  src: url("./fonts/lato/Lato-Black.ttf") format("truetype");
+  font-family: "Lato", sans-serif; /*Lato900*/
+  src: url("https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap");
   font-style: normal;
   font-weight: 900;
 }
 @font-face {
-  font-family: "Lato300", sans-serif;
-  src: url("./fonts/lato/Lato-Light.ttf") format("truetype");
+  font-family: "Lato", sans-serif; /*Lato300*/
+  src: url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
   font-style: normal;
   font-weight: 300;
 }
 @font-face {
-  font-family: "Lato400", sans-serif;
-  src: url("./fonts/lato/Lato-Regular.ttf") format("truetype");
+  font-family: "Lato", sans-serif; /*Lato400*/
+  src: url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
   font-style: normal;
   font-weight: 400;
 }
