@@ -2,11 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel = "stylesheet" href="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-   <script></script> 
+<body class="body">
+    <time class="time" id="time"></time>
+    <div class="greeting">
+        <span id="greeting"></span>
+        <span id="name" contenteditable="true"></span>
+    </div>
+    <div class="focus">
+        <span>What Is Your Focus For Today?</span>
+        <span id="focus" contenteditable="true"></span>
+    </div>
+   <script src="script.js"></script> 
 </body>
 </html>

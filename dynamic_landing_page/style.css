@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Noto Sans JP", sans-serif;
+  background: no-repeat;
+}
+.time {
+  font-size: 8rem;
+}
+.greeting,
+.focus {
+  font-size: 2rem;
+  margin: 20px;
+}
