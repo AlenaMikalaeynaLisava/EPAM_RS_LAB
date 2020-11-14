@@ -1,9 +1,8 @@
+(function() {
 const time = document.getElementById("time"),
 greeting = document.getElementById("greeting"),
 name = document.getElementById("name"),
 focus = document.getElementById("focus");
-
-
 
 // Show Data
 const showFullDate = () => {
@@ -101,3 +100,4 @@ const setFocus = (e) =>{
    focus.addEventListener('keypress', setFocus);
    focus.addEventListener('blur', setFocus);
 // setNameFocus(e);
+})();
