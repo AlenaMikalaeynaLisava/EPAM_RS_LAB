@@ -3,35 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Css variables and JS</title>
 </head>
-<body>
+<body class="body">
     <div class="wrapper">
-        <h1 class="h1">фотофильтры</h1>
+        <h1 class="h1">Фотофильтры</h1>
         <div class="controls">
             <label for = "base"> Base color</label>
-            <input type="color" name="base" value = "#716B64">
+            <input type="color" name="base" value = "#E478C0">
 
             <label for = "size"> Photo size</label>
-            <input type = "range" name = "size" min = "10" max ="200"  value = "10" data-sizing = "px">
+            <input type = "range" name = "size" min = "500" max ="800"  value = "500" data-sizing = "px">
 
             <label for = "blur"> Blur </label>
-            <input type = "range" name = "blur" min = "10" max ="200"  value = "10" data-sizing = "px">
+            <input type = "range" name = "blur" min = "0" max ="100"  value = "0" data-sizing = "px">
 
             <label for = "invert"> Invert </label>
-            <input type = "range" name = "invert" min = "10" max ="200"  value = "10" data-sizing = "%">
+            <input type = "range" name = "invert" min = "0" max ="100"  value = "0" data-sizing = "%">
 
             <label for = "sepia"> Sepia </label>
-            <input type = "range" name = "sepia" min = "10" max ="200"  value = "10" data-sizing = "%">
+            <input type = "range" name = "sepia" min = "10" max ="200"  value = "0" data-sizing = "%">
 
             <label for = "saturate"> Saturateness </label>
-            <input type = "range" name = "saturate" min = "10" max ="200"  value = "10" data-sizing = "%">
+            <input type = "range" name = "saturate" min = "10" max ="100"  value = "100" data-sizing = "%">
 
             <label for = "hue-rotate"> Hue </label>
-            <input type = "range" name = "hue-rotate" min = "10" max ="200"  value = "10" data-sizing = "%">
+            <input type = "range" name = "hue-rotate" min = "0" max ="360"  value = "0" data-sizing = "deg">
         </div>
     </div>
     <img src="./pictures/fox.jpg" alt="fox">
+    <script src="./script.js"></script>
 </body>
 </html>
