@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 10px;
+}
 body {
   background-color: #fb6707;
 }
@@ -23,9 +26,9 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 100%;
-  font-size: 80px;
+  font-size: 8rem;
   transition: flex 4s cubic-bezier(0.61, -0.19, 0.7, -0.11),
-    font-size 2s cubic-bezier(0.61, -0.19, 0.7, -0.11), background 0.2s;
+    font-size 2s cubic-bezier(0.61, -0.19, 0.7, -0.11);
   overflow: hidden;
 }
 .panel1 {
@@ -44,6 +47,7 @@ body {
   background-position: center;
 }
 .panel4 {
+  overflow: hidden;
   background: url(./pictures/night-sky.jpg);
   background-size: cover;
   background-position: center;
@@ -54,14 +58,17 @@ body {
   background-position: center;
 }
 .panel span {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  height: calc(99vh / 3);
 }
 .panel__first-word,
 .panel__last-word {
   transition: transform 2s;
-  font-size: 80px;
+  font-size: 4rem;
 }
 .panel__first-word-active {
   transform: translateY(-200%);
@@ -75,5 +82,5 @@ body {
 
 .panel.open {
   flex: 5;
-  font-size: 120px;
+  font-size: 12rem;
 }
