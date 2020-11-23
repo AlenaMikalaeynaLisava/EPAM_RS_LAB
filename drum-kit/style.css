@@ -39,3 +39,11 @@ kbd {
   border: 3px solid #f78505;
   box-shadow: 0 0 10px #f78505;
 }
+@media screen and (max-width: 768px) {
+  .keys {
+    flex-wrap: wrap;
+  }
+  .key {
+    margin: 10px;
+  }
+}
