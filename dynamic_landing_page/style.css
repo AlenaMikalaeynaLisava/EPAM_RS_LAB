@@ -20,3 +20,14 @@
   font-size: 2rem;
   margin: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .time {
+    font-size: 4rem;
+  }
+  .greeting,
+  .focus {
+    font-size: 1.5rem;
+    margin: 20px;
+  }
+}
