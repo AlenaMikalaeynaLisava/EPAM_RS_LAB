@@ -4,16 +4,17 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-ctx.strokeStyle = '#E478C0';
+const color = document.getElementById('color');
+const width = document.getElementById('width');
+ctx.strokeStyle = color.value;
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
-ctx.lineWidth = 5;
+ctx.lineWidth = width.value;
 
 
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
-let hue = 0;
 
 
 function draw(e) {
@@ -37,13 +38,10 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
 
 
 controls.addEventListener('change', (e)=>{
-    if(e.target.name ==='size'){
-        console.log(e.target.name);
+    if(e.target.name ==='width'){
         ctx.lineWidth = e.target.value;
     } else  if(e.target.name ==='color'){
-        console.log(e.target.name);
         ctx.strokeStyle = e.target.value;
-        console.log(e.target.value);
     }
    }
 )
