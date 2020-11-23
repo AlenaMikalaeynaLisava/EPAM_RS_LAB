@@ -28,6 +28,10 @@ showFullDate();
 const changeBackground = () =>{
 const body = document.getElementsByClassName("body")[0];
 let data = new Date(),
+<<<<<<< HEAD
+=======
+//let data = new Date(2020, 11, 14, 20,05,15),
+>>>>>>> f7119602427bef68a91a0d87fb0cdaeeabaad182
 hours = data.getHours();
 if ((hours>0 && hours <5) || hours>=22){
     greeting.innerText = "Good night, "
