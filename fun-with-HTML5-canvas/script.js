@@ -36,7 +36,7 @@ canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
 
 
-controls.addEventListener('click', (e)=>{
+controls.addEventListener('change', (e)=>{
     if(e.target.name ==='size'){
         console.log(e.target.name);
         ctx.lineWidth = e.target.value;
