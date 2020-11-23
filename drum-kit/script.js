@@ -1,4 +1,4 @@
-
+function dramKit(){
 const removeTransition = (event) =>{
     if (event.propertyName !== 'transform') return;
     event.target.classList.remove('play');
@@ -19,3 +19,4 @@ const presKey = (e) => {
   };
   document.addEventListener('keydown', presKey);
 
+}
