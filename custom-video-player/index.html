@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player</title>
+</head>
+<body>
+    <div class="player" id=" player">
+        <video height="500px" id="video">
+            <source src="./video/652333414.mp4" type="video/mp4">
+        </video>
+        <div class="player__controls">
+            <button value="play" id="play">►</button>
+            <input type="range" value = "0" id='current-viveo-position'>
+            <input type="range" value="0" min="0" max="100">
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
