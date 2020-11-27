@@ -1,3 +1,4 @@
+function mainfunc(){
 const player = document.getElementById('player');
 const video = document.getElementById('viewer');
 const showTime = document.getElementById('player__showtime');
@@ -66,3 +67,5 @@ function togglePlay() {
         video.mozRequestFullScreen();
       }
   }
+
+}
