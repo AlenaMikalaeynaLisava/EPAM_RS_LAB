@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Aclonica", sans-serif;
+  font-size: 10px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(./image/mole-base.jpg);
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+}
+h1 {
+  padding-top: 10px;
+  font-size: 6rem;
+}
+.start-button {
+  background-color: rgba(210, 244, 251, 0.1);
+  font-family: "Aclonica", sans-serif;
+  font-size: 2rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60vw;
+  height: 80vh;
+  align-items: flex-end;
+  justify-content: space-around;
+  /* background-color: #cf07fb; */
+  z-index: 10;
+}
+.hole {
+  margin: 10px;
+  width: 15vw;
+  height: 8vh;
+  background: url(./svg/dirt.svg);
+  background-size: cover;
+  position: relative;
+  /* background-position: center; */
+}
+
+.mole {
+  background: url(./svg/mole.svg);
+  background-size: cover;
+  /* background-size: 60%; */
+  position: absolute;
+  /* top: -15vh; */
+  top: -15vh;
+  left: 3vw;
+  width: 7vw;
+  height: 22vh;
+  transition: all 0.4s;
+  z-index: -10;
+}
+
+.hole.up .mole {
+  top: 0;
+}
