@@ -57,7 +57,7 @@ h1 {
   background: url(./svg/mole.svg);
   background-size: cover;
   position: absolute;
-  top: 20vh;
+  top: 40vh;
   left: 5vw;
   width: 7.5vw;
   height: 19vh;
@@ -65,5 +65,5 @@ h1 {
 }
 
 .hole.up .mole {
-  top: 40vh;
+  top: 20vh;
 }
