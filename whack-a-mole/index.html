@@ -9,9 +9,16 @@
     <title>Whack-A-Mole</title>
 </head>
 <body>
-    <h1 >Whack-A-Mole <span class = "score" id = "score">0</span></h1>
+    <h1 >Whack-A-Mole <span class = "score" id = "score"></span></h1>
     <button class = "start-button" id = "start-button">Start!</button>
-
+    <div class="level-change" id = "level-change">
+        <input type="radio" name="level" id="first-level" data-min="3000" data-max="5000" checked>
+        <label for="first-level">Level 1</label>
+        <input type="radio" name="level" id="second-level" data-min="800" data-max="1500">
+        <label for="second-level">Level 2</label>
+        <input type="radio" name="level" id="third-level" data-min="400" data-max="800">
+        <label for="third-level">Level 3</label>
+    </div>
     <div class="game">
         <div class="hole hole1">
             <div class="mole"></div>
