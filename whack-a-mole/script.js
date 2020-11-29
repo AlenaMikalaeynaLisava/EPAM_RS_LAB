@@ -1,9 +1,12 @@
+(function startFunction(){
 const holes = document.querySelectorAll('.hole');
-const moles = document.querySelectorAll('.hole');
+const moles = document.querySelectorAll('.mole');
 const scoreScreen = document.getElementById('score');
 const startButton = document.getElementById('start-button');
 const lavelChange = document.getElementById('level-change');
 const minMax = document.getElementById('first-level');
+const gameContinue = document.querySelector('.game-continue');
+const buttons = document.querySelectorAll('.button');
 let gameDuration = 60000;
 let timeIsOver = false;
 let score;
@@ -139,15 +142,30 @@ function changeLevel(e){
 lavelChange.addEventListener('click', changeLevel);
 
 
+function shoulContinueGame(e){
+    if (e.target.value === 'Yes'){
+        gameContinue.classList.add('hide-button');
+        continueGame();
+    }
+    gameContinue.classList.add('hide-button');
+}
+
 // chack the level function
 (function CheckTheGaim(){
     getScore();
     if (timePassed !== 0){
         if(timePassed<gameDuration){
-            let desigion = confirm("do you whant to continue game?", "yes", "no");
-            if(desigion){
-                continueGame();
-            } 
+            gameContinue.classList.remove('hide-button');
+            buttons.forEach(button => button.addEventListener('click', shoulContinueGame));
+
+
+
+            // let desigion = confirm("do you whant to continue game?", "yes", "no");
+            // if(desigion){
+            //     continueGame();
+            // } 
         }
     }
+})();
+
 })();
