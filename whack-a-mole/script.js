@@ -4,17 +4,42 @@ const scoreScreen = document.getElementById('score');
 const startButton = document.getElementById('start-button');
 const lavelChange = document.getElementById('level-change');
 const minMax = document.getElementById('first-level');
+let gameDuration = 60000;
+let timeIsOver = false;
+let score;
+let startTime = 0;//time of the game beginning
+let timePassed=0;
+let lastHoleNumber;
 
 let min = minMax.dataset.min;
 let max = minMax.dataset.max;
-let levelChanged = 0;
+
+
+
+// get local storage score
+const getScore = () => {
+        scoreScreen.textContent = localStorage.getItem('score');
+        timePassed = localStorage.getItem('timePassed');
+}
+
+
+// set local storage score
+const setScore = () =>{
+           localStorage.setItem('score', scoreScreen.textContent);
+           localStorage.setItem('timePassed', timePassed);
+   }
+
+
+
 
 // Function to get random mole showing up time
-const getShowUpTime = (min, max) => {
+function getShowUpTime(min, max){
     return Math.round(Math.random()*(max-min)+min);
 }
 
-let lastHoleNumber;
+
+
+
 // Function to get random hole number
 const getHoleNumber = holes => {
     const randomIdHole = Math.floor(Math.random()*holes.length);
@@ -26,12 +51,20 @@ const getHoleNumber = holes => {
     return holeNumber;
 }
 
+
+
 // Function to show the mole
-let timeIsOver = false;
-const showMole = () => {
+function showMole(){
     const time = getShowUpTime(min, max);
     const hole = getHoleNumber(holes);
     hole.classList.add('up');
+    timePassed1 = new Date();
+    timePassed2 = timePassed1.getTime();
+    console.log("timePassed2 "+timePassed2);
+    console.log("startTime: "+startTime);
+    timePassed = timePassed2- startTime;
+    console.log("timePassed: "+timePassed);
+    setScore();
     setTimeout(()=>{
         hole.classList.remove('up');
         if(!timeIsOver){
@@ -41,47 +74,45 @@ const showMole = () => {
 
 }
 
-// get Lockal storage score
-const getScore = () => {
-    if(localStorage.getItem('score') === null){
-        scoreScreen.textContent = "0"
-        return +scoreScreen.textContent;
-    } else {
-        scoreScreen.textContent = localStorage.getItem('score');
-        return localStorage.getItem('score');
-    }
-}
-getScore();
-
-// set Lockal storage score
-const setScore = () =>{
-           localStorage.setItem('score', scoreScreen.textContent);
-           console.log("Score from licak storage: "+localStorage.getItem('score'));
-   }
-setScore();
-
-
 //Start game function
-let score;
 const startGame = () => {
-    localStorage.removeItem('score');
+    startTime = new Date();
+    startTime = startTime.getTime();
+    console.log("startTime = " + startTime);
     scoreScreen.textContent = '0';
     timeIsOver = false;
-     score = 0;
+    timePassed = 0;
+    score = 0;
+    setScore();
     showMole();
     setTimeout(()=>{
-        timeIsOver = true;
-    }, 60000)
+    timeIsOver = true;
+    }, gameDuration)
 }
 
 startButton.addEventListener('click', startGame);
 
 
+//Continue game
+function continueGame(){
+ getScore();
+  console.log("showMole time passed "+ timePassed + "showMole game duration " + gameDuration);
+  startTime = new Date();
+  startTime = startTime.getTime();
+    gameDuration1 = gameDuration - timePassed;
+        timeIsOver = false;
+        showMole();
+        setTimeout(()=>{
+            timeIsOver = true;
+        }, gameDuration1)
+    }
+
 
 
 // score count fonction
 function countScore(e){
-    score = getScore();
+    getScore();
+    score = scoreScreen.textContent;
     if(!e.isTrusted) return;
     if(e.target.classList.contains("mole")){
         score++;
@@ -93,6 +124,9 @@ function countScore(e){
 }
 moles.forEach(mole => mole.addEventListener('click', countScore));
 
+
+
+
 // cgange the level function
 function changeLevel(e){
     if(e.target.tagName === "INPUT"){
@@ -103,3 +137,17 @@ function changeLevel(e){
 
 }
 lavelChange.addEventListener('click', changeLevel);
+
+
+// chack the level function
+(function CheckTheGaim(){
+    getScore();
+    if (timePassed !== 0){
+        if(timePassed<gameDuration){
+            let desigion = confirm("do you whant to continue game?", "yes", "no");
+            if(desigion){
+                continueGame();
+            } 
+        }
+    }
+})();
