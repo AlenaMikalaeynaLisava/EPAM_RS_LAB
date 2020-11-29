@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+}
+:root {
+  --base: #e478c0;
+  --size: 5px;
+}
+.controls {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+  height: 100px;
+  width: 120px;
+}
+#canvas {
+  background-color: bisque;
+}
