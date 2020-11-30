@@ -32,7 +32,7 @@ body {
   overflow: hidden;
 }
 .panel1 {
-  background: url(./pictures/bridge.jpg) no-repeat;
+  background: url(./pictures/bridge.jpg);
   background-size: cover;
   background-position: center;
 }
