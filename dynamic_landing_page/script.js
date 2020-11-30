@@ -29,27 +29,19 @@ const changeBackground = () =>{
 const body = document.getElementsByClassName("body")[0];
 let data = new Date(),
 hours = data.getHours();
-if ((hours>0 && hours <5) || hours>=22){
-    greeting.innerText = "Good night, "
-    body.style.background = "url(./pictures/night.jpg)";
-    body.style.backgroundRepeat = "no-repeat";
-    body.style.backgroundSize = "cover";
-} else if (hours>=5 && hours <12){
-    greeting.innerText = "Good morning, "
-    body.style.background = "url(./pictures/morning.jpg)";
-    body.style.backgroundRepeat = "no-repeat";
-    body.style.backgroundSize = "cover";
-}else if (hours>=12 && hours <18){
-    greeting.innerText = "Good afternoon, "
-    body.style.background = "url(./pictures/day.jpg)";
-    body.style.backgroundRepeat = "no-repeat";
-    body.style.backgroundSize = "cover";
-}else {
-    greeting.innerText = "Good evening, "
-    body.style.background = "url(./pictures/evening.jpg)";
-    body.style.backgroundRepeat = "no-repeat";
-    body.style.backgroundSize = "cover";
-}
+
+const isNight = hours => (hours>0 && hours <5) || hours>=22;
+const isMorning =hours =>  hours>=5 && hours <12;
+const isAfternoon = hours => hours>=12 && hours <18;
+let daytime = isNight(hours) ? 'night' : 
+                         isMorning(hours) ? 'morning' :
+                         isAfternoon(hours) ? 'afternoon' :
+                         'evening';
+greeting.innerText = `Good ${daytime}, `
+body.style.background = `url(./pictures/${daytime}.jpg)`;
+body.style.backgroundRepeat = "no-repeat";
+body.style.backgroundSize = "cover";
+
 }
 changeBackground();
 
@@ -74,30 +66,20 @@ getFocus();
 
 
 // Set Name + Focus
-const setName = (e) =>{
+const setStaff = [name, focus];
+
+const setNameFocus = (e) =>{
  if(e.type === 'keypress'){
     if(e.which == 13 || e.keycode == 13){
-        localStorage.setItem('name', e.target.textContent);
-        name.blur();
+        localStorage.setItem(`${e.target.id}`, e.target.textContent);
+        e.target.blur();
     }
  } else{
-     localStorage.setItem('name', e.target.textContent);
+     localStorage.setItem(`${e.target.id}`, e.target.textContent);
  }
 }
-name.addEventListener('keypress', setName);
-name.addEventListener('blur', setName);
-
-const setFocus = (e) =>{
-    if(e.type === 'keypress'){
-       if(e.which == 13 || e.keycode == 13){
-           localStorage.setItem('focus', e.target.textContent);
-           focus.blur();
-       }
-    } else{
-        localStorage.setItem('focus', e.target.textContent);
-    }
-   }
-   focus.addEventListener('keypress', setFocus);
-   focus.addEventListener('blur', setFocus);
-// setNameFocus(e);
+setStaff.forEach(item =>{
+    item.addEventListener('keypress', setNameFocus);
+    item.addEventListener('blur', setNameFocus);
+   })
 })();
