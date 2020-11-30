@@ -63,10 +63,7 @@ function showMole(){
     hole.classList.add('up');
     timePassed1 = new Date();
     timePassed2 = timePassed1.getTime();
-    console.log("timePassed2 "+timePassed2);
-    console.log("startTime: "+startTime);
     timePassed = timePassed2- startTime;
-    console.log("timePassed: "+timePassed);
     setScore();
     setTimeout(()=>{
         hole.classList.remove('up');
@@ -81,7 +78,6 @@ function showMole(){
 const startGame = () => {
     startTime = new Date();
     startTime = startTime.getTime();
-    console.log("startTime = " + startTime);
     scoreScreen.textContent = '0';
     timeIsOver = false;
     timePassed = 0;
@@ -99,7 +95,6 @@ startButton.addEventListener('click', startGame);
 //Continue game
 function continueGame(){
  getScore();
-  console.log("showMole time passed "+ timePassed + "showMole game duration " + gameDuration);
   startTime = new Date();
   startTime = startTime.getTime();
     gameDuration1 = gameDuration - timePassed;
@@ -117,7 +112,7 @@ function countScore(e){
     getScore();
     score = scoreScreen.textContent;
     if(!e.isTrusted) return;
-    if(e.target.classList.contains("mole")){
+    if(e.target.classList.contains('mole')){
         score++;
         this.classList.remove('up');
         scoreScreen.textContent = score;
@@ -132,7 +127,7 @@ moles.forEach(mole => mole.addEventListener('click', countScore));
 
 // cgange the level function
 function changeLevel(e){
-    if(e.target.tagName === "INPUT"){
+    if(e.target.tagName === 'INPUT'){
         min = e.target.dataset.min
         max = e.target.dataset.max
         console.log(min, max);
@@ -157,13 +152,6 @@ function shoulContinueGame(e){
         if(timePassed<gameDuration){
             gameContinue.classList.remove('hide-button');
             buttons.forEach(button => button.addEventListener('click', shoulContinueGame));
-
-
-
-            // let desigion = confirm("do you whant to continue game?", "yes", "no");
-            // if(desigion){
-            //     continueGame();
-            // } 
         }
     }
 })();
