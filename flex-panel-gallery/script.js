@@ -7,10 +7,10 @@ const clickedPanel = (e) => {
 }
 const clickedPanelWords = (e) => {
     const elem = e.target.closest('.panel')
-    for(let child of elem.children){
-        if (e.propertyName.includes('flex')) {
-                  child.classList.toggle('open-active');
-                }
+    if(e.propertyName.includes('flex')){
+        for(let child of elem.children){
+            child.classList.toggle('open-active');
+        }
     }
  }
 
