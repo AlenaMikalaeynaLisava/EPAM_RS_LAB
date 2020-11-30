@@ -11,9 +11,8 @@ const app = () =>{
 
     const outlineLength = outline.getTotalLength();
     
-    let fakeDuration = 600;
+    let duration = 600;
     outline.style.strokeDasharray = outlineLength;
-    // outline.style.strokeDashoffset = 100;
     outline.style.strokeDashoffset = outlineLength;
 
     sounds.forEach(sound =>{
@@ -31,8 +30,8 @@ const app = () =>{
 
     timeSelect.forEach(option => {
         option.addEventListener('click', function(){
-            fakeDuration = this.getAttribute('data-time');
-            timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`;
+            duration = this.getAttribute('data-time');
+            timeDisplay.textContent = `${Math.floor(duration / 60)}:${Math.floor(duration % 60)}`;
         })
     })
 
@@ -47,25 +46,29 @@ const app = () =>{
             play.src = './svg/play.svg';
         }
     }
+    const setTimeLeft = (elapsed) =>{
+        let seconds = Math.floor(elapsed % 60);
+        let minutes = Math.floor(elapsed / 60);
+        timeDisplay.textContent = `${minutes}:${seconds}`;
+    }
 
     song.ontimeupdate = () =>{
         let currrentTime = song.currentTime;
-        let elapsed = fakeDuration - currrentTime;
-        let seconds = Math.floor(elapsed % 60);
-        let minutes = Math.floor(elapsed / 60);
-
-
-        let progress = outlineLength * (1 - (currrentTime/fakeDuration));
+        let elapsed = duration - currrentTime;
+        
+        let progress = outlineLength * (1 - (currrentTime/duration));
         outline.style.strokeDashoffset = progress;
-        timeDisplay.textContent = `${minutes}:${seconds}`;
+        setTimeLeft(elapsed);
 
-        if(currrentTime >= fakeDuration){
+        if(currrentTime >= duration){
             song.pause();
             song.currentTime = 0;
             play.src = './svg/play.svg';
             video.pause();
         }
     }
+
+
 
 
 }
