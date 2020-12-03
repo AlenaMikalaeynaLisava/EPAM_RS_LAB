@@ -163,7 +163,12 @@ const keyboard = {
 
     // for determination whether we need key in Upper case
     _toggleCapsLock(){
-        console.log("CapsLock toggled!");
+        this.properties.capsLock = !this.properties.capsLock;
+        for(let key of this.elements.keys){
+            if(key.childElementCount === 0){
+                key.textContent = this.properties.capsLock ? key.textContent.toUpperCase() : key.textContent.toLowerCase();
+            }
+        }
     },
 
     open(initialValue, oninput, onclose){
