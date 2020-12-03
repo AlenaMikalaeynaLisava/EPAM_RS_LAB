@@ -43,8 +43,8 @@ const keyboard = {
         // });
 
         document.querySelector(".use-keyboard-input").addEventListener("focus", () => {
-            this.open(element.value, currentValue => {
-                element.value = currentValue;
+            this.open(document.querySelector(".use-keyboard-input").value, currentValue => {
+                document.querySelector(".use-keyboard-input").value = currentValue;
             });
         });
 
@@ -158,7 +158,9 @@ const keyboard = {
 
     // for triggering oninput/onclose
     _triggerEvent(handlerName){
-        console.log("Event triggered! Event name" + handlerName);
+        if (typeof this.eventHandlers[handlerName] == "function") {
+            this.eventHandlers[handlerName](this.properties.value);
+        }
     },
 
     // for determination whether we need key in Upper case
@@ -172,16 +174,22 @@ const keyboard = {
     },
 
     open(initialValue, oninput, onclose){
-
+        this.properties.value = initialValue || "";
+        this.eventHandlers.oninput = oninput;
+        this.eventHandlers.onclose = onclose;
+        this.elements.main.classList.remove("keyboard--hidden");
     },
 
     close(){
-
+        this.properties.value = "";
+        this.eventHandlers.oninput = oninput;
+        this.eventHandlers.onclose = onclose;
+        this.elements.main.classList.add("keyboard--hidden");
     },
 } 
 
-// window.addEventListener("DOMContentLoaded", function(){
-//     keyboard.init();
-// });
+window.addEventListener("DOMContentLoaded", function(){
+    keyboard.init();
+});
  
-keyboard.init();
+// keyboard.init();
