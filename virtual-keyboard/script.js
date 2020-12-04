@@ -22,7 +22,7 @@ const keyboard = {
         this.elements.keysContainer = document.createElement("div");
 
         // Add classes to main elements
-        this.elements.main.classList.add("keyboard", "1keyboard--hidden");
+        this.elements.main.classList.add("keyboard", "keyboard--hidden");
         this.elements.keysContainer.classList.add("keyboard__keys");
 
         this.elements.keysContainer.appendChild(this._createKeys());
@@ -33,14 +33,7 @@ const keyboard = {
         this.elements.main.appendChild(this.elements.keysContainer);
         document.body.appendChild(this.elements.main);
 
-        // Automatically use keyboard for elements with .use-keyboard-input
-        // document.querySelectorAll(".use-keyboard-input").forEach(element => {
-        //     element.addEventListener("focus", () => {
-        //         this.open(element.value, currentValue => {
-        //             element.value = currentValue;
-        //         });
-        //     });
-        // });
+
 
         document.querySelector(".use-keyboard-input").addEventListener("focus", () => {
             this.open(document.querySelector(".use-keyboard-input").value, currentValue => {
@@ -192,4 +185,3 @@ window.addEventListener("DOMContentLoaded", function(){
     keyboard.init();
 });
  
-// keyboard.init();
