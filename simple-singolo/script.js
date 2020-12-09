@@ -1,7 +1,7 @@
 (function(){
-const hamburger_wrapper = document.querySelector('.hamburger-wrapper');
+const hamburger_wrapper = document.querySelector('.hamburger__wrapper');
 const hamburger = document.querySelector('.hamburger');
-const header_navigation = document.querySelector('.header-navigation');
+const header_navigation = document.querySelector('.header__navigation');
 const navigation = document.querySelector('.navigation');
 const portfolio__filter_list = document.querySelector('.portfolio__filter-list');
 const links = document.querySelectorAll(".navigation a");
@@ -11,7 +11,7 @@ const computedStyle = getComputedStyle(hamburger_wrapper);
 hamburger_wrapper.addEventListener("click", ()=>{
     document.querySelector('.logo').classList.toggle('logo-shift');
     hamburger.classList.toggle('rotate');
-    header_navigation.classList.toggle('header-navigation-hidden');
+    header_navigation.classList.toggle('header__navigation-hidden');
 });
 
 navigation.addEventListener("click", (event)=>{
@@ -20,7 +20,7 @@ navigation.addEventListener("click", (event)=>{
     event.target.classList.add('navigation__active-item');
         if(computedStyle.display !== 'none'){
         hamburger.classList.toggle('rotate');
-        header_navigation.classList.toggle('header-navigation-hidden');
+        header_navigation.classList.toggle('header__navigation-hidden');
         document.querySelector('.logo').classList.toggle('logo-shift');
         }
     }
