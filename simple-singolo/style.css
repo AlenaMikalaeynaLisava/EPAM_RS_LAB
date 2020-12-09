@@ -397,7 +397,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 32%;
-  margin-bottom: 2.843vw;
+  margin-bottom: 1.8vw;
 }
 .services__icon {
   width: 60px;
@@ -450,7 +450,7 @@ body {
   text-align: justify;
   letter-spacing: 0em;
   width: 100%;
-  height: 70%;
+  height: 77px;
   overflow: hidden;
 }
 
