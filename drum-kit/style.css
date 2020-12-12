@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background: url(./image/piano.jpg);
+  background-size: cover;
+  font-family: "Goldman", cursive;
+}
+.keys {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.key {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.07s;
+  width: 80px;
+  height: 60px;
+  background-color: rgba(78, 103, 138, 0.4);
+  border: 3px solid #4e678a;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #f78505;
+}
+kbd {
+  font-family: "Goldman", cursive;
+  font-size: 30px;
+  color: #ffffff;
+}
+.play {
+  transform: scale(1.1);
+  border: 3px solid #f78505;
+  box-shadow: 0 0 10px #f78505;
+}
+@media screen and (max-width: 768px) {
+  .keys {
+    flex-wrap: wrap;
+  }
+  .key {
+    margin: 10px;
+  }
+}
