@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url(./image/autumn-thanksgiving-background-pumpkins-maple-leaves-turquoise-table-above-autumn-thanksgiving-background-pumpkins-160472384.jpg);
+  background-size: cover;
+}
+.wrapper {
+  height: 70vh;
+  display: flex;
+  /* background-color: #080876; */
+}
+.video {
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 3px solid rgba(0, 0, 0, 0.75);
+}
+.speed {
+  height: 100%;
+  width: 45px;
+  /* background-color: #07fb57; */
+  border-radius: 5px;
+  -webkit-box-shadow: -2px -2px 5px 0px rgba(0, 0, 0, 0.75),
+    2px 2px 5px 0px rgba(0, 0, 0, 0.75), -1px -1px 5px 0px rgba(0, 0, 0, 0.75),
+    1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px -2px 5px 0px rgba(0, 0, 0, 0.75),
+    2px 2px 5px 0px rgba(0, 0, 0, 0.75), -1px -1px 5px 0px rgba(0, 0, 0, 0.75),
+    1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -2px -2px 5px 0px rgba(0, 0, 0, 0.75),
+    2px 2px 5px 0px rgba(0, 0, 0, 0.75), -1px -1px 5px 0px rgba(0, 0, 0, 0.75),
+    1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.speed__chosen {
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  background: linear-gradient(to top, crimson, orangered, gold);
+  border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: -2px -2px 5px 0px rgba(0, 0, 0, 0.5),
+    2px 2px 5px 0px rgba(0, 0, 0, 0.5), -1px -1px 5px 0px rgba(0, 0, 0, 0.5),
+    1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -2px -2px 5px 0px rgba(0, 0, 0, 0.5),
+    2px 2px 5px 0px rgba(0, 0, 0, 0.5), -1px -1px 5px 0px rgba(0, 0, 0, 0.5),
+    1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -2px -2px 5px 0px rgba(0, 0, 0, 0.5),
+    2px 2px 5px 0px rgba(0, 0, 0, 0.5), -1px -1px 5px 0px rgba(0, 0, 0, 0.5),
+    1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
