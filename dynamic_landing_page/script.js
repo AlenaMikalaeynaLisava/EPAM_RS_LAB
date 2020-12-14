@@ -70,7 +70,7 @@ const setStaff = [name, focus];
 
 const setNameFocus = (e) =>{
  if(e.type === 'keypress'){
-    if(e.which == 13 || e.keycode == 13){
+    if(e.code === 'Enter'){
         localStorage.setItem(`${e.target.id}`, e.target.textContent);
         e.target.blur();
     }
