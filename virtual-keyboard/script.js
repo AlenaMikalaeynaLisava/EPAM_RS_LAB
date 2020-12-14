@@ -41,6 +41,7 @@ const keyboard = {
             });
         });
 
+        showElements();
     },
 
     //private methods
@@ -72,6 +73,7 @@ const keyboard = {
 
             switch (key) {
                 case "backspace":
+                    
                     keyElement.classList.add("keyboard__key--wide");
                     keyElement.innerHTML = createIconHTML("backspace");
 
@@ -179,7 +181,44 @@ const keyboard = {
         this.eventHandlers.onclose = onclose;
         this.elements.main.classList.add("keyboard--hidden");
     },
+    
 } 
+
+
+const showElements = function(){
+    document.querySelector(".use-keyboard-input").addEventListener("keydown", (e) => {
+        let codVeriable;
+        if (e.code == 'Slash' && 'shiftLeft') {
+            codVeriable = '?';
+          }
+        if(e.code.slice(0, 3)==='Key'){
+            codVeriable = e.code.slice(3).toLowerCase();
+        }else if(e.code.slice(0, 3)==='Dig'){
+            codVeriable = e.code.slice(5);
+        }else if(e.code==='Comma'){
+            codVeriable = ',';
+        }else if(e.code==='Period'){
+            codVeriable = '.';
+        } else if(e.code ==='Backspace'){
+            codVeriable = `${e.code.toLowerCase()}`;
+        }else if(e.code ==='Space'){
+            codVeriable = 'space_bar';
+        }else if(e.code ==='Enter'){
+            codVeriable = 'keyboard_return';
+        }else if(e.code ==='CapsLock'){
+            codVeriable = 'keyboard_capslock';
+        }
+        keyboard.elements.keys.forEach(element =>{
+            if(codVeriable === element.innerText){
+                element.classList.add('bold');
+                setTimeout(()=>element.classList.remove('bold'), 1000);
+            }
+           
+        })
+        
+    });
+    
+}
 
 window.addEventListener("DOMContentLoaded", function(){
     keyboard.init();
