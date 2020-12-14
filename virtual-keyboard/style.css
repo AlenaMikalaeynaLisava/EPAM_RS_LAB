@@ -38,7 +38,6 @@
     font-size: 1.05rem;
     outline: none;
     cursor: pointer;
-    /* Inline-flex???????????? */
     display: inline-flex;
     align-items: center;
     justify-content: center;
