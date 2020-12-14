@@ -30,32 +30,25 @@ body {
   transition: flex 4s cubic-bezier(0.61, -0.19, 0.7, -0.11),
     font-size 2s cubic-bezier(0.61, -0.19, 0.7, -0.11);
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 .panel1 {
   background: url(./pictures/bridge.jpg);
-  background-size: cover;
-  background-position: center;
+ 
 }
 .panel2 {
   background: url(./pictures/eiffel-tower.jpg);
-  background-size: cover;
-  background-position: center;
 }
 .panel3 {
   background: url(./pictures/moon.jpg);
-  background-size: cover;
-  background-position: center;
 }
 .panel4 {
   overflow: hidden;
   background: url(./pictures/night-sky.jpg);
-  background-size: cover;
-  background-position: center;
 }
 .panel5 {
   background: url(./pictures/rainbow.jpg);
-  background-size: cover;
-  background-position: center;
 }
 .panel span {
   width: 100%;
