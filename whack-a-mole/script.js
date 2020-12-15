@@ -5,8 +5,8 @@ const scoreScreen = document.getElementById('score');
 const startButton = document.getElementById('start-button');
 const lavelChange = document.getElementById('level-change');
 const minMax = document.getElementById('first-level');
-const gameContinue = document.querySelector('.game-continue');
-const buttons = document.querySelectorAll('.button');
+const gameContinue = document.querySelector('.continue-game-modal');
+const continueGameButtons = document.querySelectorAll('.continue-game-modal .button');
 let gameDuration = 10000;
 let timeIsOver = false;
 let score;
@@ -151,7 +151,7 @@ function shoulContinueGame(e){
     if (timePassed !== 0){
         if(timePassed<gameDuration){
             gameContinue.classList.remove('hide-button');
-            buttons.forEach(button => button.addEventListener('click', shoulContinueGame));
+            continueGameButtons.forEach(button => button.addEventListener('click', shoulContinueGame));
         }
     }
 })();

@@ -21,7 +21,7 @@ h1 {
   padding-top: 10px;
   font-size: 6rem;
 }
-.game-continue {
+.continue-game-modal {
   position: absolute;
   top: 30vh;
   left: 33vw;
