@@ -16,12 +16,13 @@ let lastHoleNumber;
 
 let min = minMax.dataset.min;
 let max = minMax.dataset.max;
+let previoustimePassed = 0;
 
 
 
 // get local storage score
 const getScore = () => {
-        scoreScreen.textContent = localStorage.getItem('score');
+       scoreScreen.textContent = localStorage.getItem('score');
         timePassed = localStorage.getItem('timePassed');
 }
 
@@ -61,10 +62,11 @@ function showMole(){
     const time = getShowUpTime(min, max);
     const hole = getHoleNumber(holes);
     hole.classList.add('hole--up');
-    timePassed1 = new Date();
-    timePassed2 = timePassed1.getTime();
-    timePassed = timePassed2- startTime;
-    setScore();
+        timePassed1 = new Date();
+        timePassed2 = timePassed1.getTime();
+        timePassed = timePassed2 - startTime + previoustimePassed;
+        setScore();
+    // }
     setTimeout(()=>{
         hole.classList.remove('hole--up');
         if(!timeIsOver){
@@ -82,7 +84,7 @@ const startGame = () => {
     timeIsOver = false;
     timePassed = 0;
     score = 0;
-    setScore();
+    // setScore();
     showMole();
     setTimeout(()=>{
     timeIsOver = true;
@@ -95,8 +97,10 @@ startButton.addEventListener('click', startGame);
 //Continue game
 function continueGame(){
  getScore();
+ previoustimePassed = timePassed;
   startTime = new Date();
   startTime = startTime.getTime();
+  setScore();
     gameDuration1 = gameDuration - timePassed;
         timeIsOver = false;
         showMole();
@@ -123,14 +127,11 @@ function countScore(e){
 moles.forEach(mole => mole.addEventListener('click', countScore));
 
 
-
-
 // cgange the level function
 function changeLevel(e){
     if(e.target.tagName === 'INPUT'){
         min = e.target.dataset.min
         max = e.target.dataset.max
-        console.log(min, max);
     }
 
 }
@@ -146,14 +147,16 @@ function shoulContinueGame(e){
 }
 
 // chack the level function
-(function CheckTheGaim(){
+function CheckTheGaim(){
     getScore();
     if (timePassed !== 0){
         if(timePassed<gameDuration){
             gameContinue.classList.remove('hide-button');
             continueGameButtons.forEach(button => button.addEventListener('click', shoulContinueGame));
         }
+    }else{
+        gameContinue.classList.add('hide-button');
     }
-})();
-
+};
+CheckTheGaim();
 })();
