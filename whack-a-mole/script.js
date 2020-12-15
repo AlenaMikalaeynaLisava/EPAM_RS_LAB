@@ -7,7 +7,7 @@ const lavelChange = document.getElementById('level-change');
 const minMax = document.getElementById('first-level');
 const gameContinue = document.querySelector('.game-continue');
 const buttons = document.querySelectorAll('.button');
-let gameDuration = 60000;
+let gameDuration = 10000;
 let timeIsOver = false;
 let score;
 let startTime = 0;//time of the game beginning
@@ -60,13 +60,13 @@ const getHoleNumber = holes => {
 function showMole(){
     const time = getShowUpTime(min, max);
     const hole = getHoleNumber(holes);
-    hole.classList.add('up');
+    hole.classList.add('hole--up');
     timePassed1 = new Date();
     timePassed2 = timePassed1.getTime();
     timePassed = timePassed2- startTime;
     setScore();
     setTimeout(()=>{
-        hole.classList.remove('up');
+        hole.classList.remove('hole--up');
         if(!timeIsOver){
             return showMole();
         }
@@ -107,14 +107,14 @@ function continueGame(){
 
 
 
-// score count fonction
+// score count function
 function countScore(e){
     getScore();
     score = scoreScreen.textContent;
     if(!e.isTrusted) return;
     if(e.target.classList.contains('mole')){
         score++;
-        this.classList.remove('up');
+        this.classList.remove('hole--up');
         scoreScreen.textContent = score;
         setScore();
     }
