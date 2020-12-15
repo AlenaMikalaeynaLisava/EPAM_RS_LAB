@@ -725,15 +725,13 @@ body {
     position: absolute;
     top: 70px;
     left: -40px;
-    /* z-index: 1; */
     width: 278px;
     height: calc(100vh - 71px);
     display: flex;
     justify-content: flex-end;
     align-items: center;
     background-color: var(--dark-background);
-    /* position: relative;*/
-    height: calc(100vh - 59px);
+    height: calc(100vh);
     z-index: 50; 
   }
   .header__navigation-hidden {
