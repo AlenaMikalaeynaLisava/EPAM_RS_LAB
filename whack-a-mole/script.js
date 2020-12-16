@@ -63,7 +63,7 @@ function showMole(startTime, previoustimePassed){
     const time = getShowUpTime(min, max);
     const hole = getHoleNumber(holes);
     hole.classList.add('hole--up');
-        timePassed1 = new Date().getTime();
+        let timePassed1 = new Date().getTime();
         timePassed = +(timePassed1 - startTime) + +previoustimePassed;
         setScore(+timePassed);
     setTimeout(()=>{
