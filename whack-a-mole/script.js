@@ -7,33 +7,33 @@ const lavelChange = document.getElementById('level-change');
 const minMax = document.getElementById('first-level');
 const gameContinue = document.querySelector('.continue-game-modal');
 const continueGameButtons = document.querySelectorAll('.continue-game-modal .button');
-let gameDuration = 10000;
+let gameDuration = 20000;
 let timeIsOver = false;
 let score;
-let startTime = 0;//time of the game beginning
-let timePassed=0;
 let lastHoleNumber;
-
 let min = minMax.dataset.min;
 let max = minMax.dataset.max;
-let previoustimePassed = 0;
-
 
 
 // get local storage score
 const getScore = () => {
        scoreScreen.textContent = localStorage.getItem('score');
-        timePassed = localStorage.getItem('timePassed');
+        
+}
+const getTimepassed = () =>{
+    return localStorage.getItem('timePassed');
 }
 
 
 // set local storage score
-const setScore = () =>{
+const setScore = (timePassed) =>{
+    if(!timePassed){
+        timePassed = 0;
+        scoreScreen.textContent = '0';
+    }
            localStorage.setItem('score', scoreScreen.textContent);
            localStorage.setItem('timePassed', timePassed);
    }
-
-
 
 
 // Function to get random mole showing up time
@@ -58,19 +58,18 @@ const getHoleNumber = holes => {
 
 
 // Function to show the mole
-function showMole(){
+function showMole(startTime, previoustimePassed){
+   let timePassed = getTimepassed();
     const time = getShowUpTime(min, max);
     const hole = getHoleNumber(holes);
     hole.classList.add('hole--up');
-        timePassed1 = new Date();
-        timePassed2 = timePassed1.getTime();
-        timePassed = timePassed2 - startTime + previoustimePassed;
-        setScore();
-    // }
+        timePassed1 = new Date().getTime();
+        timePassed = +(timePassed1 - startTime) + +previoustimePassed;
+        setScore(+timePassed);
     setTimeout(()=>{
         hole.classList.remove('hole--up');
         if(!timeIsOver){
-            return showMole();
+            return showMole(startTime, previoustimePassed);
         }
     },time)
 
@@ -78,14 +77,12 @@ function showMole(){
 
 //Start game function
 const startGame = () => {
-    startTime = new Date();
-    startTime = startTime.getTime();
-    scoreScreen.textContent = '0';
+    setScore();
+    let previoustimePassed = 0;
+    let startTime = new Date().getTime();
     timeIsOver = false;
-    timePassed = 0;
     score = 0;
-    // setScore();
-    showMole();
+    showMole(startTime,previoustimePassed);
     setTimeout(()=>{
     timeIsOver = true;
     }, gameDuration)
@@ -96,14 +93,14 @@ startButton.addEventListener('click', startGame);
 
 //Continue game
 function continueGame(){
- getScore();
+    let startTime = 0;//time of the game beginning
+    let timePassed = getTimepassed();
+    getScore();
  previoustimePassed = timePassed;
-  startTime = new Date();
-  startTime = startTime.getTime();
-  setScore();
+  startTime = new Date().getTime();
     gameDuration1 = gameDuration - timePassed;
         timeIsOver = false;
-        showMole();
+        showMole(startTime, previoustimePassed, timePassed);
         setTimeout(()=>{
             timeIsOver = true;
         }, gameDuration1)
@@ -113,6 +110,7 @@ function continueGame(){
 
 // score count function
 function countScore(e){
+    timePassed = getTimepassed();
     getScore();
     score = scoreScreen.textContent;
     if(!e.isTrusted) return;
@@ -120,14 +118,14 @@ function countScore(e){
         score++;
         this.classList.remove('hole--up');
         scoreScreen.textContent = score;
-        setScore();
+        setScore(timePassed);
     }
 
 }
 moles.forEach(mole => mole.addEventListener('click', countScore));
 
 
-// cgange the level function
+// change the level function
 function changeLevel(e){
     if(e.target.tagName === 'INPUT'){
         min = e.target.dataset.min
@@ -138,24 +136,22 @@ function changeLevel(e){
 lavelChange.addEventListener('click', changeLevel);
 
 
-function shoulContinueGame(e){
+function shouldContinueGame(e){
+    gameContinue.classList.add('game-continue--hidden');
     if (e.target.value === 'Yes'){
-        gameContinue.classList.add('hide-button');
         continueGame();
     }
-    gameContinue.classList.add('hide-button');
 }
 
 // chack the level function
 function CheckTheGaim(){
+    let timePassed = getTimepassed();
     getScore();
     if (timePassed !== 0){
-        if(timePassed<gameDuration){
-            gameContinue.classList.remove('hide-button');
-            continueGameButtons.forEach(button => button.addEventListener('click', shoulContinueGame));
+        if(timePassed < gameDuration - min){ 
+            gameContinue.classList.remove('game-continue--hidden');
+            continueGameButtons.forEach(button => button.addEventListener('click', shouldContinueGame));
         }
-    }else{
-        gameContinue.classList.add('hide-button');
     }
 };
 CheckTheGaim();

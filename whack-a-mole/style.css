@@ -43,7 +43,7 @@ h1 {
   cursor: pointer;
   margin-left: 15px;
 }
-.hide-button {
+.game-continue--hidden {
   display: none;
 }
 .start-button {
