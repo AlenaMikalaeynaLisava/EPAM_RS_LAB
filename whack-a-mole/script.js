@@ -98,7 +98,7 @@ function continueGame(){
     getScore();
  previoustimePassed = timePassed;
   startTime = new Date().getTime();
-    gameDuration1 = gameDuration - timePassed;
+    let gameDuration1 = gameDuration - timePassed;
         timeIsOver = false;
         showMole(startTime, previoustimePassed, timePassed);
         setTimeout(()=>{
