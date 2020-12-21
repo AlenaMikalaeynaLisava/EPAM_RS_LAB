@@ -1,10 +1,10 @@
-export default function ballFallTheSea(){
-    const ballBottom = document.querySelector(".sircule");
+export default function ballFallTheSea(circule){
+    // const ballBottom = document.querySelector(".sircule");
     const seaTop = document.querySelector(".seapart__sea-level");
     // alert(ballBottom.getBoundingClientRect().top);
     // alert(seaTop.getBoundingClientRect().bottom);
     const a = function(){
-    if(seaTop.getBoundingClientRect().top >= ballBottom.getBoundingClientRect().bottom){
+    if(seaTop.getBoundingClientRect().top >= circule.getBoundingClientRect().bottom){
        setTimeout(a, 1000);
        return;
     } else{
