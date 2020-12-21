@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <section class="wrapper">
+        <div class="calculator">
+            <div class="calculator__screen">
+                <div class="calculator__show-all">&#160;</div>
+                <div class="calculator__show">0</div>
+            </div>
+            <div class="calculator__buttons-holder">
+                <div class="calculator__buttons-line">
+                    <button type="button" class="button number">7</button>
+                    <button type="button" class="button number">8</button>
+                    <button type="button" class="button number">9</button>
+                    <button type="button" class="button square-operation disabled" >&#8730;</button><!--SQUARE ROOT-->
+                    <button type="button" class="button square-operation disabled" >x&#178;</button><!--SUPERSCRIPT TWO-->
+                </div>
+                <div class="calculator__buttons-line">
+                    <button type="button" class="button number">4</button>
+                    <button type="button" class="button number">5</button>
+                    <button type="button" class="button number">6</button>
+                    <button type="button" class="button simple-operation">&#215;</button> <!--MULTIPLICATION-->
+                    <button type="button" class="button simple-operation">&#247;</button> <!--DIVISION SIGN-->
+                </div>
+                <div class="calculator__buttons-line">
+                    <button type="button" class="button number">1</button>
+                    <button type="button" class="button number">2</button>
+                    <button type="button" class="button number">3</button>
+                    <button type="button" class="button simple-operation">+</button>
+                    <button type="button" class="button simple-operation">-</button>
+                </div>
+                <div class="calculator__buttons-bottumn-block">
+                    <div class="calculator_ziro-subblock">
+                        <button type="button" class="button big-button number">0</button>
+                    </div>
+                    <div class="calculator_bullet-sign-subblock">
+                        <button type="button" class="button decimal-sign disabled">.</button>
+                        <button type="button" class="button clean disabled-clean">c</button>
+                    </div>
+                    <div class="calculator_clear-subblock">
+                        <button type="button" class="button sign-change disabled">+/-</button>
+                        <button type="button" class="button clean">ce</button>
+                    </div>
+                    <div class="calculator_total-subblock">
+                        <button type="button" class="button big-button result">=</button>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>
