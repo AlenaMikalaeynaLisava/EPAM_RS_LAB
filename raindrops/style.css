@@ -15,6 +15,20 @@
     background: linear-gradient(to top, #d4ecea, #ffffff);
     position: relative;
 }
+.sircule{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: turquoise;
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 50px);
+    transition: top 20s ease;
+}
+.bottom{
+    top: 100vh;
+}
 .seapart__sea-level{
     position: absolute;
     bottom: 0px;

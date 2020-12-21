@@ -10,6 +10,26 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./Drop-Object/ballFallTheSea.js":
+/*!***************************************!*\
+  !*** ./Drop-Object/ballFallTheSea.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ ballFallTheSea\n/* harmony export */ });\nfunction ballFallTheSea(){\r\n    const ballBottom = document.querySelector(\".sircule\");\r\n    const seaTop = document.querySelector(\".seapart__sea-level\");\r\n    // alert(ballBottom.getBoundingClientRect().top);\r\n    // alert(seaTop.getBoundingClientRect().bottom);\r\n    const a = function(){\r\n    if(seaTop.getBoundingClientRect().top >= ballBottom.getBoundingClientRect().bottom){\r\n       setTimeout(a, 1000);\r\n       return;\r\n    } else{\r\n        alert(\"Упал в море\");\r\n        //setTimeout(() => { clearInterval(timerId)}, 0);\r\n        // setTimeout(() => { clearInterval(timerId)}, 0);\r\n        return;\r\n    }\r\n\r\n    }\r\n    a();\r\n}\r\n\r\n\n\n//# sourceURL=webpack://raindrops/./Drop-Object/ballFallTheSea.js?");
+
+/***/ }),
+
+/***/ "./Drop-Object/circuleDrop.js":
+/*!************************************!*\
+  !*** ./Drop-Object/circuleDrop.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ circuleDrop\n/* harmony export */ });\n/* harmony import */ var _ballFallTheSea__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ballFallTheSea */ \"./Drop-Object/ballFallTheSea.js\");\n\r\nfunction circuleDrop(){\r\n    const circule = document.querySelector(\".sircule\");\r\n    circule.addEventListener('click',()=>{\r\n        event.target.classList.add(\"bottom\");\r\n    })\r\n    ;(0,_ballFallTheSea__WEBPACK_IMPORTED_MODULE_0__.default)();\r\n}\n\n//# sourceURL=webpack://raindrops/./Drop-Object/circuleDrop.js?");
+
+/***/ }),
+
 /***/ "./Drop-Object/getOperation.js":
 /*!*************************************!*\
   !*** ./Drop-Object/getOperation.js ***!
@@ -26,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ getRandomInt\n/* harmony export */ });\nfunction getRandomInt(min, max) {\r\n    min = Math.ceil(min);\r\n    max = Math.floor(max);\r\n    alert(Math.floor(Math.random() * (max - min)) + min);\r\n    return Math.floor(Math.random() * (max - min)) + min;\r\n  }\n\n//# sourceURL=webpack://raindrops/./Drop-Object/getRandomInt.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ getRandomInt\n/* harmony export */ });\nfunction getRandomInt(min, max) {\r\n    min = Math.ceil(min);\r\n    max = Math.floor(max);\r\n    return Math.floor(Math.random() * (max - min)) + min;\r\n  }\n\n//# sourceURL=webpack://raindrops/./Drop-Object/getRandomInt.js?");
 
 /***/ }),
 
@@ -36,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ mathExpressionProduse\n/* harmony export */ });\n/* harmony import */ var _getOperation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getOperation */ \"./Drop-Object/getOperation.js\");\n\r\n\r\nfunction mathExpressionProduse(){\r\n    const operations =[\"+\", \"-\", \"*\", \"/\"];\r\n    const currentScore = document.querySelector(\".enterpart__score__score-value\");\r\n    alert(currentScore.innerText);\r\n    if(+currentScore.innerText <= 50){\r\n        alert(operations.slice(0, 1));\r\n        return (0,_getOperation__WEBPACK_IMPORTED_MODULE_0__.default)(operations.slice(0, 1));\r\n    } else if(+currentScore.innerText<90){\r\n        alert(operations.slice(0, 2));\r\n        return (0,_getOperation__WEBPACK_IMPORTED_MODULE_0__.default)(operations.slice(0, 2));\r\n    } else if(+currentScore.innerText<140){\r\n        alert(operations.slice(0, 3));\r\n        return (0,_getOperation__WEBPACK_IMPORTED_MODULE_0__.default)(operations.slice(0, 3));\r\n    } else {\r\n        return (0,_getOperation__WEBPACK_IMPORTED_MODULE_0__.default)(operations);\r\n    }\r\n// Function to get random int\r\n// function getRandomInt(min, max) {\r\n//     min = Math.ceil(min);\r\n//     max = Math.floor(max);\r\n//     return Math.floor(Math.random() * (max - min)) + min;\r\n//   }\r\n    // const enterpart = document.querySelector(\".enterpart__play-panel__screen\");\r\n    // enterpart.innerText = \"\";\r\n    }\n\n//# sourceURL=webpack://raindrops/./Drop-Object/mathExpressionProduce.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ mathExpressionProduse\n/* harmony export */ });\n/* harmony import */ var _getOperation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getOperation */ \"./Drop-Object/getOperation.js\");\n\r\n\r\nfunction mathExpressionProduse(){\r\n    const operations =[\"+\", \"-\", \"*\", \"/\"];\r\n    const currentScore = document.querySelector(\".enterpart__score__score-value\");\r\n    if(+currentScore.innerText <= 50){\r\n        return (0,_getOperation__WEBPACK_IMPORTED_MODULE_0__.default)(operations.slice(0, 1));\r\n    } else if(+currentScore.innerText<90){\r\n        return (0,_getOperation__WEBPACK_IMPORTED_MODULE_0__.default)(operations.slice(0, 2));\r\n    } else if(+currentScore.innerText<140){\r\n        return (0,_getOperation__WEBPACK_IMPORTED_MODULE_0__.default)(operations.slice(0, 3));\r\n    } else {\r\n        return (0,_getOperation__WEBPACK_IMPORTED_MODULE_0__.default)(operations);\r\n    }\r\n    }\n\n//# sourceURL=webpack://raindrops/./Drop-Object/mathExpressionProduce.js?");
 
 /***/ }),
 
@@ -46,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ showRendomExpression\n/* harmony export */ });\n/* harmony import */ var _mathExpressionProduce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mathExpressionProduce */ \"./Drop-Object/mathExpressionProduce.js\");\n/* harmony import */ var _getRandomInt__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getRandomInt */ \"./Drop-Object/getRandomInt.js\");\n\r\n\r\nfunction showRendomExpression(){\r\n    alert(\"Work!\");\r\nconst rendomOperationShow = document.querySelector(\".seapart__math-operation\");\r\nrendomOperationShow.innerText = (0,_getRandomInt__WEBPACK_IMPORTED_MODULE_1__.default)(1, 100) + (0,_mathExpressionProduce__WEBPACK_IMPORTED_MODULE_0__.default)() + (0,_getRandomInt__WEBPACK_IMPORTED_MODULE_1__.default)(1, 100);\r\n    }\n\n//# sourceURL=webpack://raindrops/./Drop-Object/showRendomExpression.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ showRendomExpression\n/* harmony export */ });\n/* harmony import */ var _mathExpressionProduce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mathExpressionProduce */ \"./Drop-Object/mathExpressionProduce.js\");\n/* harmony import */ var _getRandomInt__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getRandomInt */ \"./Drop-Object/getRandomInt.js\");\n\r\n\r\nfunction showRendomExpression(){\r\nconst rendomOperationShow = document.querySelector(\".seapart__math-operation\");\r\n// Проверка на целочисленное деление, т.к. у польз-ля нет дробных чисел\r\nrendomOperationShow.innerText = (0,_getRandomInt__WEBPACK_IMPORTED_MODULE_1__.default)(1, 100) + (0,_mathExpressionProduce__WEBPACK_IMPORTED_MODULE_0__.default)() + (0,_getRandomInt__WEBPACK_IMPORTED_MODULE_1__.default)(1, 100);\r\nconst expectedResult = eval(rendomOperationShow.innerText);\r\nreturn expectedResult;\r\n    }\n\n//# sourceURL=webpack://raindrops/./Drop-Object/showRendomExpression.js?");
 
 /***/ }),
 
@@ -66,7 +86,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ enterButton\n/* harmony export */ });\nfunction enterButton(){\r\n    const expectedResult = 15;\r\n    const enterpart = document.querySelector(\".enterpart__play-panel__screen\");\r\n    const scoreScreen = document.querySelector(\".enterpart__score__score-value\");\r\n    if(+ enterpart.innerText === expectedResult){\r\n        scoreScreen.innerText = +scoreScreen.innerText + 10;\r\n    }else {\r\n        scoreScreen.innerText = +scoreScreen.innerText - 10;\r\n    }\r\n    enterpart.innerText = \"\"\r\n    }\n\n//# sourceURL=webpack://raindrops/./Enter-Object-Observer/enterButton.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ enterButton\n/* harmony export */ });\n// import showRendomExpression from \"../Drop-Object/showRendomExpression\";\r\nfunction enterButton(){\r\n    const expectedResult = 0;\r\n    const enterpart = document.querySelector(\".enterpart__play-panel__screen\");\r\n    const scoreScreen = document.querySelector(\".enterpart__score__score-value\");\r\n    if(+ enterpart.innerText === expectedResult){\r\n        scoreScreen.innerText = +scoreScreen.innerText + 10;\r\n    }else {\r\n        scoreScreen.innerText = +scoreScreen.innerText - 10;\r\n    }\r\n    enterpart.innerText = \"\"\r\n    }\n\n//# sourceURL=webpack://raindrops/./Enter-Object-Observer/enterButton.js?");
 
 /***/ }),
 
@@ -96,7 +116,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Enter_Object_Observer_enterCatcher__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Enter-Object-Observer/enterCatcher */ \"./Enter-Object-Observer/enterCatcher.js\");\n/* harmony import */ var _Drop_Object_showRendomExpression__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Drop-Object/showRendomExpression */ \"./Drop-Object/showRendomExpression.js\");\n\r\n\r\n(0,_Enter_Object_Observer_enterCatcher__WEBPACK_IMPORTED_MODULE_0__.default)();\r\n(0,_Drop_Object_showRendomExpression__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://raindrops/./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Enter_Object_Observer_enterCatcher__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Enter-Object-Observer/enterCatcher */ \"./Enter-Object-Observer/enterCatcher.js\");\n/* harmony import */ var _Drop_Object_showRendomExpression__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Drop-Object/showRendomExpression */ \"./Drop-Object/showRendomExpression.js\");\n/* harmony import */ var _Drop_Object_circuleDrop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Drop-Object/circuleDrop */ \"./Drop-Object/circuleDrop.js\");\n\r\n\r\n\r\n\r\n// showRendomExpression();\r\n(0,_Enter_Object_Observer_enterCatcher__WEBPACK_IMPORTED_MODULE_0__.default)((0,_Drop_Object_showRendomExpression__WEBPACK_IMPORTED_MODULE_1__.default)());\r\n(0,_Drop_Object_circuleDrop__WEBPACK_IMPORTED_MODULE_2__.default)();\r\n\r\n\n\n//# sourceURL=webpack://raindrops/./index.js?");
 
 /***/ })
 
