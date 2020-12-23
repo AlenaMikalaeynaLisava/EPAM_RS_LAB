@@ -1,16 +1,16 @@
 export default function ballFallTheSea(circule){
-    // const ballBottom = document.querySelector(".sircule");
     const seaTop = document.querySelector(".seapart__sea-level");
-    // alert(ballBottom.getBoundingClientRect().top);
-    // alert(seaTop.getBoundingClientRect().bottom);
+
     const a = function(){
+// console.log(seaTop.getBoundingClientRect().top);
+// console.log(circule.getBoundingClientRect().bottom);
     if(seaTop.getBoundingClientRect().top >= circule.getBoundingClientRect().bottom){
        setTimeout(a, 1000);
-       return;
+    //    return;
     } else{
-        alert("Упал в море");
-        //setTimeout(() => { clearInterval(timerId)}, 0);
-        // setTimeout(() => { clearInterval(timerId)}, 0);
+        circule.classList.add("circule-disappear");
+
+        setTimeout(() => { circule.remove()}, 2000);      
         return;
     }
 

@@ -14,21 +14,27 @@
     height: 100%;
     background: linear-gradient(to top, #d4ecea, #ffffff);
     position: relative;
+    overflow: hidden;
 }
-.sircule{
+
+.circule{
     width: 100px;
     height: 100px;
     border-radius: 50%;
     background-color: turquoise;
-    /* opacity: 0.5; */
+    opacity: 1; 
     position: absolute;
     top: 0px;
     left: calc(50% - 50px);
-    transition: top 20s ease;
+    transition: top 20s ease,
+                opacity 3s  ease;
+}
+.circule-disappear{
+opacity: 0.2;
 }
 .top{
     top: 1px;
-    transition: top 20s ease;
+    transition: top 0s ease;
 }
 .bottom{
     top: 100vh;
@@ -40,12 +46,31 @@
     opacity: 0.3;
     height: 15%;
     width: 100%;
+    
 }
 .wave{
     position: absolute;
     bottom:0%;
     background-repeat: repeat;
-    width: 100%;
+    width: 120%;
+    left: -1%;
+    transition: left 10s ease;
+}
+.wave1{
+    position: absolute;
+    bottom:0%;
+    background-repeat: repeat;
+    width: 120%;
+    left: -12%;
+    /* transition: left 15s ease; */
+}
+.wave-left{
+    left: 20%;
+    /* transition: left 30s ease; */
+}
+.wave-start-left{
+    left: 0%;
+    /* transition: left 30s ease; */
 }
 .svg{
     width: 100%;
