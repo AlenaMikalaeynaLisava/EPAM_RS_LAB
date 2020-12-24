@@ -3,7 +3,7 @@ import numberPress from "./numberPress";
 import clearScreen from "./clearScreen";
 import deleteLastNumber from "./deleteLastNumber";
 import enterButton from "./enterButton";
-export default function enterCatcher(vara, timerId)  {
+export default function enterCatcher(timerId)  {
     const buttonsHolder = document.querySelector(".enterpart__play-panel__buttons-holder");
     // const currrentNumber = "";
     
@@ -15,7 +15,7 @@ export default function enterCatcher(vara, timerId)  {
         }else if (e.target.classList.contains("delete")){
             deleteLastNumber();
         }else if (e.target.classList.contains("enter")){
-            enterButton(vara);
+            enterButton();
         }
     }
     

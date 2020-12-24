@@ -1,18 +1,19 @@
+import mainObject from "../mainObject/mainObject"
 import ballFallTheSea from "../Drop-Object/ballFallTheSea";
-// import lis from "../Enter-Object-Observer/enterCatcher";
-// import showRendomExpression from "./showRendomExpression";
-// import circuleDrop from "./circuleDrop";
 export default function circuleAdd(expectedResult, counter){
     const circule = document.createElement("div");
+    circule.style.transitionDuration = mainObject.dropSpeed;
+    circule.style.marginLeft = (Math.floor(Math.random() * (50 - 10)) + 50) + "px";
+    console.log(circule.style.transitionDuration);
     const mathOperation = document.createElement("div");
     const sea = document.querySelector(".seapart");
+    const dropHolder = document.querySelector(".circule-holder");
     circule.classList.add("circule");
-    sea.append(circule);
+    
+    dropHolder.append(circule);
     mathOperation.innerText= expectedResult;
     
     circule.append(mathOperation);
-    // const a = lis(showRendomExpression(mathOperation));//lis-заменить
-   
     const f = function(){
         circule.classList.add("bottom");
         ballFallTheSea(circule, counter);
@@ -26,13 +27,5 @@ export default function circuleAdd(expectedResult, counter){
             }
         )
     }
-
-    // circule.addEventListener("transitionend",() =>{
-    //     circule.classList.add("bottom");
-    // });
-    // circuleDrop(circule)
-    //Добавим шум моря по щелчку по экрану (можно сделать в другом месте)
-
     return mathOperation;
-
 }

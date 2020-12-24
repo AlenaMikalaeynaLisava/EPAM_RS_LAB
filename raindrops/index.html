@@ -10,6 +10,10 @@
 </head>
 <body>
     <div class="wrapper">
+        <div class="game-start">
+            <button class="button" value="start-game">Start Game</button>
+            <!-- <button class="button" value="start-demo">Start Demo</button> -->
+        </div>
         <div class="seapart">
             <audio class="audio" loop>
                 <source src="./sounds/stereo-zvuk-s-morskimi-volnami-vo-vremya-vetrenoy-pogodyi-44027.ogg">
@@ -21,6 +25,7 @@
                 <source src="./sounds/zvuk-udara-kulakom-dlya-montaja-19346.wav">
             </audio>
             <!-- Будет добавляться потом в каплю -->
+            <div class="circule-holder"></div>
             <!-- <div class="sircule"></div> -->
             <!-- <div class="seapart__math-operation">Math operation</div> -->
             <div class="seapart__sea-level"></div>
@@ -77,6 +82,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="game-over game-nondisplay">
         </div>
     </div>
 </body>

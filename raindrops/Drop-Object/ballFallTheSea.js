@@ -1,6 +1,6 @@
 
 import mainObject from "../mainObject/mainObject"
-export default function ballFallTheSea(circule, counter){
+export default function ballFallTheSea(circule){
     const seaTop = document.querySelector(".seapart__sea-level");
     const a = function(){
     if(seaTop.getBoundingClientRect().top >= circule.getBoundingClientRect().bottom){
@@ -8,7 +8,7 @@ export default function ballFallTheSea(circule, counter){
     } else{
         circule.classList.add("circule-disappear");
 
-        setTimeout(() => { circule.remove()}, 2000); 
+        setTimeout(() => { circule.remove()}, 1000); 
         if(!seaTop.style.height){
             seaTop.style.height = "20%"
             console.log(seaTop.style.height.slice(0, +seaTop.style.height.length-1));

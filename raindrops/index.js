@@ -2,7 +2,7 @@ import lis from "./Enter-Object-Observer/enterCatcher";
 import showRendomExpression from "./Drop-Object/showRendomExpression";
 // import circuleDrop from "./Drop-Object/circuleDrop";
 import waveMove from "./SeaPartObject/wave"
-import circuleAdd from "./Drop-Object/circuleAdd";
+import startGame from "./mainObject/start";
 import mainObject from "./mainObject/mainObject"
 // showRendomExpression();
 // lis(showRendomExpression(mathOperation));
@@ -15,16 +15,13 @@ import mainObject from "./mainObject/mainObject"
 // mainObject.drop.addDrop;
 // console.log(mainObject.drop.expectedResultOfExpression);
 // mainObject.drop.catchUsersValue;
-mainObject.drop.isContinue();
+startGame();
+// mainObject.drop.isContinue();
 // console.log(mainObject.loseGameCount);
 // console.log(mainObect.drop.expectedResult);
 // console.log(mainObect.drop.expectedResult);
 
-const sea = document.querySelector(".seapart");
-const aud = document.querySelector('.audio');
-sea.addEventListener('click', function() {
-    aud.play();
-  });
+
   waveMove(); 
   // while (mainObject.shouldConyinueGame) {
   //   setTimeout(waveMove, 2000);
@@ -36,7 +33,3 @@ if(!mainObject.shouldConyinueGame){
 }
 // остановить вывод через 5 секунд
 
-    
-  // }
-  // w();
- 
