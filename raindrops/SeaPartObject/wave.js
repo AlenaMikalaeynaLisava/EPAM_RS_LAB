@@ -1,13 +1,14 @@
 export default function waveMove(){
+    // alert("Ia!");
     const wave = document.querySelector(".wave");
-    const removeA = ()=>{
+    const addA = ()=>{
         wave.classList.add("wave-left");
     }
     
-    const addA = function(){
-        wave.classList.add("wave-start-left");
+    const removeA = function(){
+        wave.classList.remove("wave-left");
     }
-     timeFrame(removeA);
+     timeFrame(addA);
     
     function timeFrame(fn){
         window.requestAnimationFrame(
@@ -20,7 +21,5 @@ export default function waveMove(){
             }
         )
     }  
-    wave.addEventListener("transitionend",addA);
-
-    
+    wave.addEventListener("transitionend",removeA);
 }

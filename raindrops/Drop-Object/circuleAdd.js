@@ -1,8 +1,8 @@
- import ballFallTheSea from "../Drop-Object/ballFallTheSea";
+import ballFallTheSea from "../Drop-Object/ballFallTheSea";
 // import lis from "../Enter-Object-Observer/enterCatcher";
 // import showRendomExpression from "./showRendomExpression";
 // import circuleDrop from "./circuleDrop";
-export default function circuleAdd(expectedResult){
+export default function circuleAdd(expectedResult, counter){
     const circule = document.createElement("div");
     const mathOperation = document.createElement("div");
     const sea = document.querySelector(".seapart");
@@ -15,7 +15,7 @@ export default function circuleAdd(expectedResult){
    
     const f = function(){
         circule.classList.add("bottom");
-        ballFallTheSea(circule);
+        ballFallTheSea(circule, counter);
     }
      timeFrame(f);
 

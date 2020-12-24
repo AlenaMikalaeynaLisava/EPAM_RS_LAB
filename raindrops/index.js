@@ -16,11 +16,27 @@ import mainObject from "./mainObject/mainObject"
 // console.log(mainObject.drop.expectedResultOfExpression);
 // mainObject.drop.catchUsersValue;
 mainObject.drop.isContinue();
+// console.log(mainObject.loseGameCount);
 // console.log(mainObect.drop.expectedResult);
 // console.log(mainObect.drop.expectedResult);
 
-
+const sea = document.querySelector(".seapart");
 const aud = document.querySelector('.audio');
 sea.addEventListener('click', function() {
     aud.play();
   });
+  waveMove(); 
+  // while (mainObject.shouldConyinueGame) {
+  //   setTimeout(waveMove, 2000);
+  // }
+
+  let timerId = setInterval(waveMove, 22000);
+if(!mainObject.shouldConyinueGame){
+  setTimeout(() => { clearInterval(timerId)}, 0);
+}
+// остановить вывод через 5 секунд
+
+    
+  // }
+  // w();
+ 
