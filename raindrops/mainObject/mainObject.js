@@ -17,6 +17,8 @@ const mainObject = {
       operator:"+",
       expectedResultOfExpression:[],
     },
+    isYallowDrop:false,
+    yellowDropExpressionResult:0,
     loseGameCount: 0,
     expectedResult:[],
 };
@@ -34,9 +36,13 @@ const v1 = function(){//Рандомное выражение доб. в кап�
   const expectedResult1 = eval(mainObject.drop.addDrop.innerText);
   return expectedResult1;
         }
-        mainObject.drop.showExpectedResult =  v1();   
-        console.log(mainObject.drop.showExpectedResult);
-mainObject.drop.expectedResultOfExpression.push(mainObject.drop.showExpectedResult);//Записываем ожидаемый результат     
+        if(document.querySelectorAll(".circule")[document.querySelectorAll(".circule").length -1].classList.contains("circule-yellow")){
+          mainObject.yellowDropExpressionResult = v1();
+        } else{
+          mainObject.drop.showExpectedResult =  v1();   
+          mainObject.drop.expectedResultOfExpression.push(mainObject.drop.showExpectedResult);//Записываем ожидаемый результат  
+        }
+   
 mainObject.drop.catchUsersValue = enterCatcher(timerId);//Записываем и сравниваем ожидаемый результат со введенным Потом можно засунуть в отдельный объект
 if(end === false){
   setTimeout( isContinueGame, timerId);

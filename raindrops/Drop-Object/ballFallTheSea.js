@@ -5,7 +5,12 @@ export default function ballFallTheSea(circule){
     const a = function(){
     if(seaTop.getBoundingClientRect().top >= circule.getBoundingClientRect().bottom){
        setTimeout(a, 1000);
-    } else{
+    } else if(circule.classList.contains("circule-yellow")){
+        // const m = circule.classList.contains("circule-yellow");
+        // console.log(m);
+        circule.classList.add("circule-disappear");
+        setTimeout(() => { circule.remove()}, 1000); 
+    }else{
         circule.classList.add("circule-disappear");
         setTimeout(() => { circule.remove()}, 1000); 
         mainObject.drop.expectedResultOfExpression.shift();

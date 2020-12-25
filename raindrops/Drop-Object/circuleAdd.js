@@ -11,10 +11,15 @@ export default function circuleAdd(expectedResult, counter){
     const mathOperation = document.createElement("div");
     const sea = document.querySelector(".seapart");
     circule.classList.add("circule");
+    if(dropHolder.childNodes.length===3){
+        circule.classList.add("circule-yellow");
+        mainObject.isYallowDrop = true;
+        //запускаем функцию
+}
+    
     // if(dropHolder.childNodes.length%2){
         // circule.style.left = (Math.floor(Math.random() * (40 - 2)) + 40) + "%";
         circule.style.left = (Math.floor(Math.random() * Math.floor(90)))+ "%";
-        console.log(circule.style.marginLeft);
     // }else{
     //     circule.style.right = (Math.floor(Math.random() * (20 - 1)) + 20) + "%";
     //     console.log(circule.style.marginRight);

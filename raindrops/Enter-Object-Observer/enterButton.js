@@ -7,11 +7,10 @@ export default function enterButton(){
     const circule = document.querySelector(".circule");
     console.log(mainObject.drop.expectedResultOfExpression);
     //console.log(mainObject.drop.expectedResultOfExpression.shift());
-    if(+ enterpart.innerText === mainObject.drop.expectedResultOfExpression.shift()){
+    if(+enterpart.innerText === mainObject.drop.expectedResultOfExpression.shift()){
         scoreScreen.innerText = +scoreScreen.innerText + mainObject.pointsToAdd;
         mainObject.pointsToAdd++;
         mainObject.score = +scoreScreen.innerText;
-        console.log(mainObject.score);
         if(mainObject.score >= 50){
             mainObject.dropSpeed = "6s";
         }else if (mainObject.score >= 30){
@@ -22,8 +21,20 @@ export default function enterButton(){
                 mainObject.dropSpeed = "20s";
             }
         aproved.play();
-        circule.remove();
-    }else {
+        if(document.querySelectorAll(".circule")[0].classList.contains("circule-yellow")){
+            document.querySelectorAll(".circule")[1].remove()
+        } else{
+            circule.remove();
+        }
+
+    }else if((mainObject.isYallowDrop === true)&&(+enterpart.innerText === mainObject.yellowDropExpressionResult)){
+        mainObject.drop.expectedResultOfExpression = [];
+        let allCirciles = document.querySelectorAll(".circule");
+        allCirciles.forEach((eachCircule)=>{
+            eachCircule.remove();
+        })
+    
+    }else{
         scoreScreen.innerText = +scoreScreen.innerText - mainObject.pointsToAdd;
         mainObject.score = +scoreScreen.innerText;
         refused.play();
