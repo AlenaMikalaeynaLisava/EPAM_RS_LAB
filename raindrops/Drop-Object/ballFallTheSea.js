@@ -7,8 +7,8 @@ export default function ballFallTheSea(circule){
        setTimeout(a, 1000);
     } else{
         circule.classList.add("circule-disappear");
-
         setTimeout(() => { circule.remove()}, 1000); 
+        mainObject.drop.expectedResultOfExpression.shift();
         if(!seaTop.style.height){
             seaTop.style.height = "20%"
             console.log(seaTop.style.height.slice(0, +seaTop.style.height.length-1));
@@ -20,7 +20,7 @@ export default function ballFallTheSea(circule){
             mainObject.shouldConyinueGame = false;
         }
         return true;
-    }
+        }
 
     }
     a();

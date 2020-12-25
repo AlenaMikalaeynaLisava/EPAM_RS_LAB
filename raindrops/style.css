@@ -65,9 +65,11 @@
 }
 .circule-holder{
     display: flex;
-    width: 50%;
-    height: 50%;
-    margin-left: 15%;
+    align-items:flex-start;
+    justify-self: start;
+    width: 85%;
+    height: 20%;
+    margin-right: 15%; 
     position: relative;
 }
 .circule{
@@ -84,7 +86,8 @@
     opacity: 0.9; 
     position: absolute;
     top: 0px;
-    left: calc(50% - 50px);
+    /*left: calc(50% - 50px); */
+    left:0;
     transition: top ease,
                 opacity 3s  ease; 
 }

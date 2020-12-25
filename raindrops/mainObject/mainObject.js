@@ -7,7 +7,7 @@ import getRandomInt from "../Drop-Object/getRandomInt";
 import circuleAdd from "../Drop-Object/circuleAdd";
 const mainObject = {
   shouldConyinueGame : true,
-  dropSpeed:"30s",//Функция, которая изменяет скорость в зависимости от количества очков
+  dropSpeed:"60s",//Функция, которая изменяет скорость в зависимости от количества очков
   seaLevel: 42,//Функция, которая изменяет скорость в зависимости от количества очков
   score: 0,
   pointsToAdd:1,
