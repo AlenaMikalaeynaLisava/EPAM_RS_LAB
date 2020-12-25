@@ -1,4 +1,4 @@
-
+import checkTheKey from "../Enter-Object-Observer/checkTheKey";
 import enterButton from "../Enter-Object-Observer/enterButton";
 import showRendomExpression from "../Drop-Object/showRendomExpression";
 import enterCatcher from "../Enter-Object-Observer/enterCatcher";
@@ -25,6 +25,7 @@ const mainObject = {
 let end = false;
 let timerId = 5000;
 mainObject.drop.isContinue = function isContinueGame(){
+
   if(mainObject.shouldConyinueGame){
     mainObject.drop.operand1 =getRandomInt(1,20);
     mainObject.drop.operator = mathExpressionProduse();
@@ -42,7 +43,7 @@ const v1 = function(){//Рандомное выражение доб. в кап�
           mainObject.drop.showExpectedResult =  v1();   
           mainObject.drop.expectedResultOfExpression.push(mainObject.drop.showExpectedResult);//Записываем ожидаемый результат  
         }
-   
+        
 mainObject.drop.catchUsersValue = enterCatcher(timerId);//Записываем и сравниваем ожидаемый результат со введенным Потом можно засунуть в отдельный объект
 if(end === false){
   setTimeout( isContinueGame, timerId);

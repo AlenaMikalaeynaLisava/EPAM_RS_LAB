@@ -22,7 +22,10 @@ export default function enterButton(){
             }
         aproved.play();
         if(document.querySelectorAll(".circule")[0].classList.contains("circule-yellow")){
-            document.querySelectorAll(".circule")[1].remove()
+            if(document.querySelectorAll(".circule")[1].classList.contains("circule-yellow")){
+            
+                document.querySelectorAll(".circule")[2].remove()
+            } else{document.querySelectorAll(".circule")[1].remove()}
         } else{
             circule.remove();
         }

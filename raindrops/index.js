@@ -1,4 +1,4 @@
-import lis from "./Enter-Object-Observer/enterCatcher";
+
 import showRendomExpression from "./Drop-Object/showRendomExpression";
 // import circuleDrop from "./Drop-Object/circuleDrop";
 import waveMove from "./SeaPartObject/wave"
@@ -15,6 +15,7 @@ import mainObject from "./mainObject/mainObject"
 // mainObject.drop.addDrop;
 // console.log(mainObject.drop.expectedResultOfExpression);
 // mainObject.drop.catchUsersValue;
+
 startGame();
 // mainObject.drop.isContinue();
 // console.log(mainObject.loseGameCount);

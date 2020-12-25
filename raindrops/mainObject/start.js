@@ -1,5 +1,6 @@
 import mainObject from "./mainObject"
 
+
 export default function startGame(){
     const startGame = document.querySelector(".game-start");
     startGame.addEventListener("click",(e)=>{
