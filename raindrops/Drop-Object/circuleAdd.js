@@ -25,6 +25,7 @@ export default function circuleAdd(expectedResult, counter){
     //     console.log(circule.style.marginRight);
     // }
     dropHolder.append(circule);
+    mainObject.dropsAmount++;
     mathOperation.innerText= expectedResult;
     
     circule.append(mathOperation);

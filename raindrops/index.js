@@ -1,5 +1,5 @@
 
-import showRendomExpression from "./Drop-Object/showRendomExpression";
+import makeScreenFull from "./SeaPartObject/makeScreenFull";
 // import circuleDrop from "./Drop-Object/circuleDrop";
 import waveMove from "./SeaPartObject/wave"
 import startGame from "./mainObject/start";
@@ -27,7 +27,7 @@ startGame();
   // while (mainObject.shouldConyinueGame) {
   //   setTimeout(waveMove, 2000);
   // }
-
+  makeScreenFull();
   let timerId = setInterval(waveMove, 22000);
 if(!mainObject.shouldConyinueGame){
   setTimeout(() => { clearInterval(timerId)}, 0);

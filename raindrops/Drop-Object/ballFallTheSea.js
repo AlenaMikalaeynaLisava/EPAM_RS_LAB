@@ -11,6 +11,7 @@ export default function ballFallTheSea(circule){
         circule.classList.add("circule-disappear");
         setTimeout(() => { circule.remove()}, 1000); 
     }else{
+        mainObject.follenToSea++;
         circule.classList.add("circule-disappear");
         setTimeout(() => { circule.remove()}, 1000); 
         mainObject.drop.expectedResultOfExpression.shift();

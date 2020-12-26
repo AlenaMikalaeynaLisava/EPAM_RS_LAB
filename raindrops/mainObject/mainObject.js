@@ -17,11 +17,16 @@ const mainObject = {
       operator:"+",
       expectedResultOfExpression:[],
     },
+    dropsAmount:0,
+    correctlySolved:0,
+    solvedWithMistake:0,
+    follenToSea:0,
     isYallowDrop:false,
     yellowDropExpressionResult:0,
     loseGameCount: 0,
     expectedResult:[],
 };
+
 let end = false;
 let timerId = 5000;
 mainObject.drop.isContinue = function isContinueGame(){
@@ -49,9 +54,8 @@ if(end === false){
   setTimeout( isContinueGame, timerId);
 }
   }else {
-    document.querySelector(".game-over").innerText = mainObject.score + " points";
+    document.querySelector(".game-over").innerText = `${mainObject.score} points \n Amount of drops: ${mainObject.dropsAmount}\n Solved correctly: ${mainObject.correctlySolved} \n Solved with mistake: ${mainObject.solvedWithMistake}\n Foll to the Sea: ${mainObject.follenToSea}`;
     document.querySelector(".game-over").classList.remove("game-nondisplay");
-    alert("Game over!");
     return;
   }
       }

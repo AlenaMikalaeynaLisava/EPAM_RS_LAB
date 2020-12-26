@@ -5,7 +5,6 @@ import deleteLastNumber from "./deleteLastNumber";
 import enterButton from "./enterButton";
 export default function enterCatcher(timerId)  {
     const buttonsHolder = document.querySelector(".enterpart__play-panel__buttons-holder");
-    // const currrentNumber = "";
     const buttonOnClick = (e)=>{
         if(e.target.classList.contains("number")||e.target.classList.contains("ziro")){
             numberPress(e.target.textContent);

@@ -10,6 +10,7 @@ export default function enterButton(){
     if(+enterpart.innerText === mainObject.drop.expectedResultOfExpression.shift()){
         scoreScreen.innerText = +scoreScreen.innerText + mainObject.pointsToAdd;
         mainObject.pointsToAdd++;
+        mainObject.correctlySolved++;
         mainObject.score = +scoreScreen.innerText;
         if(mainObject.score >= 50){
             mainObject.dropSpeed = "6s";
@@ -32,6 +33,7 @@ export default function enterButton(){
 
     }else if((mainObject.isYallowDrop === true)&&(+enterpart.innerText === mainObject.yellowDropExpressionResult)){
         mainObject.drop.expectedResultOfExpression = [];
+        mainObject.correctlySolved++;
         let allCirciles = document.querySelectorAll(".circule");
         allCirciles.forEach((eachCircule)=>{
             eachCircule.remove();
@@ -40,6 +42,7 @@ export default function enterButton(){
     }else{
         scoreScreen.innerText = +scoreScreen.innerText - mainObject.pointsToAdd;
         mainObject.score = +scoreScreen.innerText;
+        mainObject.solvedWithMistake++;
         refused.play();
         circule.remove();
     }
