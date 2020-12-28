@@ -31,11 +31,11 @@ export default function instructions(color){
             }
         )
     }
-    setTimeout(()=>{
+    const timqrId1 = setTimeout(()=>{
         circule.remove();
     }, 8000);
 
-     setTimeout(addColor, 3000);
+     const timqrId2 = setTimeout(addColor, 3000);
     function addColor(){
         const chosen = document.querySelector(".chosen");
         function addColorInner(){
@@ -49,8 +49,12 @@ export default function instructions(color){
     document.querySelector(".instructions").addEventListener("click", function(event){
         instructionsObject.buttonPressedValue = event.target.value;
         if(instructionsObject.buttonPressedValue === "start-game"){
-            s();
+            setTimeout(s, 500); 
         }
+        clearTimeout(timqrId1);
+        clearTimeout(timqrId2);
+        circule.remove();
+        return;
     });
 return;
 }
