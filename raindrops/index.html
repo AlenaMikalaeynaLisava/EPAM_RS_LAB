@@ -14,7 +14,7 @@
         <div class="normal-screen-game game-nondisplay screen-symbol">&#9932;</div>
         <div class="game-start">
             <button class="button" value="start-game">Start Game</button>
-            <!-- <button class="button" value="start-demo">Start Demo</button> -->
+            <button class="button" value="start-demo">Start Demo</button>
         </div>
         <div class="seapart">
             <audio class="audio" loop>
@@ -26,10 +26,7 @@
             <audio class="refused">
                 <source src="./sounds/zvuk-udara-kulakom-dlya-montaja-19346.wav">
             </audio>
-            <!-- Будет добавляться потом в каплю -->
             <div class="circule-holder"></div>
-            <!-- <div class="sircule"></div> -->
-            <!-- <div class="seapart__math-operation">Math operation</div> -->
             <div class="seapart__sea-level"></div>
             <div class="seapart__sea-plants">
                 <img class="seapart__sea-plants__plant" src="./pictures/—Pngtree—marine life free coral green_3841892.png">
@@ -60,7 +57,7 @@
                             <div class="enterpart__play-panel__line__numbers-holder">
                                 <button class="number">7</button>
                                 <button class="number">8</button>
-                                <button class="number">9</button>
+                                <button class="number chosen">9</button>
                                 <button class="number">4</button>
                                 <button class="number">5</button>
                                 <button class="number">6</button>
@@ -84,7 +81,20 @@
                     </div>
                 </div>
             </div>
+            <div class="instructions game-nondisplay">
+                <div class="instructions__text-holder"></div>
+                <div class="instructions__navigation-holder">
+                    <button class="instructions__button instructions__back">Back</button>
+                    <button class="instructions__button instructions__next">Next</button>
+                </div>
+                <button class="instructions__button" value="start-game">Play 
+                    <div class="enterpart__score__star">                
+                        <img src="./pictures/star-png-icon-6.jpg" alt="star">
+                    </div>
+                </button>
+            </div>
         </div>
+   
         <div class="game-over game-nondisplay">
         </div>
     </div>
