@@ -8,10 +8,12 @@ export default function startGame(){
     startGame.addEventListener("click",(e)=>{
         if(e.target.value === "start-game"){
            s();
+           startGame.classList.add("game-nondisplay");
         } else if(e.target.value === "start-demo"){
           t(); 
+          startGame.classList.add("game-nondisplay");
         }
-        startGame.classList.add("game-nondisplay");
     })
+    // startGame.removeEventListener("click");
 }
 

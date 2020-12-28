@@ -333,6 +333,7 @@ opacity: 0.2;
     align-items: center;
     justify-content: center;
     color: #ffffff;
+    cursor: pointer;
 }
 .instructions__button__star{
     width: 30%;
@@ -342,6 +343,10 @@ opacity: 0.2;
 }
 .yellow-key{
     background-color: #b8860b;
+}
+.disabled-gray{
+    background: #5d635c;
+    cursor: none;
 }
 
 

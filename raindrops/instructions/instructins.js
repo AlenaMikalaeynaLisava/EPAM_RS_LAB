@@ -1,60 +1,56 @@
 import instructionsObject from "../instructions/instructionsObject"
 import s from "./functionS";
 import t from "./functionT";
-export default function instructions(color){
-    const circule = document.createElement("div");
-    circule.style.transitionDuration = "30s";
-    const dropHolder = document.querySelector(".circule-holder");
-    const mathOperation = document.createElement("div");
-    const instructionsText = document.querySelector(".instructions__text-holder");
-    instructionsText.innerText = "Solve The equation in the raindrop before it reaches the water. Select your answer on the number pad i  the game and click Enter or use your computer key board."
-    circule.classList.add("circule");
-    if(color==="yellow"){
-        circule.classList.add("circule-yellow");
-}
-    circule.style.left = (Math.floor(Math.random() * Math.floor(60)))+ "%";
-    dropHolder.append(circule);
-    mathOperation.textContent = "3+6";
-    circule.append(mathOperation);
-    // setTimeout(circule.classList.add("bottom"), 3000);
+import firstPage from "./firstPage"
+import secondPage from "./secondPage"
+import thirdPage from "./thirdPage"
 
-    
-    const f = function(){
-        circule.classList.add("bottom");
-    }
-     timeFrame(f);
+export default function instructions(value){
 
-    function timeFrame(fn){
-        window.requestAnimationFrame(
-            function(){
-                fn();
+     function directInstructionFunction(){
+         console.log("Я вызвана");
+           if(instructionsObject.numberOfInstructionPage === 1){
+            firstPage();
+            document.querySelector(".instructions__back").classList.add("disabled-gray");
+            document.querySelector(".instructions__back").setAttribute("disabled","disabled");
+            
+           } else if(instructionsObject.numberOfInstructionPage === 2){
+            secondPage();
+            document.querySelector(".instructions__back").classList.remove("disabled-gray");
+            document.querySelector(".instructions__next").classList.remove("disabled-gray");
+            if(document.querySelector(".instructions__back").hasAttribute("disabled")){
+                document.querySelector(".instructions__back").removeAttribute("disabled");
+            };
+            if(document.querySelector(".instructions__next").hasAttribute("disabled")){
+                document.querySelector(".instructions__next").removeAttribute("disabled"); 
             }
-        )
-    }
-    const timqrId1 = setTimeout(()=>{
-        circule.remove();
-    }, 8000);
+            // secondPage();
+           }
+           else if(instructionsObject.numberOfInstructionPage === 3){
+            thirdPage();
+            document.querySelector(".instructions__next").classList.add("disabled-gray");
+            document.querySelector(".instructions__next").setAttribute("disabled","disabled");
+            // thirdPage();
+           }
+       }
+        // if(event.target.classList.contains("instructions__button")){
+            if(value === "start-game"){
+                instructionsObject.numberOfInstructionPage = 1;
+                setTimeout(s, 500); 
+                // return;
+            } else if (value === "next"){
+                console.log(instructionsObject.numberOfInstructionPage);
+                instructionsObject.numberOfInstructionPage++;
+                setTimeout(directInstructionFunction, 500); 
+            }else if (value === "back"){
+                instructionsObject.numberOfInstructionPage--;
+                console.log(instructionsObject.numberOfInstructionPage);
+                //document.querySelector(".instructions__back").classList.remove("disabled-gray");
+                setTimeout(directInstructionFunction, 500); 
+            }
+        // }
+        
 
-     const timqrId2 = setTimeout(addColor, 3000);
-    function addColor(){
-        const chosen = document.querySelector(".chosen");
-        function addColorInner(){
-            chosen.classList.remove("yellow-key");
-            chosen.removeEventListener("transitionend",addColorInner)
-        }
-        chosen.classList.add("yellow-key");
-        chosen.addEventListener("transitionend",addColorInner)
-
-    }   
-    document.querySelector(".instructions").addEventListener("click", function(event){
-        instructionsObject.buttonPressedValue = event.target.value;
-        if(instructionsObject.buttonPressedValue === "start-game"){
-            setTimeout(s, 500); 
-        }
-        clearTimeout(timqrId1);
-        clearTimeout(timqrId2);
-        circule.remove();
-        return;
-    });
 return;
 }
+
