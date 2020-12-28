@@ -1,4 +1,6 @@
 import instructionsObject from "../instructions/instructionsObject"
+import s from "./functionS";
+import t from "./functionT";
 export default function instructions(color){
     const circule = document.createElement("div");
     circule.style.transitionDuration = "30s";
@@ -15,8 +17,6 @@ export default function instructions(color){
     mathOperation.textContent = "3+6";
     circule.append(mathOperation);
     // setTimeout(circule.classList.add("bottom"), 3000);
-
-
 
     
     const f = function(){
@@ -47,8 +47,10 @@ export default function instructions(color){
 
     }   
     document.querySelector(".instructions").addEventListener("click", function(event){
-        console.log(event.target.value);
         instructionsObject.buttonPressedValue = event.target.value;
+        if(instructionsObject.buttonPressedValue === "start-game"){
+            s();
+        }
     });
-
+return;
 }
