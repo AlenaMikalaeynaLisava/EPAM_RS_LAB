@@ -6,8 +6,6 @@ export default function ballFallTheSea(circule){
     if(seaTop.getBoundingClientRect().top >= circule.getBoundingClientRect().bottom){
        setTimeout(a, 1000);
     } else if(circule.classList.contains("circule-yellow")){
-        // const m = circule.classList.contains("circule-yellow");
-        // console.log(m);
         circule.classList.add("circule-disappear");
         setTimeout(() => { circule.remove()}, 1000); 
     }else{
@@ -17,7 +15,6 @@ export default function ballFallTheSea(circule){
         mainObject.drop.expectedResultOfExpression.shift();
         if(!seaTop.style.height){
             seaTop.style.height = "20%"
-            console.log(seaTop.style.height.slice(0, +seaTop.style.height.length-1));
         } else{
             seaTop.style.height = seaTop.style.height.slice(0, +seaTop.style.height.length-1)*2 +"%";
         }

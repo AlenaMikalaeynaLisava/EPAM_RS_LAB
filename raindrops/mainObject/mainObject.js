@@ -14,6 +14,7 @@ const mainObject = {
   pointsToAdd:10,
   operationsSet:"+",
   rangeofNumbers:10,
+  timerId: 5000,
   drop:{
       operand1: 0,
       operand2: 0,
@@ -31,14 +32,34 @@ const mainObject = {
 };
 
 let end = false;
-let timerId = 5000;
 mainObject.drop.isContinue = function isContinueGame(){
   mathExpressionProduse();
   
   if(mainObject.shouldConyinueGame){
+
+    if(+mainObject.score > 250){
+      mainObject.timerId = 2000;
+    } else if(+mainObject.score > 150){
+      mainObject.timerId = 2000;
+    } else if(+mainObject.score > 100){
+      mainObject.timerId = 3500;
+    } 
+
     mainObject.drop.operand1 =getRandomInt(1,+mainObject.rangeofNumbers);
-    mainObject.drop.operand2 = getRandomInt(1,+mainObject.drop.operand1);
-mainObject.drop.expectedResult = mainObject.drop.operand1 + mainObject.drop.operator + mainObject.drop.operand2;
+    function isGoodNumber(){
+      if(mainObject.drop.operator === "/"){
+        if(! (+mainObject.drop.operand1 % 2)){
+        } else{
+          mainObject.drop.operand1 = +mainObject.drop.operand1 -1;
+        }
+        mainObject.drop.expectedResult = mainObject.drop.operand1 + mainObject.drop.operator +"2";
+      } else {
+        mainObject.drop.operand2 = getRandomInt(1,+mainObject.drop.operand1);
+        mainObject.drop.expectedResult = mainObject.drop.operand1 + mainObject.drop.operator + mainObject.drop.operand2;
+      }
+    }
+    isGoodNumber();
+    
 mainObject.drop.addDrop = circuleAdd(mainObject.drop.expectedResult, mainObject.loseGameCount);//Добавляем каплю на экран
 const v1 = function(){//Рандомное выражение доб. в каплю
   mainObject.drop.addDrop.innerText = mainObject.drop.expectedResult;
@@ -52,9 +73,9 @@ const v1 = function(){//Рандомное выражение доб. в кап�
           mainObject.drop.expectedResultOfExpression.push(mainObject.drop.showExpectedResult);//Записываем ожидаемый результат  
         }
         
-mainObject.drop.catchUsersValue = enterCatcher(timerId);//Записываем и сравниваем ожидаемый результат со введенным Потом можно засунуть в отдельный объект
+mainObject.drop.catchUsersValue = enterCatcher(mainObject.timerId);//Записываем и сравниваем ожидаемый результат со введенным Потом можно засунуть в отдельный объект
 if(end === false){
-  setTimeout( isContinueGame, timerId);
+  setTimeout( isContinueGame, mainObject.timerId);
 }
   }else {
     document.querySelector(".game-over").innerText = `${mainObject.score} points \n Amount of drops: ${mainObject.dropsAmount}\n Solved correctly: ${mainObject.correctlySolved} \n Solved with mistake: ${mainObject.solvedWithMistake}\n Foll to the Sea: ${mainObject.follenToSea}`;

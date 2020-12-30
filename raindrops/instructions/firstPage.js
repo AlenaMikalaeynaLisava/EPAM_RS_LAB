@@ -35,7 +35,6 @@ export default function firstPage(){
 
     function addColor(button){
         function addColorInner(){
-            console.log("Yo!");
             button.classList.remove("yellow-key");
             button.removeEventListener("transitionend",addColorInner)
         }
@@ -68,17 +67,6 @@ function help(e){
 }
 document.querySelector(".instructions").addEventListener("click", help, "click");
 
-    // document.querySelector(".instructions").addEventListener("click", function(event){
-    //     if(event.target.classList.contains("instructions__button")){
-    //         clearTimeout(timqrId1);
-    //         clearTimeout(timqrId2);
-    //         clearTimeout(timqrId3);
-    //         circule.remove();
-    //         console.log(event.target.value);
-    //         instructions(event.target.value);
-    //        return;
-    //     }
-    // });
     setTimeout(() => {
         document.querySelector(".instructions").removeEventListener("click", help, "click");
     }, 5000);

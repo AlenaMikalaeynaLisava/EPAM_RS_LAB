@@ -5,21 +5,19 @@ export default function enterButton(){
     const aproved = document.querySelector(".aproved");
     const refused = document.querySelector(".refused");
     const circule = document.querySelector(".circule");
-    console.log(mainObject.drop.expectedResultOfExpression);
-    //console.log(mainObject.drop.expectedResultOfExpression.shift());
     if(+enterpart.innerText === mainObject.drop.expectedResultOfExpression.shift()){
         scoreScreen.innerText = +scoreScreen.innerText + mainObject.pointsToAdd;
         mainObject.pointsToAdd++;
         mainObject.correctlySolved++;
         mainObject.score = +scoreScreen.innerText;
-        if(mainObject.score >= 50){
-            mainObject.dropSpeed = "6s";
-        }else if (mainObject.score >= 30){
-                mainObject.dropSpeed = "10s";
-            } else if(mainObject.score >= 20){
-                mainObject.dropSpeed = "15s";
-            } else if (mainObject.score >= 10){
-                mainObject.dropSpeed = "20s";
+        if(mainObject.score >= 350){
+            mainObject.dropSpeed = "25s";
+        }else if (mainObject.score >= 250){
+                mainObject.dropSpeed = "30s";
+            } else if(mainObject.score >= 150){
+                mainObject.dropSpeed = "35s";
+            } else if (mainObject.score >= 100){
+                mainObject.dropSpeed = "40s";
             }
         aproved.play();
         if(document.querySelectorAll(".circule")[0].classList.contains("circule-yellow")){

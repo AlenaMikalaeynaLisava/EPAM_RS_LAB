@@ -5,9 +5,10 @@
 }
 .game-over{
     width: 100vw;
+    min-width: 320px;
     height: 100vh;
     background-color: #008b8b;
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     top: 0;
     left: 0;
@@ -15,11 +16,12 @@
     justify-content: center;
     align-items: center;
     font-family: 'Andika New Basic', sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     color: #cd5c5c;
 }
 .game-start{
     width: 100vw;
+    min-width: 320px;
     height: 100vh;
     background-color: #008b8b;
     opacity: 0.8;
@@ -359,19 +361,22 @@ opacity: 0.2;
     background: #5d635c;
     cursor: none;
 }
-
-
 .game-nondisplay{
     display: none;
 }
+
+
 @media (max-width: 1000px) {
     .enterpart__score-holder{
         display: flex;
         flex-wrap: wrap;
     }  
     .game-nondisplay{
-    display: none;
-}
+    display: none;  
+    }
+    .enterpart__score__score-description, .enterpart__score__score-value{
+        font-size: 1.5em;
+    }
 }
 @media (max-width: 800px) {
     .seapart{
@@ -380,16 +385,59 @@ opacity: 0.2;
     .enterpart{
         flex-basis: 50%;
     }
+    .circule-holder{
+        width: 45%;
+        height: 10%;
+        margin-right: 5%; 
+    }
+    .circule{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-family: 'Andika New Basic', sans-serif;
+        font-size: 1rem;
+    }
+    .circule-yellow{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-family: 'Andika New Basic', sans-serif;
+        font-size: 1rem;
+        color: #ffffff;
+    }
+    .circule-disappear{
+    opacity: 0.2;
+    }
 }
 @media (max-width: 400px) {
   .enterpart__score__star{
       display: none;
   }
-  .enterpart__score__score-description{
-    font-size: 1.5em;
+  .enterpart__score__score-description, .enterpart__score__score-value{
+    font-size: 1em;
 }
-.enterpart__score__score-value{
-    color: #e14a19;
-    font-size: 2em;
+
 }
+@media (max-width: 1150px) {
+    .button{
+        font-family: 'Andika New Basic', sans-serif;
+        font-size: 1rem;
+    }
+}
+@media (max-width: 625px) {
+    .button{
+        font-family: 'Andika New Basic', sans-serif;
+        font-size: 0.7rem;
+    }
+    .game-over{
+        font-family: 'Andika New Basic', sans-serif;
+        font-size: 1.5rem;
+        color: #cd5c5c;
+    }
+}
+@media (max-width: 410px) {
+    .button{
+        font-family: 'Andika New Basic', sans-serif;
+        font-size: 0.5rem;
+    }
 }

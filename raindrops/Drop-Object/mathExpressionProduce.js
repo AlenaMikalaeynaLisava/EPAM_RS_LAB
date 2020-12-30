@@ -5,12 +5,11 @@ export default function mathExpressionProduse(){
 
         if(mainObject.operationsSet === "+"){
             getOperation(operationsAll.slice(0, 1));
-            // checkedOperationHolder.removeEventListener("click",oper);
         }else if(mainObject.operationsSet === "-"){
             getOperation(operationsAll.slice(0, 2));
-            // checkedOperationHolder.removeEventListener("click",oper);
-        } else {
+        } else if(mainObject.operationsSet === "*"){
             getOperation(operationsAll.slice(0, 3));
-            // checkedOperationHolder.removeEventListener("click",oper);
+        } else {
+            getOperation(operationsAll);
         }
     }

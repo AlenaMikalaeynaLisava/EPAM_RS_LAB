@@ -8,7 +8,6 @@ import thirdPage from "./thirdPage"
 export default function instructions(value){
 
      function directInstructionFunction(){
-         console.log("Я вызвана");
            if(instructionsObject.numberOfInstructionPage === 1){
             firstPage();
             document.querySelector(".instructions__back").classList.add("disabled-gray");
@@ -35,12 +34,10 @@ export default function instructions(value){
                 instructionsObject.numberOfInstructionPage = 1;
                 setTimeout(s, 500); 
             } else if (value === "next"){
-                console.log(instructionsObject.numberOfInstructionPage);
                 instructionsObject.numberOfInstructionPage++;
                 setTimeout(directInstructionFunction, 500); 
             }else if (value === "back"){
                 instructionsObject.numberOfInstructionPage--;
-                console.log(instructionsObject.numberOfInstructionPage);
                 setTimeout(directInstructionFunction, 500); 
             }
 

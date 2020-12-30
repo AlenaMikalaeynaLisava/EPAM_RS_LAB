@@ -10,10 +10,4 @@ export default function t(){
     document.querySelector(".instructions").classList.remove("game-nondisplay");
     document.querySelector(".enterpart__play-panel-wrapper").classList.add("enterpart__play-panel-wrapper-information");
     firstPage();
-    // if(instructionsObject === "start-game"){
-    //     console.log(instructionsObject);
-    //     s();
-    // } else {
-    //     
-    // }
 }

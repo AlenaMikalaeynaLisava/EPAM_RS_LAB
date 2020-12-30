@@ -1,5 +1,4 @@
 export default function waveMove(){
-    // alert("Ia!");
     const wave = document.querySelector(".wave");
     const addA = ()=>{
         wave.classList.add("wave-left");

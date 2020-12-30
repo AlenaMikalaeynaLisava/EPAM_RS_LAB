@@ -40,5 +40,4 @@ export default function enterCatcher(timerId)  {
 
     setTimeout(removeEv, timerId);
     setTimeout(removeEv1, timerId);
-    // buttonsHolder.removeEventListener("click", buttonOnClick);
 }

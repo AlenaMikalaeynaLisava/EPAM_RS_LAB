@@ -17,9 +17,7 @@ export default function secondPage(){
             allCirciles.forEach((eachCircule)=>{
                 eachCircule.remove();
             })
-            console.log(e.target.value);
             instructions(e.target.value);
-            // seaTop.style.height = "10%";
             return;
         }
     }
@@ -28,22 +26,6 @@ export default function secondPage(){
  
    
 
-    // document.querySelector(".instructions").addEventListener("click", function(event){
-    //     if(event.target.classList.contains("instructions__button")){
-    //         const seaTop = document.querySelector(".seapart__sea-level");
-    //         seaTop.style.height = "10%";
-    //         clearTimeout(timqrId1);
-    //         clearTimeout(timqrId2);
-    //         let allCirciles = document.querySelectorAll(".circule");
-    //         allCirciles.forEach((eachCircule)=>{
-    //             eachCircule.remove();
-    //         })
-    //         console.log(event.target.value);
-    //         instructions(event.target.value);
-    //         // seaTop.style.height = "10%";
-    //         return;
-    //     }
-    // });
     setTimeout(() => {
         document.querySelector(".instructions").removeEventListener("click", help, "click");
     }, 5000);

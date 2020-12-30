@@ -16,7 +16,6 @@ export default function startGame(){
                       }
                  })
           e.target.setAttribute("checked","checked");
-          console.log(e.target.value);
           mainObject.operationsSet = e.target.value;
           mathExpressionProduse();
           return mainObject.operationsSet;
@@ -48,6 +47,5 @@ export default function startGame(){
           startGame.classList.add("game-nondisplay");
         }
     })
-    // startGame.removeEventListener("click");
 }
 

@@ -44,8 +44,6 @@ export default function thirdPage(){
             allCirciles.forEach((eachCircule)=>{
                 eachCircule.remove();
             })
-            // seaTop.style.height = "10%";
-            console.log(event.target.value);
             instructions(event.target.value);
             return;
         }
