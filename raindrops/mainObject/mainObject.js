@@ -1,16 +1,19 @@
-import checkTheKey from "../Enter-Object-Observer/checkTheKey";
-import enterButton from "../Enter-Object-Observer/enterButton";
-import showRendomExpression from "../Drop-Object/showRendomExpression";
+// import checkTheKey from "../Enter-Object-Observer/checkTheKey";
+// import enterButton from "../Enter-Object-Observer/enterButton";
+// import showRendomExpression from "../Drop-Object/showRendomExpression";
 import enterCatcher from "../Enter-Object-Observer/enterCatcher";
 import mathExpressionProduse from "../Drop-Object/mathExpressionProduce";
 import getRandomInt from "../Drop-Object/getRandomInt";
 import circuleAdd from "../Drop-Object/circuleAdd";
+
 const mainObject = {
   shouldConyinueGame : true,
   dropSpeed:"60s",//Функция, которая изменяет скорость в зависимости от количества очков
-  seaLevel: 42,//Функция, которая изменяет скорость в зависимости от количества очков
+  seaLevel: 42,//Функция, которая изменяет уровень моря в зависимости от количества проигрышей?? Нужна лм?
   score: 0,
-  pointsToAdd:1,
+  pointsToAdd:10,
+  operationsSet:"+",
+  rangeofNumbers:10,
   drop:{
       operand1: 0,
       operand2: 0,
@@ -30,11 +33,11 @@ const mainObject = {
 let end = false;
 let timerId = 5000;
 mainObject.drop.isContinue = function isContinueGame(){
-
+  mathExpressionProduse();
+  
   if(mainObject.shouldConyinueGame){
-    mainObject.drop.operand1 =getRandomInt(1,20);
-    mainObject.drop.operator = mathExpressionProduse();
-    mainObject.drop.operand2 = getRandomInt(1,mainObject.drop.operand1);
+    mainObject.drop.operand1 =getRandomInt(1,+mainObject.rangeofNumbers);
+    mainObject.drop.operand2 = getRandomInt(1,+mainObject.drop.operand1);
 mainObject.drop.expectedResult = mainObject.drop.operand1 + mainObject.drop.operator + mainObject.drop.operand2;
 mainObject.drop.addDrop = circuleAdd(mainObject.drop.expectedResult, mainObject.loseGameCount);//Добавляем каплю на экран
 const v1 = function(){//Рандомное выражение доб. в каплю

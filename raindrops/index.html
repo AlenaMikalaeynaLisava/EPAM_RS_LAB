@@ -13,6 +13,42 @@
         <div class="full-screen-game screen-symbol">&#9974;</div>
         <div class="normal-screen-game game-nondisplay screen-symbol">&#9932;</div>
         <div class="game-start">
+            <div class="level-difficulty">
+                <fieldset class="numbersRange">
+                    <legend>Choose range of numbers</legend>
+                    <div>
+                      <input type="radio" id="tenMax" name="numbersRange" value="10" checked>
+                      <label for="tenMax">1-10</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="fiftyMax" name="numbersRange" value="50">
+                      <label for="fiftyMax">1-50</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="hundredMax" name="numbersRange" value="100">
+                        <label for="hundredMax">1-100</label>
+                    </div>
+                </fieldset>
+                <fieldset class="mathOperations">
+                    <legend>Choose mathematical operations</legend>
+                    <div>
+                      <input type="radio" id="addition" name="mathOperations" value="+" checked>
+                      <label for="addition">+</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="subtraction" name="mathOperations" value="-">
+                      <label for="subtraction">+ -</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="multiplication" name="mathOperations" value="*">
+                        <label for="multiplication">+ - *</label>
+                      </div>
+                      <div>
+                        <input type="radio" id="division" name="mathOperations" value="/">
+                        <label for="division">+ - * /2</label>
+                      </div>
+                </fieldset>
+            </div>
             <button class="button" value="start-game">Start Game</button>
             <button class="button" value="start-demo">Start Demo</button>
         </div>

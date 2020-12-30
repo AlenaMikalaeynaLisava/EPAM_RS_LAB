@@ -24,20 +24,16 @@ export default function instructions(value){
             if(document.querySelector(".instructions__next").hasAttribute("disabled")){
                 document.querySelector(".instructions__next").removeAttribute("disabled"); 
             }
-            // secondPage();
            }
            else if(instructionsObject.numberOfInstructionPage === 3){
             thirdPage();
             document.querySelector(".instructions__next").classList.add("disabled-gray");
             document.querySelector(".instructions__next").setAttribute("disabled","disabled");
-            // thirdPage();
            }
        }
-        // if(event.target.classList.contains("instructions__button")){
             if(value === "start-game"){
                 instructionsObject.numberOfInstructionPage = 1;
                 setTimeout(s, 500); 
-                // return;
             } else if (value === "next"){
                 console.log(instructionsObject.numberOfInstructionPage);
                 instructionsObject.numberOfInstructionPage++;
@@ -45,11 +41,8 @@ export default function instructions(value){
             }else if (value === "back"){
                 instructionsObject.numberOfInstructionPage--;
                 console.log(instructionsObject.numberOfInstructionPage);
-                //document.querySelector(".instructions__back").classList.remove("disabled-gray");
                 setTimeout(directInstructionFunction, 500); 
             }
-        // }
-        
 
 return;
 }
