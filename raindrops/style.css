@@ -81,9 +81,6 @@
     position: relative;
     overflow: hidden;
 }
-/* .seapart-information-regime{
-    
-} */
 .circule-holder{
     display: flex;
     align-items:flex-start;
@@ -107,7 +104,6 @@
     opacity: 0.9; 
     position: absolute;
     top: 0px;
-    /*left: calc(50% - 50px); */
     left:0;
     transition: top ease,
                 opacity 3s  ease; 
@@ -126,7 +122,6 @@
     opacity: 0.9; 
     position: absolute;
     top: 0px;
-    /*left: calc(50% - 50px); */
     left:0;
     transition: top ease,
                 opacity 3s  ease; 
@@ -136,7 +131,6 @@ opacity: 0.2;
 }
 .top{
     top: 1px;
-    /* transition: top 0s ease; */
 }
 .bottom{
     top: 100vh;
@@ -179,7 +173,6 @@ opacity: 0.2;
     position: absolute;
     bottom:  13%;
     left: calc(50% - 100px);
-    /* Размер в % и отступ слева в % */
     height: 200px;
     width: 200px;
 }

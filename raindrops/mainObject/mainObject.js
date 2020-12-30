@@ -1,6 +1,3 @@
-// import checkTheKey from "../Enter-Object-Observer/checkTheKey";
-// import enterButton from "../Enter-Object-Observer/enterButton";
-// import showRendomExpression from "../Drop-Object/showRendomExpression";
 import enterCatcher from "../Enter-Object-Observer/enterCatcher";
 import mathExpressionProduse from "../Drop-Object/mathExpressionProduce";
 import getRandomInt from "../Drop-Object/getRandomInt";
@@ -9,7 +6,7 @@ import circuleAdd from "../Drop-Object/circuleAdd";
 const mainObject = {
   shouldConyinueGame : true,
   dropSpeed:"60s",//Функция, которая изменяет скорость в зависимости от количества очков
-  seaLevel: 42,//Функция, которая изменяет уровень моря в зависимости от количества проигрышей?? Нужна лм?
+  seaLevel: "",
   score: 0,
   pointsToAdd:10,
   operationsSet:"+",

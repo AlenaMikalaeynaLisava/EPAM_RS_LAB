@@ -3,8 +3,6 @@ import getRandomInt from "../Drop-Object/getRandomInt"
 import mathExpressionProduse from "../Drop-Object/mathExpressionProduce"
 import s from "../instructions/functionS"
 import t from "../instructions/functionT"
-import instructionsObject from "../instructions/instructionsObject"
-import instructions from "../instructions/instructins"
 export default function startGame(){
   const checkedOperationHolder = document.querySelector(".mathOperations");
   const checkedOperatios = checkedOperationHolder.querySelectorAll("input");

@@ -1,6 +1,3 @@
-import s from "./functionS"
-import instructionsObject from "./instructionsObject"
-import instructions from "./instructins"
 import firstPage from "./firstPage";
 export default function t(){
     document.querySelector(".enterpart__score-holder").classList.add("game-nondisplay");

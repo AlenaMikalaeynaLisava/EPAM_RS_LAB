@@ -1,4 +1,3 @@
-import addDrop from "./addDrop"
 import instructions from "./instructins"
 export default function firstPage(){
     const circule = document.createElement("div");
