@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <title>Raindrops</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="full-screen-game screen-symbol">&#9974;</div>
+        <div class="normal-screen-game game-nondisplay screen-symbol">&#9932;</div>
+        <div class="game-start">
+            <div class="level-difficulty">
+                <fieldset class="numbersRange">
+                    <legend>Choose range of numbers</legend>
+                    <div>
+                      <input type="radio" id="tenMax" name="numbersRange" value="10" checked>
+                      <label for="tenMax">1-10</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="fiftyMax" name="numbersRange" value="50">
+                      <label for="fiftyMax">1-50</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="hundredMax" name="numbersRange" value="100">
+                        <label for="hundredMax">1-100</label>
+                    </div>
+                </fieldset>
+                <fieldset class="mathOperations">
+                    <legend>Choose mathematical operations</legend>
+                    <div>
+                      <input type="radio" id="addition" name="mathOperations" value="+" checked>
+                      <label for="addition">+</label>
+                    </div>
+                    <div>
+                      <input type="radio" id="subtraction" name="mathOperations" value="-">
+                      <label for="subtraction">+ -</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="multiplication" name="mathOperations" value="*">
+                        <label for="multiplication">+ - *</label>
+                      </div>
+                      <div>
+                        <input type="radio" id="division" name="mathOperations" value="/">
+                        <label for="division">+ - * /2</label>
+                      </div>
+                </fieldset>
+            </div>
+            <button class="button" value="start-game">Start Game</button>
+            <button class="button" value="start-demo">Start Demo</button>
+        </div>
+        <div class="seapart">
+            <audio class="audio" loop>
+                <source src="./sounds/stereo-zvuk-s-morskimi-volnami-vo-vremya-vetrenoy-pogodyi-44027.ogg">
+            </audio>
+            <audio class="aproved">
+                <source src="./sounds/vot-esche-variant-10931.mp3">
+            </audio>
+            <audio class="refused">
+                <source src="./sounds/zvuk-udara-kulakom-dlya-montaja-19346.wav">
+            </audio>
+            <div class="circule-holder"></div>
+            <div class="seapart__sea-level"></div>
+            <div class="seapart__sea-plants">
+                <img class="seapart__sea-plants__plant" src="./pictures/—Pngtree—marine life free coral green_3841892.png">
+            </div>
+            <div class="wave"><svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#0099ff" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+              </svg> 
+              </div>
+              <div class="wave1"><svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#0099ff" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,154.7C384,160,480,224,576,218.7C672,213,768,139,864,128C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+              </svg> 
+              </div> 
+        </div>
+        <div class="enterpart">
+            <div class="enterpart__score-holder">
+                <div class="enterpart__score__star">
+                    <img src="./pictures/star-png-icon-6.jpg" alt="star">
+                </div>
+                <div class="enterpart__score__score-description">Score :</div>
+                <div class="enterpart__score__score-value">0</div>
+            </div>
+            <div class="enterpart__play-panel-wrapper">
+                <div class="enterpart__play-panel">
+                    <div class="enterpart__play-panel__screen"></div>
+                    <div class="enterpart__play-panel__buttons-holder">
+                        <div class="enterpart__play-panel__line">
+                            <div class="enterpart__play-panel__line__numbers-holder">
+                                <button class="number">7</button>
+                                <button class="number">8</button>
+                                <button class="number chosen">9</button>
+                                <button class="number">4</button>
+                                <button class="number">5</button>
+                                <button class="number">6</button>
+                            </div>
+                            <div class="enterpart__play-panel__line__clear">
+                                <button class="clear">Clear</button>
+                            </div>
+                        </div>
+                        <div class="enterpart__play-panel__line">
+                            <div class="enterpart__play-panel__line__numbers-holder">
+                                <button class="number">1</button>
+                                <button class="number chosen2">2</button>
+                                <button class="number">3</button>
+                                <button class="ziro">0</button>
+                                <button class="delete">Delete</button>
+                            </div>
+                            <div class="enterpart__play-panel__line__enter">
+                                <button class="enter">Enter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="instructions game-nondisplay">
+                <div class="instructions__text-holder"></div>
+                <div class="instructions__navigation-holder">
+                    <button class="instructions__button instructions__back disabled-gray" disabled value="back">Back</button>
+                    <button class="instructions__button instructions__next" value="next">Next</button>
+                </div>
+                <button class="instructions__button" value="start-game">Play 
+                    <div class="enterpart__score__star">                
+                        <img src="./pictures/star-png-icon-6.jpg" alt="star">
+                    </div>
+                </button>
+            </div>
+        </div>
+   
+        <div class="game-over game-nondisplay">
+        </div>
+    </div>
+</body>
+<script src="./dist/bundle.js"></script>
+</html>
